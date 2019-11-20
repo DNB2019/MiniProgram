@@ -1,4 +1,7 @@
 /* pages/home/home.wxss */
+.container{
+  background: rgb(255, 255, 255);
+}
  .userinfo {
   display: flex;
   flex-direction: column;
@@ -17,5 +20,5 @@
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 50px;
 } 

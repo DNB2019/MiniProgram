@@ -1,5 +1,7 @@
 // pages/home/home.js
+import { apiGreet } from '../../utils/api/home_api.js'
 const app = getApp();
+var util=require('../../utils/util.js')
 Page({
 
   /**
@@ -14,19 +16,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this   
     this.setData(
       {
         userInfo:app.globalData.userInfo,
-        greeting:"Hello World"
       }
     )
+    var date = util.formatTime(new Date())
+    console.log('date:' + date)
+    //请求问候语
+    apiGreet({
+      date
+    }).then(res => {
+      that.setData({
+        greeting:res.data
+      })
+    }).catch(error => {
+      console.log('error greet')
+    })
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.hideLoading()
   },
 
   /**

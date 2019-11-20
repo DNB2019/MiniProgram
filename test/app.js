@@ -1,6 +1,9 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -12,7 +15,7 @@ App({
         console.log('wx.login:' + res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: that.globalData.urlPath + '/OpenID',
+          url: that.globalData.baseUrl + '/OpenID',
           data: { code: res.code },
           method: "POST",
           header: {
@@ -57,7 +60,7 @@ App({
   },
   globalData: {
     userInfo: null,  //用户信息
-    urlPath: 'http://172.20.10.10:5000',
+    baseUrl: 'http://172.20.10.10:5000',
     openid: null
   }
 })
