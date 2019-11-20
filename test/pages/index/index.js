@@ -3,31 +3,21 @@ const app = getApp();
 Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),  //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    userInfo: app.globalData.userInfo, //用户信息
+    userInfo: app.globalData.userInfo //用户信息
   },
-  //加载后，看用户是否已经授权过，授权则直接跳转到主页
+  //加载后，看用户是否已经授权过
   onLoad: function () {
-    var that = this;
-    // getSetting获取用户设置，查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          //用户已经授权
-          wx.getUserInfo({
-            success: function (res) {
-              console.log(res.userInfo);
-              that.setData({userInfo:res.userInfo})
-              app.globalData.userInfo = res.userInfo;
-              //that.queryUserInfo(); 
-              //跳转至首页
-              console.log('switch')
-              wx.switchTab({
-                url: '/pages/home/home'
-              })
-            }
-          });
-        }
-      }
+    if(app.globalData.userInfo){
+      console.log('Had userInfo')
+      this.setData(
+        {
+          userInfo: app.globalData.userInfo
+        }    
+      )
+    }
+    console.log('index switch to home'),
+    wx.switchTab({
+      url: '/pages/home/home',
     })
   },
   //初次，授权登录
@@ -37,7 +27,7 @@ Page({
       console.log('permit: ' + e.detail.userInfo);
       app.globalData.userInfo = e.detail.userInfo
       this.setData({ userInfo: e.detail.userInfo});
-      
+     
       var that = this;
       //插入登录的用户的相关信息到数据库
       wx.request({
@@ -83,23 +73,23 @@ Page({
       });
     }
   },
-  //用openid向后端请求用户数据
-  queryUserInfo: function () {
-    console.log('query'),
-      wx.request({
-        url: app.globalData.urlPath + 'user/userInfo',
-        data: {
-          openid: app.globalData.openid   //请求参数为openid
-        },
-        header: {
-          'content-type': 'application/json'
-        },
-        success: function (res) {
-          //后端返回用户信息
-          console.log('succeed in getting userInfo: '+res.data)
-          getApp().globalData.userInfo = res.data;
-        }
-      })
-  },
+//   //用openid向后端请求用户数据
+//   queryUserInfo: function () {
+//     console.log('query'),
+//       wx.request({
+//         url: app.globalData.urlPath + 'user/userInfo',
+//         data: {
+//           openid: app.globalData.openid   //请求参数为openid
+//         },
+//         header: {
+//           'content-type': 'application/json'
+//         },
+//         success: function (res) {
+//           //后端返回用户信息
+//           console.log('succeed in getting userInfo: '+res.data)
+//           getApp().globalData.userInfo = res.data;
+//         }
+//       })
+//   },
 
 })
