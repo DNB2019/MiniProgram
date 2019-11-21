@@ -1,2 +1,6 @@
 <!--pages/discovery/discovery.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="content">发现</view>
+</cu-custom>
 <text>pages/discovery/discovery.wxml</text>
+

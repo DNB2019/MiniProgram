@@ -5,8 +5,9 @@ const baseUrl = getApp().globalData.baseUrl
 
 //请求问候语，参数为date
 export function apiGreet(data) {
+  //data是一个object：{}
   return request({
-    url: `${baseUrl}/greet`,
+    url: `${baseUrl}/testing`,
     method: 'POST',
     data
   })

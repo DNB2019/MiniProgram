@@ -8,11 +8,13 @@
     "pages/community/community"
   ],
   "window": {
-   "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0068C4",
+    "navigationBarBackgroundColor": "#0081ff",
     "navigationBarTitleText": "LIGHT",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "tabBar": {
     "color": "#626567",

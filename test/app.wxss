@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
 .container {
   height: 100%;
   display: flex;
@@ -8,4 +10,15 @@
   /* padding: 200rpx 0; */
   box-sizing: border-box;
 }
+.nav-li {
+padding: 30rpx;
+border-radius: 12rpx;
+width: 45%;
+margin: 0 2.5% 40rpx;
+background-size: cover;
+background-position: center;
+position: relative;
+z-index: 1;
+}
+
 

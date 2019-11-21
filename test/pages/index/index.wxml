@@ -1,5 +1,5 @@
-<!--pages/authorize/authorize.wxml-->
-<view wx:if="{{canIUse}}">
+<!--pages/index/index.wxml-->
+<view wx:if="{{canIUse && showbtn}}">
     <view class='header'>
         <image src="{{userInfo.avatarUrl}}" mode="cover"></image>
     </view>
@@ -14,5 +14,4 @@
     </button>
 </view>
 
-<view wx:else>请升级微信版本</view>
-
+<view wx:elif="{{showbtn}}">请升级微信版本</view>

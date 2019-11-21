@@ -4,10 +4,12 @@ App({
     wx.showLoading({
       title: '加载中',
     })
+    console.log('app onLaunch')
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+  
     var that = this;
     //登录
     wx.login({
@@ -24,7 +26,6 @@ App({
           success: (res) => {
             console.log('wx.login:success')
             console.log(res.data)
-            console.log(this);
             this.globalData.openid = res.data.openid;
           }
         })
@@ -40,12 +41,11 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-              console.log(res.userInfo);
-              //that.queryUserInfo(); 
+              console.log('get userInfo:'+res.userInfo);
               //跳转至首页
               console.log('switch to home')
               wx.switchTab({
-                url: '/pages/home/home'
+                url: '/pages/home/home',
               })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -55,6 +55,14 @@ App({
             }
           })
         }
+      }
+    }),
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let custom = wx.getMenuButtonBoundingClientRect();
+        this.globalData.Custom = custom;
+        this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
     })
   },

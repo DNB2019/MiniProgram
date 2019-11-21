@@ -3,19 +3,30 @@ import { apiGreet } from '../../utils/api/home_api.js'
 const app = getApp();
 var util=require('../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
-    greeting:null
+    userInfo:app.globalData.userInfo,
+    greeting:"欢迎",
+    list: [{
+      title: '心理测试',
+      img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
+      url: '/indexes/indexes'
+    },
+    {
+      title: '放松疏解',
+      img: 'https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg',
+      url: '/animation/animation'
+    }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('home onLoad')
     var that=this   
     this.setData(
       {
@@ -23,18 +34,17 @@ Page({
       }
     )
     var date = util.formatTime(new Date())
-    console.log('date:' + date)
     //请求问候语
     apiGreet({
       date
     }).then(res => {
+      console.log('Success request:'+res)
       that.setData({
-        greeting:res.data
+        greeting: res
       })
     }).catch(error => {
-      console.log('error greet')
+      console.log('Error in get greeting: '+error)
     })
-
   },
 
   /**
@@ -84,5 +94,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  bindClick:function()
+  {
+    console.log('here')
+    wx.switchTab({
+      url: '../me/me',
+    })
+  },
+  toChild(e) {
+    wx.navigateTo({
+      url: '/pages' + e.currentTarget.dataset.url
+    })
   }
+
 })

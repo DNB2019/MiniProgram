@@ -1,14 +1,33 @@
 <!--pages/home/home.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgColor="bg-gradual-blue" >
+    <view slot="backText"></view>
+    <view slot="content">首页</view>
+  </cu-custom>
+  <view class="container">
+    <view class="userinfo">
+      <block>
+
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+
+    <view class="usermotto">
+      <text class="user-motto" >{{greeting}}</text>
+    </view>  
   </view>
 
-  <view class="usermotto">
-    <text class="user-motto" bindtap="itemClick">{{greeting}}</text>
+  <view class="cu-card">
+    <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.img}})" bindtap="toChild" data-url="{{item.url}}" wx:for="{{list}}" wx:key>
+      <view class="cardTitle">
+        {{item.title}}
+      </view>
+    </view>
   </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
 
-</view>
+
+

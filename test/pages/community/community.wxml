@@ -1,2 +1,5 @@
 <!--pages/community/community.wxml-->
-<text>pages/community/community.wxml</text>
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+	<view slot="content">社区</view>
+</cu-custom>
