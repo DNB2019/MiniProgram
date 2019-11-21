@@ -24,7 +24,7 @@ App({
             'content-type': 'application/json'
           },
           success: (res) => {
-            console.log('wx.login:success')
+            console.log('wx.login:get openid')
             console.log(res.data)
             this.globalData.openid = res.data.openid;
           }
@@ -35,6 +35,7 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log('here:'+res.authSetting['scope.userInfo'])
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -43,7 +44,7 @@ App({
               this.globalData.userInfo = res.userInfo
               console.log('get userInfo:'+res.userInfo);
               //跳转至首页
-              console.log('switch to home')
+              console.log('app switch to home')
               wx.switchTab({
                 url: '/pages/home/home',
               })

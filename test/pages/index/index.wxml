@@ -1,17 +1,19 @@
 <!--pages/index/index.wxml-->
-<view wx:if="{{canIUse && showbtn}}">
-    <view class='header'>
-        <image src="{{userInfo.avatarUrl}}" mode="cover"></image>
-    </view>
+<view wx:if="{{showbtn}}">
+  <view wx:if="{{canIUse}}">
+      <view class='header'>
+          <image src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
 
-    <view class='content'>
-        <view>申请获取以下权限</view>
-        <text>获得你的公开信息(昵称，头像等)</text>
-    </view>
+      <view class='content'>
+          <view>申请获取以下权限</view>
+          <text>获得你的公开信息(昵称，头像等)</text>
+      </view>
 
-    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-        授权登录
-    </button>
+      <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+          授权登录
+      </button>
+  </view>
+
+  <view wx:else>请升级微信版本</view>
 </view>
-
-<view wx:elif="{{showbtn}}">请升级微信版本</view>

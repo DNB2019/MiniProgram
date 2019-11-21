@@ -1,7 +1,8 @@
 // pages/home/home.js
-import { apiGreet } from '../../utils/api/home_api.js'
+// import { apiGreet } from '../../utils/api/home_api.js'
 const app = getApp();
 var util=require('../../utils/util.js')
+var api = require('../../utils/api/home_api.js')
 Page({
   /**
    * 页面的初始数据
@@ -16,7 +17,7 @@ Page({
     },
     {
       title: '放松疏解',
-      img: 'https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg',
+      img: 'http://172.20.10.10:5000/img/home/bluesky.jpg',
       url: '/animation/animation'
     }
     ]
@@ -35,7 +36,7 @@ Page({
     )
     var date = util.formatTime(new Date())
     //请求问候语
-    apiGreet({
+    api.apiGreet({
       date
     }).then(res => {
       console.log('Success request:'+res)
@@ -51,7 +52,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.hideLoading()
+    
   },
 
   /**

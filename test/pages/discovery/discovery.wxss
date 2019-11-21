@@ -1,1 +1,60 @@
 /* pages/discovery/discovery.wxss */
+/* .cu-bar .search-form input{
+  margin-right :  50rpx
+} */
+/* .mycon{
+  display: flex;
+  flex-direction: row;
+
+} */
+.text-more{
+  color: #66cccc
+}
+.grid.col-2>view {
+  width: 45%;
+}
+.cu-list.grid>.cu-item {
+position: relative;
+display: flex;
+padding: 20rpx 0 30rpx;
+transition-duration: 0s;
+flex-direction: column;
+margin: 15rpx 18rpx;
+border-radius: 16px;
+}
+
+/* .cu-card.article {
+  display: block;
+  border-radius: 16px;
+} */
+
+.article-img{
+  border-radius:16rpx;
+  width: 300rpx;
+  height: 8em;
+  /* padding:0 */
+}
+.article-title
+{
+  font-size: 25rpx;
+  /* font-weight: 700; */
+  margin-left: 10px;
+}
+page{
+  height:100%;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+
+
+.title{
+  color:#353535;
+  size:50px
+}
+
+

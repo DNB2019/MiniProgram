@@ -9,6 +9,7 @@ Page({
   //加载后，看用户是否已经授权过
   onLoad: function () {
     console.log('index onLoad')
+    console.log('showbtn'+this.data.showbtn)
     if (app.globalData.userInfo) {
       console.log('Had userInfo')
       this.setData(
@@ -16,26 +17,39 @@ Page({
           userInfo: app.globalData.userInfo
         }
       )
-      console.log('this'+userInfo)
+      console.log('index userInfo'+this.data.userInfo)
       console.log('index switch home')
       wx.switchTab({
-        url: '/pages//home/home',
+        url: '/pages/home/home',
       })
-    }
-    else{
-      wx.hideLoading()
-      this.setData(
-        {
-          showbtn:true
-        }
-      )
+    }else if(this.data.canIUse){
+      console.log('callback')
+      app.userInfoReadyCallback = res => {
+        console.log('callback res:'+res.userInfo)
+        this.setData({
+          userInfo: res.userInfo,
+        })
+      }
+      //callback成功获得userInfo
+      if(this.userInfo)
+      {
+        console.log('callback成功获得userInfo,跳转')
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
+      }
+      else {
+        console.log('需要用户点击按钮')
+        wx.hideLoading()
+        this.setData({showbtn:true})
+      }
     }
   },
   //初次，授权登录
   bindGetUserInfo: function (e) {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
-      console.log('permit: ' + e.detail.userInfo);
+      console.log('permit: ')
       app.globalData.userInfo = e.detail.userInfo
       this.setData({ userInfo: e.detail.userInfo });
 
