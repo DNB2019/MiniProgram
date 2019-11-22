@@ -1,36 +1,11 @@
-// pages/discovery/discovery.js
+// pages/discovery/article-li/article-li.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    blocks:[{'文章干货':{}},{'心理课堂':{}}],
-    list: [{
-      title: '文章1文章1文章1文章1文章1文章1文章1文章1',
-      img: '../../images/bluesky.jpg',
-      abstract:'摘要1',
-      url: '/indexes/indexes'
-    },
-    {
-      title: '文章2',
-      img: '../../images/bluesky.jpg',
-      abstract: '摘要2',
-      url: '/animation/animation'
-    },
-      {
-        title: '文章3',
-        img: '../../images/bluesky.jpg',
-        abstract: '摘要1',
-        url: '/indexes/indexes'
-      },
-      {
-        title: '文章4',
-        img: '../../images/bluesky.jpg',
-        abstract: '摘要1',
-        url: '/indexes/indexes'
-      }
-    ]
+
   },
 
   /**

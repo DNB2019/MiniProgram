@@ -1,19 +1,19 @@
-// pages/home/home.js
+// pages/home/main/main.js
 // import { apiGreet } from '../../utils/api/home_api.js'
 const app = getApp();
-var util=require('../../utils/util.js')
-var api = require('../../utils/api/home_api.js')
+var util = require('../../../utils/util.js')
+var api = require('../../../utils/api/home_api.js')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:app.globalData.userInfo,
-    greeting:"欢迎",
+    userInfo: app.globalData.userInfo,
+    greeting: "欢迎",
     list: [{
       title: '心理测试',
       img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
-      url: '/indexes/indexes'
+      url: 'pages/discovery/main'
     },
     {
       title: '放松疏解',
@@ -28,10 +28,10 @@ Page({
    */
   onLoad: function (options) {
     console.log('home onLoad')
-    var that=this   
+    var that = this
     this.setData(
       {
-        userInfo:app.globalData.userInfo,
+        userInfo: app.globalData.userInfo,
       }
     )
     var date = util.formatTime(new Date())
@@ -39,12 +39,12 @@ Page({
     api.apiGreet({
       date
     }).then(res => {
-      console.log('Success request:'+res)
+      console.log('Success request:' + res)
       that.setData({
         greeting: res
       })
     }).catch(error => {
-      console.log('Error in get greeting: '+error)
+      console.log('Error in get greeting: ' + error)
     })
   },
 
@@ -52,7 +52,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -96,14 +96,14 @@ Page({
   onShareAppMessage: function () {
 
   },
-  bindClick:function()
-  {
+  bindViewTap: function () {
     console.log('here')
     wx.switchTab({
-      url: '../me/me',
+      url: '/pages/me/me',
     })
   },
   toChild(e) {
+    console.log('toChild')
     wx.navigateTo({
       url: '/pages' + e.currentTarget.dataset.url
     })

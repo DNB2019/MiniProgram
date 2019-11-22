@@ -1,19 +1,19 @@
-<!--pages/discovery/discovery.wxml-->
+<!--pages/discovery/main/main.wxml-->
 <!-- 搜索框 -->
 <scroll-view scroll-y class="scrollPage">
 
-<image class='background' src="../../images/背景图.png" mode="aspectFill"></image>
+<image class='background' src="../../../images/背景图.png" mode="aspectFill"></image>
 
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
   <view class="search-form round">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
   </view>
-
   <view class="action">
-    <button class="cu-btn bg-gradual-blue shadow-blur round">搜索</button>
+    <button class="cu-btn shadow-blur round">搜索</button>
   </view>
 </view>
+
 <view class="padding-xl"></view>
 
 
@@ -34,15 +34,15 @@
 </view>
 </view>
 <!-- 卡片 -->
-  <view style="float: right">
-    <text class="text-more" bindTap="more">更多</text>
+<view bindTap="toMore" style="float: right">
+    <text class="text-more" >更多</text>
     <text class="cuIcon-right lg text-grey" ></text>
 </view>
 
 <view class="margin-df"></view>
 
 <view class="cu-bar solid-bottom margin-top">
-    <view class="action">
+    <view>
       <text class="cuIcon-title text-black">心理课堂</text>
     </view>
 </view>

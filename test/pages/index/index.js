@@ -20,7 +20,7 @@ Page({
       console.log('index userInfo'+this.data.userInfo)
       console.log('index switch home')
       wx.switchTab({
-        url: '/pages/home/home',
+        url: '/pages/home/main/main',
       })
     }else if(this.data.canIUse){
       console.log('callback')
@@ -35,7 +35,7 @@ Page({
       {
         console.log('callback成功获得userInfo,跳转')
         wx.switchTab({
-          url: '/pages/home/home',
+          url: '/pages/home/main/main',
         })
       }
       else {
@@ -81,7 +81,7 @@ Page({
       });
       //授权成功后，跳转进入小程序首页
       wx.switchTab({
-        url: '/pages/home/home'
+        url: '/pages/home/main/main'
       });
     } else {
       //用户按了拒绝按钮

@@ -1,4 +1,4 @@
-/* pages/home/home.wxss */
+/* pages/home/main/main.wxss */
 .container{
   background: rgb(255, 255, 255);
 }

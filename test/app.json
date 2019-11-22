@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/home",
     "pages/logs/logs",
     "pages/me/me",
-    "pages/discovery/discovery",
     "pages/community/community",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/home/main/main",
+    "pages/discovery/main/main",
+    "pages/discovery/article-li/article-li"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",
@@ -20,7 +21,7 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/home/main/main",
         "text": "首页",
         "iconPath": "images/导航栏icon/首页未选中.png",
         "selectedIconPath": "images/导航栏icon/首页选中.png"
@@ -32,7 +33,7 @@
         "selectedIconPath": "images/导航栏icon/测评选中.png"
       },
       {
-        "pagePath": "pages/discovery/discovery",
+        "pagePath": "pages/discovery/main/main",
         "text": "干货",
         "iconPath": "images/导航栏icon/干货未选中.png",
         "selectedIconPath": "images/导航栏icon/干货选中.png"

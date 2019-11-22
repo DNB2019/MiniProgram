@@ -1,4 +1,4 @@
-/* pages/discovery/discovery.wxss */
+/* pages/discovery/main/main.wxss */
 /* .cu-bar .search-form input{
   margin-right :  50rpx
 } */
@@ -7,6 +7,16 @@
   flex-direction: row;
 
 } */
+.scrollPage{
+  z-index:-1;
+}
+.cu-bar .search-form {
+  flex:3;
+}
+.cu-btn{
+  font-weight:500;
+  height: 30rpx;
+}
 .text-more{
   color: #66cccc
 }
@@ -21,6 +31,7 @@ transition-duration: 0s;
 flex-direction: column;
 margin: 15rpx 18rpx;
 border-radius: 16px;
+box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(215,215,215,0.35);
 }
 
 /* .cu-card.article {
@@ -51,6 +62,10 @@ page{
   z-index: -1;
 }
 
+.cu-list.grid {
+background-color: var(--white);
+text-align: center;
+}
 
 .title{
   color:#353535;
