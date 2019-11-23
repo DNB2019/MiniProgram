@@ -1,0 +1,22 @@
+<!--pages/discovery/search/search.wxml-->
+<!-- 搜索框 -->
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <form class="myform" bindsubmit='searchClick'>
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input name="searchInput" type="text" value="{{inputValue}}" placeholder="输入搜索的关键词" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button form-type="submit" class="cu-btn shadow-blur round">搜索</button>
+    </view>
+  </form>
+</view>
+<view class='margin-xl'></view>
+<view class='margin-xl'></view>
+<view class="cu-bar margin-top">
+  <view class="cu-list grid col-4">
+    <view class="cu-item flex justify-center" wx:for="{{searchHisList}}" wx:key>
+      <view class="cu-tag light xl round">{{item.tagName}}</view>
+    </view>
+  </view>
+</view>

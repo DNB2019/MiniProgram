@@ -1,21 +1,17 @@
 <!--pages/discovery/main/main.wxml-->
-<!-- 搜索框 -->
-<scroll-view scroll-y class="scrollPage">
 
+<scroll-view scroll-y class="scrollPage">
 <image class='background' src="../../../images/背景图.png" mode="aspectFill"></image>
 
+<!-- 搜索框 -->
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
-  <view class="search-form round">
-    <text class="cuIcon-search"></text>
-    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
-  </view>
-  <view class="action">
-    <button class="cu-btn shadow-blur round">搜索</button>
-  </view>
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input bindtap="getSearch" type="text" placeholder="搜索" confirm-type="search"></input>
+    </view>
 </view>
 
 <view class="padding-xl"></view>
-
 
 <view class="cu-bar solid-bottom margin-top">
     <view class="action">
@@ -24,30 +20,42 @@
   </view>
 
 <view class="cu-list grid col-2">
-  <view class="cu-item flex justify-center" wx:for="{{list}}" wx:key>
+  <view class="cu-item flex justify-center" wx:for="{{articleList}}" wx:key>
     <view>
-    <image class='article-img'src="{{item.img}}"></image>
+    <image class='article-img'src="{{item.Back_Image}}"></image>
     </view>
     <view class="article-title">
-      <view class="text-cut">{{item.title}}</view>
+      <view class="text-cut">{{item.Title}}</view>
     </view>
 </view>
 </view>
 <!-- 卡片 -->
-<view bindTap="toMore" style="float: right">
-    <text class="text-more" >更多</text>
+<view class="more" style="float: right" catchTap="toMore">
+    <text class="text-more" catchTap="toMore">更多</text>
     <text class="cuIcon-right lg text-grey" ></text>
 </view>
 
-<view class="margin-df"></view>
-
 <view class="cu-bar solid-bottom margin-top">
-    <view>
+    <view class="action">
       <text class="cuIcon-title text-black">心理课堂</text>
     </view>
 </view>
 
+<view class="cu-list grid col-2">
+  <view class="cu-item flex justify-center" wx:for="{{classList}}" wx:key>
+    <view>
+    <image class='article-img'src="{{item.Back_Image}}"></image>
+    </view>
+    <view class="article-title">
+      <view class="text-cut">{{item.Title}}</view>
+    </view>
+</view>
+</view>
 
+<view class="more" style="float: right" bindTap="toMore">
+    <text class="text-more" bindTap="toMore">更多</text>
+    <text class="cuIcon-right lg text-grey" ></text>
+</view>
 
 </scroll-view>
 

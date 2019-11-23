@@ -7,7 +7,8 @@
     "pages/test/test",
     "pages/home/main/main",
     "pages/discovery/main/main",
-    "pages/discovery/article-li/article-li"
+    "pages/discovery/article-li/article-li",
+    "pages/discovery/search/search"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",

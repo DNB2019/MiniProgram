@@ -1,0 +1,9 @@
+/* pages/discovery/search/search.wxss */
+.cu-tag {
+border: 2rpx solid;
+border-color:#b2b2b2;
+background-color: #ffffff;
+}
+.margin-xl{
+  margin:500rpx;
+}

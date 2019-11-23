@@ -8,8 +8,7 @@ Page({
   },
   //加载后，看用户是否已经授权过
   onLoad: function () {
-    console.log('index onLoad')
-    console.log('showbtn'+this.data.showbtn)
+    console.log('---index onLoad---')
     if (app.globalData.userInfo) {
       console.log('Had userInfo')
       this.setData(
@@ -49,14 +48,14 @@ Page({
   bindGetUserInfo: function (e) {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
-      console.log('permit: ')
+      console.log('用户允许授权')
       app.globalData.userInfo = e.detail.userInfo
       this.setData({ userInfo: e.detail.userInfo });
-
+      var baseUrl=app.globalData.baseUrl
       var that = this;
       //插入登录的用户的相关信息到数据库
       wx.request({
-        url: app.globalData.urlPath + '/UsrInfo', //开发者服务器接口
+        url: baseUrl + '/UsrInfo', //开发者服务器接口
         data: {//请求的参数(要插入到数据库的数据)
           openid: getApp().globalData.openid,
           nickName: e.detail.userInfo.nickName,
@@ -71,11 +70,16 @@ Page({
         //接口调用成功的回调函数
         success: function (res) {
           //从数据库获取用户信息
-          //that.queryUserInfo();//将globalData中的用户信息赋值
-          console.log('success ' + res.data)
-          console.log("插入小程序登录用户信息成功！");
+          console.log('success ' + res.data.code)
+          if(res.data.code==1){
+            console.log("插入小程序登录用户信息失败！");
+          }
+          else{
+            console.log("插入小程序登录用户信息成功！");
+          }
         },
         fail: function (res) {
+          console.log(res.data);
           console.log('fail');
         }
       });

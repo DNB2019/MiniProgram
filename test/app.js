@@ -4,12 +4,12 @@ App({
     wx.showLoading({
       title: '加载中',
     })
-    console.log('app onLaunch')
+    console.log('---app onLaunch---')
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-  
+    var baseUrl=this.globalData.baseUrl;
     var that = this;
     //登录
     wx.login({
@@ -17,7 +17,7 @@ App({
         console.log('wx.login:' + res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: that.globalData.baseUrl + '/OpenID',
+          url: baseUrl+'/OpenID',
           data: { code: res.code },
           method: "POST",
           header: {
@@ -69,7 +69,7 @@ App({
   },
   globalData: {
     userInfo: null,  //用户信息
-    baseUrl: 'http://172.20.10.10:5000',
+    baseUrl: 'http://222.200.181.65:5000',
     openid: null
   }
 })

@@ -1,18 +1,15 @@
 /* pages/discovery/main/main.wxss */
-/* .cu-bar .search-form input{
-  margin-right :  50rpx
-} */
-/* .mycon{
-  display: flex;
-  flex-direction: row;
 
-} */
 .scrollPage{
   z-index:-1;
 }
 .cu-bar .search-form {
   flex:3;
 }
+/* .myform
+{
+  display: flex;
+} */
 .cu-btn{
   font-weight:500;
   height: 30rpx;
@@ -34,10 +31,6 @@ border-radius: 16px;
 box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(215,215,215,0.35);
 }
 
-/* .cu-card.article {
-  display: block;
-  border-radius: 16px;
-} */
 
 .article-img{
   border-radius:16rpx;
@@ -51,9 +44,7 @@ box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(215,215,215,0.35);
   /* font-weight: 700; */
   margin-left: 10px;
 }
-page{
-  height:100%;
-}
+
 .background {
   width: 100%;
   height: 100%;
@@ -63,13 +54,16 @@ page{
 }
 
 .cu-list.grid {
-background-color: var(--white);
+background-color: #ffffff79;
 text-align: center;
 }
 
 .title{
   color:#353535;
   size:50px
+}
+.more{
+  margin-bottom: 50rpx;
 }
 
 

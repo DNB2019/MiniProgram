@@ -1,5 +1,5 @@
 // pages/home/main/main.js
-// import { apiGreet } from '../../utils/api/home_api.js'
+
 const app = getApp();
 var util = require('../../../utils/util.js')
 var api = require('../../../utils/api/home_api.js')
@@ -17,7 +17,7 @@ Page({
     },
     {
       title: '放松疏解',
-      img: 'http://172.20.10.10:5000/img/home/bluesky.jpg',
+      img: app.globalData.baseUrl +'/static/img/background/bluesky.jpg',
       url: '/animation/animation'
     }
     ]
@@ -27,7 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('home onLoad')
+    console.log('---home onLoad---')
     var that = this
     this.setData(
       {
@@ -38,13 +38,13 @@ Page({
     //请求问候语
     api.apiGreet({
       date
-    }).then(res => {
-      console.log('Success request:' + res)
+    }).then(data => {
+      console.log('Success request:' + data)
       that.setData({
-        greeting: res
+        greeting: data.time_greeting + data.motto_greeting
       })
-    }).catch(error => {
-      console.log('Error in get greeting: ' + error)
+    }).catch(data => {
+      console.log('Error in get greeting: ' + data.code)
     })
   },
 
@@ -98,8 +98,8 @@ Page({
   },
   bindViewTap: function () {
     console.log('here')
-    wx.switchTab({
-      url: '/pages/me/me',
+    wx.navigateTo({
+      url: '/pages/discovery/article-li/article-li',
     })
   },
   toChild(e) {

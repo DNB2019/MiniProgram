@@ -1,44 +1,45 @@
 // pages/discovery/discovery.js
+const app = getApp();
+var util = require('../../../utils/util.js')
+var api = require('../../../utils/api/discovery_api.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl: '../../../images/bluesky.jpg',
-    blocks: [{ '文章干货': {} }, { '心理课堂': {} }],
-    list: [{
-      title: '文章1文章1文章1文章1文章1文章1文章1文章1',
-      img:  '../../../images/bluesky.jpg',
-      abstract: '摘要1',
-      url: '/indexes/indexes'
-    },
-    {
-      title: '文章2',
-      img: '../../../ images / bluesky.jpg',
-      abstract: '摘要2',
-      url: '/animation/animation'
-    },
-    {
-      title: '文章3',
-      img: '../../../ images / bluesky.jpg',
-      abstract: '摘要1',
-      url: '/indexes/indexes'
-    },
-    {
-      title: '文章4',
-      img: '../../../ images / bluesky.jpg',
-      abstract: '摘要1',
-      url: '/indexes/indexes'
-    }
-    ]
+    inputValue:'',
+    articleList: [],
+    classList:[]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('---discovery onLoad---');
+    var that=this;
+    api.recommendArticle({
+    }).then(data => {
+      console.log('code :'+data.code);
+      console.log('Success request:' + data.article[0].Back_Image);
+      console.log('Success request:' + data.article[0].Title);
+      that.setData({
+        articleList:data.article
+      })
+    }).catch(data => {
+      console.log('Error in get greeting: ' + data.code)
+    });
+    api.recommendClass({
+    }).then(data => {
+      console.log('code hhhh :' + data.code);
+      console.log('Success request:' + data.article[0].Back_Image);
+      console.log('Success request:' + data.article[0].Title);
+      that.setData({
+        classList: data.article
+      })
+    }).catch(data => {
+      console.log('Error in get greeting: ' + data.code)
+    })
   },
 
   /**
@@ -89,11 +90,18 @@ Page({
   onShareAppMessage: function () {
 
   },
+  getSearch:function()
+  {
+    console.log('跳转到搜索页面')
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
   toMore:function()
   {
     console.log('跳转到更多')
     wx.navigateTo({
-      url: '/pages/article-li/article-li',
+      url: '/pages/me/me',
     })
   }
 })
