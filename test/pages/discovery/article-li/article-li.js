@@ -1,16 +1,40 @@
 // pages/discovery/article-li/article-li.js
+var api = require('../../../utils/api/discovery_api.js')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-
+    searchData:"搜索",
+    articleList:[{
+      Title:"你好吗",
+      content:"好的好的好的好的好的好的好的好的好的好的",
+      Back_Image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
+      Tag:"抑郁症"
+    }],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('---article-li onLoad---');
+    var searchData=options.searchData;
+    var that=this;
+    console.log('用户搜索:'+searchData);
+    this.setData(
+      {
+        searchData:searchData
+      }
+    ),
+    api.getSearchList({searchData}).then(data => {
+      console.log('Success getSearchList:' + data.article_list[0].Tag)
+      that.setData({
+        articleList: data.article_list
+      })
+    }).catch(data => {
+      console.log('Error in get greeting: ' + data.code)
+    })
 
   },
 

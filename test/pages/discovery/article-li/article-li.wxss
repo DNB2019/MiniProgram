@@ -1,1 +1,7 @@
 /* pages/discovery/article-li/article-li.wxss */
+cu-bar .search-form input {
+  margin-left: 16px;
+}
+.mymargin {
+  margin: 400rpx;
+}

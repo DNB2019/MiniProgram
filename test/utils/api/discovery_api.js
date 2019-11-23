@@ -29,3 +29,12 @@ export function getArticleList(data) {
     data
   })
 }
+
+export function getSearchList(data) {
+  //data是一个object：{}
+  return request({
+    url: `${baseUrl}/Article_Search`,
+    method: 'POST',
+    data
+  })
+}
