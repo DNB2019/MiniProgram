@@ -3,29 +3,35 @@
 <!-- 搜索框 -->
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round">
-      <text class="cuIcon-search"></text>
+      <!-- <text class="cuIcon-search"></text> -->
       <input  placeholder="{{searchData}}" confirm-type="search"></input>
     </view>
 </view>
 
 <view class="mymargin"></view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-tab':'text-untab'}}" wx:for="{{sortList}}"  bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+
 <!-- 文章卡片列表 -->
   <view class="cu-card article no-card" wx:for="{{articleList}}" wx:key>
     <view class="cu-item shadow">
-    <!-- 标题 -->
-      <view class="title">
-        <view class="text-cut"></view>
-      </view>
       <view class="content">
         <!--文章图片 -->
         <image src="{{item.Back_Image}}"></image>
         <view class="desc">
-          <!-- 文章内容 -->
+          <!-- 文章标题 -->
           <view class="text-content"> {{item.Title}}</view>
-          <view>
+          <view class="right-container">
           <!-- 文章标签 -->
-            <view class="cu-tag bg-red light sm round">{{item.Tag}}</view>
-            <!-- <view class="cu-tag bg-green light sm round">史诗</view> -->
+            <view class="myauthor">{{item.Author}}</view>
+          <!-- 文章作者 -->
+            <view class="mytag">{{item.Tag}}</view>
           </view>
         </view>
       </view>

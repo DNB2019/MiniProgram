@@ -1,10 +1,10 @@
 // pages/discovery/search/search.js
 const app = getApp();
-var list = wx.getStorageSync('searchData');
+
 Page({
   data: {
     // CustomBar:app.globalData.CustomBar,
-    searchHisList: list,
+    searchHisList: [],
     hotList: [
       "标签名称123testing", "标签名称123testing", "标签名称123testing",
       "标签名称", "标签名称", "标签名称", "标签名称", "标签名称",
@@ -17,6 +17,10 @@ Page({
    */
   onLoad: function(options) {
     console.log('app CustomBar' + app.globalData.CustomBar);
+    var list = wx.getStorageSync('searchData');
+    this.setData({
+      searchHisList: list 
+    });
   },
 
   /**

@@ -65,5 +65,11 @@ text-align: center;
 .more{
   margin-bottom: 50rpx;
 }
-
-
+.myinput {
+flex: 1;
+padding-right: 30rpx;
+height: 64rpx;
+line-height: 64rpx;
+font-size: 26rpx;
+background-color: transparent;
+}

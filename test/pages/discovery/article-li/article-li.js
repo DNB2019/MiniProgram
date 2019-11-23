@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    TabCur:0,
+    sortList: ["文章干货","心理课堂"],
     searchData:"搜索",
     articleList:[{
       Title:"你好吗",

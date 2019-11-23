@@ -1,7 +1,31 @@
 var app = getApp();
 const baseUrl = app.globalData.baseUrl;
-//登录
-var p = new Promise(function(resolve, reject) {
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    userInfo: app.globalData.userInfo,
+    greeting: "欢迎",
+    list: [{
+      title: '心理测试',
+      img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
+      url: 'pages/discovery/main'
+    },
+    {
+      title: '放松疏解',
+      img: app.globalData.baseUrl + '/static/img/background/bluesky.jpg',
+      url: '/animation/animation'
+    }
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    //登录
+    var p = new Promise(function (resolve, reject) {
       var flag = false;
       wx.login({
         success: res => {
@@ -30,9 +54,9 @@ var p = new Promise(function(resolve, reject) {
             reject();
           }
         }
-      })   
+      })
     });
-    p.then(function(data) {
+    p.then(function (data) {
       // 获取用户设置
       wx.getSetting({
         success: res => {
@@ -48,8 +72,8 @@ var p = new Promise(function(resolve, reject) {
                 // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                 // 所以此处加入 callback 以防止这种情况
                 // if (this.userInfoReadyCallback) {
-                //   console.log('userInfoCallback')
-                //   this.userInfoReadyCallback(res) //res是getUserInfo的返回值
+                // console.log('userInfoCallback')
+                // this.userInfoReadyCallback(res) //res是getUserInfo的返回值
                 // }
                 //跳转至首页
                 console.log('---login switch to home---')
@@ -69,3 +93,55 @@ var p = new Promise(function(resolve, reject) {
         }
       })
     });
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

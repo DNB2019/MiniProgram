@@ -7,7 +7,7 @@
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input bindtap="getSearch" type="text" placeholder="搜索" confirm-type="search"></input>
+      <view bindtap="getSearch" class="myinput"></view>
     </view>
 </view>
 
