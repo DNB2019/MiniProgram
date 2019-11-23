@@ -36,7 +36,7 @@
 .mytag {
   font-size: 24rpx;
   color: #6cc;
-  max-height: 60rpx;
+  max-height: 65rpx;
   overflow: hidden;
 }
 

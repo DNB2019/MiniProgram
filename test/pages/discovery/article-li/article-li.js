@@ -8,12 +8,14 @@ Page({
     TabCur:0,
     sortList: ["文章干货","心理课堂"],
     searchData:"搜索",
-    articleList:[{
-      Title:"你好吗",
-      content:"好的好的好的好的好的好的好的好的好的好的",
-      Back_Image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-      Tag:"抑郁症"
-    }],
+    articleList:[
+    //   {
+    //   Title:"你好吗",
+    //   content:"好的好的好的好的好的好的好的好的好的好的",
+    //   Back_Image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
+    //   Tag:"抑郁症"
+    // }
+    ],
   },
 
   /**
