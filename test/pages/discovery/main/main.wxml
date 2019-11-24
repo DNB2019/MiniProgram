@@ -20,7 +20,7 @@
   </view>
 
 <view class="cu-list grid col-2">
-  <view class="cu-item flex justify-center" wx:for="{{articleList}}" wx:key>
+  <view class="cu-item flex justify-center" catchtap="articleClick" data-id="{{item.Article_ID}}" wx:for="{{articleList}}" wx:key>
     <view>
     <image class='article-img'src="{{item.Back_Image}}"></image>
     </view>
@@ -30,7 +30,7 @@
 </view>
 </view>
 <!-- 卡片 -->
-<view class="more" style="float: right" catchTap="toMore">
+<view class="more" style="float: right">
     <text class="text-more" catchTap="toMore">更多</text>
     <text class="cuIcon-right lg text-grey" ></text>
 </view>
@@ -42,7 +42,7 @@
 </view>
 
 <view class="cu-list grid col-2">
-  <view class="cu-item flex justify-center" wx:for="{{classList}}" wx:key>
+  <view class="cu-item flex justify-center" catchtap="articleClick" data-id="{{item.Title}}" wx:for="{{classList}}" wx:key>
     <view>
     <image class='article-img'src="{{item.Back_Image}}"></image>
     </view>

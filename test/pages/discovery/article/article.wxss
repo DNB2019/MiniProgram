@@ -1,0 +1,145 @@
+/* pages/discovery/article/article.wxss */
+
+.mybg {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* color: #66cccc08; */
+  background-color: #f3fbfb;
+  position: fixed;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+/* 卡片背景 白色 */
+
+.cu-card {
+  overflow: hidden;
+  background-color: white;
+  border-bottom: solid #eeeeee 5rpx;
+  max-height: 230rpx;
+  /* padding-bottom: 25rpx; */
+}
+
+/* 标签 */
+
+.mytag {
+  font-size: 24rpx;
+  color: #6cc;
+  max-height: 30rpx;
+  overflow: hidden;
+  max-width: 60%;
+}
+
+/* 标题下面的容器 */
+
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+  align-items: flex-end;
+}
+
+/* 标签左边的容器 */
+
+.left-container {
+  display: flex;
+  align-items: flex-end;
+  flex: auto;
+}
+
+/* 标题 */
+
+.mytitle {
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  font-size: 40rpx;
+  max-width: 80%;
+}
+
+/* 作者 */
+
+.myauthor {
+  font-size: 28rpx;
+  color: #888;
+  margin-right: 15rpx;
+}
+
+/* 时间 */
+
+.issue-time {
+  font-size: 24rpx;
+  color: #b2b2b2;
+}
+
+.myarticle {
+  background-color: white;
+  border-bottom: solid #eeeeee 2rpx;
+  padding-top: 40rpx;
+  padding-left: 40rpx;
+  padding-bottom: 40rpx;
+  padding-right: 30rpx;
+}
+
+.article-content {
+  /* margin-top:20rpx; */
+}
+
+.end {
+  color: #b2b2b2;
+  font-size: 28rpx;
+  margin: 0 290rpx;
+}
+
+.comment {
+  color: gray;
+  font-size: 28rpx;
+  line-height: 1.6;
+  border-radius: 16px;
+}
+
+.comment-inside {
+  background-color: #6cc;
+  color: var(--white);
+  overflow: hidden;
+  max-width: 95%;
+  max-height: 73rpx;
+}
+
+.text-mint {
+  color: #6cc;
+}
+
+/* 评论框 */
+.cu-bar .search-form input {
+  padding-left: 30rpx;
+  margin-left: 20rpx;
+}
+/* 右边容器 */
+.right-container{
+  margin-right:20rpx;
+}
+.comment-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  padding-bottom: 25rpx;
+}
+.refresh{
+  color: gray;
+  font-size: 28rpx;
+  line-height: 1.6;
+  border-radius: 16px;
+  text-align: center;
+  padding-left: 43%;
+  height: 40rpx;
+  min-height: 40rpx;
+  background-color: #f3fbfb;
+}
+.marginbottom{
+  margin-bottom: 100rpx;
+}

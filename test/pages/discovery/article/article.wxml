@@ -1,0 +1,64 @@
+<!--pages/discovery/article/article.wxml-->
+
+<!-- 标题栏卡片 -->
+<scroll-view scroll-y class="mybg scrollPage">
+  <view class="cu-card no-card">
+    <view class="mytitle">{{article.Title}}</view>
+    <view class="card-bottom">
+      <view class="left-container">
+        <view class="myauthor">{{article.Author}}</view>
+        <view class="issue-time">{{article.Issue_time}}</view>
+      </view>
+      <view class="mytag">{{article.Tag}}</view>
+    </view>
+  </view>
+  <!-- 正文 -->
+  <view class="myarticle">
+    <view class="article-content">
+      <wemark md="{{article.Context}}" link type="wemark"></wemark>
+    </view>
+    <view>
+      <text class="end">- End -</text>
+    </view>
+  </view>
+
+
+
+
+  <!-- 评论 -->
+
+  <!-- <view class="cu-item shadow"> -->
+
+    <view class="cu-list menu-avatar margin-sm comment" wx:for="{{commentList}}" >
+      <view class="cu-item">
+        <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
+        <view class="content">
+          <view class="text-grey">{{item.nickName}}</view>
+          <view class="comment">
+            {{item.Content}}
+          </view>
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.Time}}</view>
+            <view>
+              <text class="cuIcon-creative text-mint"></text>
+              <text class="cuIcon-message text-mint margin-left-sm"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+<!-- </view> -->
+<view bindtap="commentRefresh" class="cu-bar refresh bg-white text marginbottom">轻揪刷新~</view>
+<!-- 评论框 -->
+<view class="cu-bar comment-bar bg-white">
+    <view class="search-form round">
+      <!-- <text class="cuIcon-search"></text> -->
+      <input bindconfirm="submitComment" confirm-type="done" placeholder="评论" value="{{commentValue}}"></input>
+    </view>
+    <view class="right-container">
+    <text class="cuIcon-favor text-gray margin-left-sm"></text>
+    <text class="cuIcon-message text-gray margin-left-sm"></text>
+    <text class="cuIcon-forward text-gray margin-left-sm"></text> 
+    </view>
+</view>
+</scroll-view>

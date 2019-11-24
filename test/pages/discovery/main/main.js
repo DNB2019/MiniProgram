@@ -22,7 +22,7 @@ Page({
     }).then(data => {
       console.log('code :'+data.code);
       console.log('Success request:' + data.article[0].Back_Image);
-      console.log('Success request:' + data.article[0].Title);
+      console.log('Success request ID:' + data.article[0].Article_ID);
       that.setData({
         articleList:data.article
       })
@@ -103,5 +103,9 @@ Page({
     wx.navigateTo({
       url: '/pages/me/me',
     })
+  },
+  articleClick:function(e)
+  {
+    api.articleClick(e);
   }
 })

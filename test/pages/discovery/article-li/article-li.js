@@ -1,3 +1,4 @@
+
 // pages/discovery/article-li/article-li.js
 var api = require('../../../utils/api/discovery_api.js')
 Page({
@@ -16,6 +17,7 @@ Page({
     //   Tag:"抑郁症"
     // }
     ],
+    classList:[]
   },
 
   /**
@@ -34,7 +36,8 @@ Page({
     api.getSearchList({searchData}).then(data => {
       console.log('Success getSearchList:' + data.article_list[0].Tag)
       that.setData({
-        articleList: data.article_list
+        articleList: data.article_list,
+        classList:data.article_list
       })
     }).catch(data => {
       console.log('Error in get greeting: ' + data.code)
@@ -89,5 +92,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  articleClick:function(e)
+  {
+    api.articleClick(e);
+  },
+  tabSelect:function(e)
+  {
+    var index=e.currentTarget.dataset.id;
+    console.log('被点击栏目:'+index);
+    this.setData({
+      TabCur:index
+    });
   }
 })
