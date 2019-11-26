@@ -3,7 +3,10 @@
     "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/me/me",
+    "pages/me/main/main",
+    "pages/me/history/history",
+    "pages/me/collection/collection",
+    "pages/me/testRecord/testRecord",
     "pages/community/community",
     "pages/test/test",
     "pages/home/main/main",
@@ -49,7 +52,7 @@
         "selectedIconPath": "images/导航栏icon/社区选中.png"
       },
       {
-        "pagePath": "pages/me/me",
+        "pagePath": "pages/me/main/main",
         "text": "我的",
         "iconPath": "images/导航栏icon/我的未选中.png",
         "selectedIconPath": "images/导航栏icon/我的选中.png"
