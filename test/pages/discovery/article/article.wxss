@@ -2,7 +2,7 @@
 
 .mybg {
   width: 100%;
-  height: 100%;
+  height: 93%;
   z-index: -1;
   /* color: #66cccc08; */
   background-color: #f3fbfb;
@@ -121,11 +121,15 @@
   padding-left: 30rpx;
   margin-left: 20rpx;
 }
-
+.cu-bar .search-form{
+  margin-right:0rpx;
+  margin-left:30rpx;
+}
 /* 右边容器 */
 
 .right-container {
   margin-right: 20rpx;
+  font-size:50rpx;
 }
 
 /* 发评论的框 */
@@ -135,17 +139,19 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 16rpx;
+  padding-bottom: 36rpx;
   padding-top: 16rpx;
   font-size: 45rpx;
 }
+
+/* 评论的输入框 */
 
 .makecomment-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 25rpx;
+  padding-bottom: 36rpx;
   padding-top: 16rpx;
   padding-right: 5rpx;
   height: 152rpx;
@@ -230,4 +236,36 @@ margin-right: auto;
   display: flex;
   width: 100%;
   height: 152rpx;
+}
+
+/* 互动数据框 */
+
+.left {
+  color: #b2b2b2;
+  font-size: 40rpx;
+  border-right: 2rpx gainsboro solid;
+  padding: 0 80rpx;
+  max-width: 35%;
+}
+
+.right {
+  color: #b2b2b2;
+  font-size: 40rpx;
+  border-left: 2rpx gainsboro solid;
+  padding: 0 80rpx;
+  max-width: 35%;
+  overflow: hidden;
+}
+
+.middle {
+  color: #b2b2b2;
+  font-size: 40rpx;
+  overflow: hidden;
+  max-width: 35%;
+}
+
+.interaction {
+  height: 80rpx;
+  min-height: 80rpx;
+  overflow: hidden;
 }

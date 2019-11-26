@@ -34,7 +34,7 @@ Page({
         userInfo: app.globalData.userInfo,
       }
     )
-    var date = util.formatTime(new Date())
+    var date = util.formatTime(new Date());
     //请求问候语
     api.apiGreet({
       date

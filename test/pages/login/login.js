@@ -5,19 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: app.globalData.userInfo,
-    greeting: "欢迎",
-    list: [{
-      title: '心理测试',
-      img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
-      url: 'pages/discovery/main'
-    },
-    {
-      title: '放松疏解',
-      img: app.globalData.baseUrl + '/static/img/background/bluesky.jpg',
-      url: '/animation/animation'
-    }
-    ]
   },
 
   /**
@@ -29,7 +16,7 @@ Page({
       var flag = false;
       wx.login({
         success: res => {
-          console.log('wx.login:' + res.code)
+          console.log('wx.login code:' + res.code)
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           wx.request({
             url: baseUrl + '/OpenID',
@@ -41,7 +28,7 @@ Page({
               'content-type': 'application/json'
             },
             success: (res) => {
-              console.log('wx.login:get openid')
+              console.log('wx.login get openid：')
               console.log(res.data)
               app.globalData.openid = res.data.openid;
             }
@@ -60,7 +47,7 @@ Page({
       // 获取用户设置
       wx.getSetting({
         success: res => {
-          console.log('获取用户设置:' + res.authSetting['scope.userInfo'])
+          console.log('用户是否授权？:' + res.authSetting['scope.userInfo'])
           if (res.authSetting['scope.userInfo']) {
             console.log('用户已授权')
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
@@ -84,7 +71,7 @@ Page({
             })
           } else {
             console.log('用户未曾授权')
-            //跳转至首页
+            //跳转至授权界面
             console.log('---login switch to index---')
             wx.navigateTo({
               url: '/pages/index/index',

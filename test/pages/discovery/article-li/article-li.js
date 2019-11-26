@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadFlag:false,
     TabCur:0,
     sortList: ["文章干货","心理课堂"],
     searchData:"搜索",
@@ -24,6 +25,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     console.log('---article-li onLoad---');
     var searchData=options.searchData;
     var that=this;
@@ -37,8 +41,10 @@ Page({
       console.log('Success getSearchList:' + data.article_list[0].Tag)
       that.setData({
         articleList: data.article_list,
-        classList:data.article_list
-      })
+        classList:data.article_list,
+        loadFlag:true
+      });
+      wx.hideLoading();
     }).catch(data => {
       console.log('Error in get greeting: ' + data.code)
     })

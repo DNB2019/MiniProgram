@@ -1,7 +1,9 @@
 <!--pages/discovery/article/article.wxml-->
+<!-- 遮罩 -->
 <view class="mask" hidden='{{maskFlag}}'></view>
+
 <!-- 标题栏卡片 -->
-<scroll-view scroll-y class="mybg scrollPage" enable-back-to-top="true" bindscrolltolower="commentRefresh">
+<scroll-view scroll-y class="mybg scrollPage" enable-back-to-top="true" bindscrolltolower="commentRefresh" hidden="{{!loadFlag}}">
   <view class="cu-card no-card">
     <view class="mytitle">{{article.Title}}</view>
     <view class="card-bottom">
@@ -22,8 +24,21 @@
     </view>
   </view>
 
-
-
+  <!-- 互动数据框 -->
+  <view class="cu-bar interaction flex bg-white">
+    <view class="left">
+      <text class="cuIcon-attention"></text>
+      <text class="issue-time">{{Watches}}</text>
+    </view>
+    <view class="middle">
+      <text class="cuIcon-creative"></text>
+      <text class="issue-time">{{Likes}}</text>
+    </view>
+    <view class="right">
+      <text class="cuIcon-forward"></text>
+      <text class="issue-time">122</text>
+    </view>
+  </view>
 
   <!-- 评论 -->
 
@@ -48,7 +63,10 @@
     </view>
   </view>
   <!-- </view> -->
+
   <view bindtap="commentRefresh" class="cu-bar refresh bg-white text marginbottom">轻揪刷新~</view>
+  <view class="margin-xl"></view>
+  <view class="margin-xl"></view>
 
 
 </scroll-view>
@@ -70,21 +88,21 @@
 
 <!-- 评论框 -->
 <view class="cu-bar comment-bar bg-white" hidden="{{!maskFlag}}">
-    <view class=" search-form round ">
-      <!-- <input bindconfirm="submitComment " confirm-type="done " placeholder="评论 " value="{{commentValue}} "></input> -->
-       <input disabled="true" bindtap="showMask" confirm-type="done " placeholder="评论 " value="{{commentValue}} "></input>
-    </view>
-    <view class="right-container ">
-    <text class="cuIcon-creative text-mint margin-left-sm "></text>
-    <text class="cuIcon-favor text-mint margin-left-sm "></text>
-    <text class="cuIcon-forward text-mint margin-left-sm "></text> 
-    </view>
+  <view class=" search-form round ">
+    <!-- <input bindconfirm="submitComment " confirm-type="done " placeholder="评论 " value="{{commentValue}} "></input> -->
+    <input disabled="true" bindtap="showMask" confirm-type="done " placeholder="评论"></input>
+  </view>
+  <view class="right-container ">
+    <text class="{{creativeFlag?'cuIcon-creativefill':'cuIcon-creative'}} text-mint margin-left-sm " catchtap="catchCreative"></text>
+    <text class="{{favorFlag?'cuIcon-favorfill':'cuIcon-favor'}} text-mint margin-left-lg " catchtap="catchFavor"></text>
+    <text class="cuIcon-forward text-mint margin-left-lg "></text>
+  </view>
 </view>
 
 <form bindsubmit="submitComment">
-<view class="cu-bar makecomment-bar" hidden="{{maskFlag}}">
-    <input bindblur="back" class="comment-container" focus="{{focusFlag}}" confirm-type="done" placeholder="你的言语值得被倾听" name="commentInput" value="{{commentInput}}"></input>
+  <view class="cu-bar makecomment-bar" hidden="{{maskFlag}}">
+    <input fixed cursor-spacing="200" bindblur="back" class="comment-container" focus="{{focusFlag}}" confirm-type="done" placeholder="你的言语值得被倾听" name="commentInput" value="{{commentInput}}"></input>
     <!-- <view class="mybtn" catchtap="submitComment" >发送</view> -->
-     <button size="mini" class="mybtn" formType="submit" >发送</button>
-</view>
+    <button size="mini" class="mybtn" formType="submit">发送</button>
+  </view>
 </form>

@@ -6,9 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    focusFlag:false,
-    maskFlag:true,
-    commentInput:"",
+    loadFlag: false,
+    focusFlag: false,
+    maskFlag: true,
+    creativeFlag: false,
+    favorFlag: false,
+    forwardFlag: false,
+    commentInput: "",
+    Watches: 0,
+    Likes: 0,
     articleId: null,
     article: {
       // Title: "文章标题吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼",
@@ -24,17 +30,24 @@ Page({
       //   avatar:"https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png",
       //   comment:"越努力越幸运,DNB!!"
       // }
-    ]
+    ],
+    userInfo: app.globalData.userInfo
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.showLoading({
+      title: '加载中',
+    });
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
     console.log('---article onLoad---');
     var that = this;
     var articleId = options.id;
-    console.log('articleId' + articleId);
+    console.log('展示的文章articleId' + articleId);
     this.setData({
       articleId: articleId
     })
@@ -44,22 +57,29 @@ Page({
       console.log('Success getArticle:' + data.article.Title);
       console.log('Success getArticle:' + data.article.Tag);
       that.setData({
-        article: data.article
+        article: data.article,
+        loadFlag: true,
+        Watches: data.article.Watches,
+        Likes: data.article.Likes
         // commentList:data.commentList
-      })
+      });
+      wx.hideLoading();
     }).catch(data => {
       console.log('Error in get greeting: ' + data.code)
     });
+
     var cur_num = this.data.commentList.length;
     api.getComment({
       articleId,
       cur_num
     }).then(data => {
-      console.log('Success getComment:' + data.Com_List[0].Content);
-      console.log('Success getComment:' + data.Com_List[0].nickName);
-      that.setData({
-        commentList: data.Com_List
-      })
+      if (data.Com_list.length != 0) {
+        console.log('Success getComment:' + data.Com_List[0].Content);
+        console.log('Success getComment:' + data.Com_List[0].nickName);
+        that.setData({
+          commentList: data.Com_List
+        })
+      }
     }).catch(data => {
       console.log('Error in getComment: ' + data.code)
     });
@@ -115,78 +135,104 @@ Page({
   },
   submitComment: function(e) {
     var content = e.detail.value.commentInput;
-    console.log("用户提交评论:" + content);
-    this.setData({
-      commentInput: "",
-    });
-    var that=this;
-    var articleId = this.data.articleId;
-    console.log(articleId);
-    var openid = app.globalData.openid;
-    console.log(openid);
-    api.submitComment({
-      'articleId': articleId,
-      'openid': openid,
-      'content': content
-    }).then(data => {
-      console.log('Success submitComment:' + data.code);
-      api.getComment({
-        articleId
-      }).then(data => {
-        console.log('Success getComment:' + data.Com_List[0].Content);
-        console.log('Success getComment:' + data.Com_List[0].nickName);
-        that.setData({
-          commentList: data.Com_List,
-          commentValue: "",
-        })
-      }).catch(data => {
-        console.log('Error in getComment: ' + data.code)
+    if (content.length == 0) {
+      wx.showModal({
+        title: '发送失败',
+        content: '评论不能为空',
+        showCancel: false,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    } else if (content.length < 120) {
+      console.log("用户提交评论:" + content);
+      this.setData({
+        commentInput: "",
       });
-    }).catch(data => {
-      console.log('Error in submitComment: ' + data.code)
-    });
+      var that = this;
+      var articleId = this.data.articleId;
+      var openid = app.globalData.openid;
+      api.submitComment({
+        'articleId': articleId,
+        'openid': openid,
+        'content': content
+      }).then(data => {
+        console.log('Success submitComment:' + data.code);
+        var newComment = {
+          'nickName': this.data.userInfo.nickName,
+          'Time': '刚刚',
+          'Content': content,
+          'avatarUrl': this.data.userInfo.avatarUrl
+        }
+        var newList = [newComment];
+        var oldList = this.data.commentList;
+        that.setData({
+          commentList: newList.concat(oldList)
+        });
+        wx.showToast({
+          title: '发送成功',
+          // duration: 1500,
+          mask: true,
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        });
+      })
+      // .catch(data => {
+      //   console.log('Error in submitComment: ' + data.code)
+      // });
+    } else {
+      wx.showModal({
+        title: '发送失败',
+        content: '评论最多120字',
+        showCancel: false,
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   },
-  commentRefresh:function()
-  {
-    var that=this;
-    var articleId=this.data.articleId;
-    var cur_num=this.data.commentList.length;
+  //上拉获取更多评论
+  commentRefresh: function() {
+    var that = this;
+    var articleId = this.data.articleId;
+    var cur_num = this.data.commentList.length;
     api.getComment({
       articleId,
-      cur_num
+      cur_num //当前评论数
     }).then(data => {
-      console.log('Success getComment:' + data.Com_List[0].Content);
-      console.log('Success getComment:' + data.Com_List[0].nickName);
-      var origin=(that.data.commentList).concat(data.Com_List);
-      console.log("origin:"+origin);
-      console.log("origin:" + origin.length);
-      that.setData({
-        commentList: origin
-      });
-      
+      if (data.Com_List.length != 0) {
+        console.log('Success getComment:' + data.Com_List[0].Content);
+        console.log('Success getComment:' + data.Com_List[0].nickName);
+        var origin = (that.data.commentList).concat(data.Com_List);
+        console.log("新评论列表长度:" + origin.length);
+        that.setData({
+          commentList: origin
+        });
+      } else {
+
+      }
     });
     // .catch (data => {
     //   console.log('Error in getComment: ' + data.code)
     // });
   },
   // 点击评论的遮罩
-  showMask: function () {
+  showMask: function() {
     console.log('showMask');
-    this.setData(
-      {
-        maskFlag: false,
-        focusFlag:true
-      }
-    );
+    this.setData({
+      maskFlag: false,
+      focusFlag: true
+    });
     console.log('maskFlag' + this.data.maskFlag);
   },
-  back: function () {
+  back: function() {
     console.log('back');
     this.setData({
       maskFlag: true,
-      focusFlag:false
+      focusFlag: false
     })
-  }
+  },
   // 按下按钮，提交评论
   // submitComment: function (e) {
   //   var input = e.detail.value.commentInput;
@@ -196,4 +242,21 @@ Page({
   //     commentInput: "",
   //   })
   // },
+  catchCreative: function() {
+    console.log('用户点亮');
+    var flag = this.data.creativeFlag ? false : true;
+    this.setData({
+      creativeFlag: flag
+    });
+  },
+  catchFavor: function() {
+    console.log('用户收藏');
+    var flag = this.data.favorFlag ? false : true;
+    this.setData({
+      favorFlag: flag
+    });
+  },
+  catchForward: function() {
+    console.log('用户转发');
+  }
 })

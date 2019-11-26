@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadFlag:false,
     inputValue:'',
     articleList: [],
     classList:[]
@@ -16,29 +17,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     console.log('---discovery onLoad---');
     var that=this;
+    var num=4;
     api.recommendArticle({
+      num
     }).then(data => {
-      console.log('code :'+data.code);
-      console.log('Success request:' + data.article[0].Back_Image);
       console.log('Success request ID:' + data.article[0].Article_ID);
       that.setData({
         articleList:data.article
       })
     }).catch(data => {
-      console.log('Error in get greeting: ' + data.code)
+      console.log('Error in getArticle: ' + data.code)
     });
     api.recommendClass({
+      num
     }).then(data => {
-      console.log('code hhhh :' + data.code);
-      console.log('Success request:' + data.article[0].Back_Image);
       console.log('Success request:' + data.article[0].Title);
       that.setData({
-        classList: data.article
-      })
+        classList: data.article,
+         loadFlag: true
+      });
+      wx.hideLoading();
     }).catch(data => {
-      console.log('Error in get greeting: ' + data.code)
+      console.log('Error in getClass: ' + data.code)
     })
   },
 

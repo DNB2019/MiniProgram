@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadFlag:false,
     searchValue:"",
     tagCur:null,
     articleList:[],
@@ -16,15 +17,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that=this;
     console.log('---more-li onLoad---');
     var searchData="抑郁症";
     api.getSearchList({ searchData }).then(data => {
       console.log('Success getSearchList:' + data.article_list[0].Tag)
       that.setData({
+        loadFlag: true,
         articleList: data.article_list,
         // tagList: data.article_list
-      })
+      });
+      wx.hideLoading();
     }).catch(data => {
       console.log('Error in get greeting: ' + data.code)
     })

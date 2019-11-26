@@ -1,5 +1,5 @@
 <!--pages/discovery/more-li/more-li.wxml-->
-<scroll-view scroll-y class="scrollPage bg-white" enable-back-to-top="true" bindscrolltolower="articleRefresh">
+<scroll-view scroll-y class="scrollPage bg-white" enable-back-to-top="true" bindscrolltolower="articleRefresh" hidden="{{!loadFlag}}">
   <!-- 搜索框 -->
   <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round text-icon">

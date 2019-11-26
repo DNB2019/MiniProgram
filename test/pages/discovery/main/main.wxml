@@ -1,24 +1,24 @@
 <!--pages/discovery/main/main.wxml-->
 
-<scroll-view scroll-y class="scrollPage">
+<scroll-view scroll-y class="scrollPage" hidden="{{!loadFlag}}">
   <image class='background' src="../../../images/背景图.png" mode="aspectFill"></image>
 
   <!-- 搜索框 -->
   <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <view bindtap="getSearch" class="myinput"></view>
+      <input disabled="true" bindtap="getSearch" placeholder="搜索"></input>
     </view>
   </view>
 
   <view class="padding-xl"></view>
-<!-- 文章干货 -->
+  <!-- 文章干货 -->
   <view class="cu-bar solid-bottom margin-top" bindtap="toMore">
     <view class="action">
       <text class="cuIcon-title text-black">文章干货</text>
     </view>
   </view>
-<!-- 文章卡片 -->
+  <!-- 文章卡片 -->
   <view class="cu-list grid col-2">
     <view class="cu-item flex justify-center" catchtap="articleClick" data-id="{{item.Article_ID}}" wx:for="{{articleList}}" wx:key>
       <view>
@@ -30,8 +30,8 @@
     </view>
   </view>
   <!-- 更多 -->
-  <view class="more" bindTap="toMore">
-    <text class="text-more">更多</text>
+  <view class="more">
+    <text class="text-more" bindTap="toMore">更多 </text>
     <text class="cuIcon-right lg text-grey"></text>
   </view>
 
@@ -51,9 +51,9 @@
       </view>
     </view>
   </view>
-<!-- 更多 -->
+  <!-- 更多 -->
   <view class="more" bindTap="toMore">
-    <text class="text-more"> 更多</text>
+    <text class="text-more">更多 </text>
     <text class="cuIcon-right lg text-grey"></text>
   </view>
 
