@@ -101,7 +101,7 @@ Page({
   {
     console.log('跳转到更多')
     wx.navigateTo({
-      url: '/pages/me/me',
+      url: '/pages/discovery/more-li/more-li',
     })
   },
   articleClick:function(e)

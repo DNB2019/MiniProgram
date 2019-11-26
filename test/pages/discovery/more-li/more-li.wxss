@@ -1,0 +1,127 @@
+/* pages/discovery/more-li/more-li.wxss */
+
+/* pages/discovery/article-li/article-li.wxss */
+
+/* 卡片下边框 */
+
+.cu-card.article {
+  border-bottom: solid #eee 2rpx;
+}
+
+/* 标题颜色、大小 */
+
+.cu-card.article>.cu-item .content .text-content {
+  font-size: 32rpx;
+  color: #353535;
+  height: 90rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+/* 调整卡片的上边距 */
+
+.cu-card.article>.cu-item .content {
+  display: flex;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+}
+
+/* 作者 */
+
+.myauthor {
+  font-size: 24rpx;
+  color: #b2b2b2;
+}
+
+/* 标签 */
+
+.mytag {
+  font-size: 24rpx;
+  color: #6cc;
+  max-height: 65rpx;
+  overflow: hidden;
+}
+
+/* 图片 */
+
+.cu-card.article>.cu-item .content>image {
+  width: 180rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+}
+
+/* .cu-card.article>.cu-item {
+padding-bottom: 30rpx;
+} */
+
+/* 图片右边 */
+
+.cu-card.article>.cu-item .content .desc {
+  flex-direction: row;
+}
+
+/* 标题右边 */
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 60%;
+  align-items: flex-end;
+}
+
+.cu-bar .search-form input {
+  margin-left: 10px;
+}
+
+/* 导航栏点击时文字 */
+
+.text-tab {
+  color: #6ccccc;
+  font-size: 30rpx;
+  border-bottom: #6ccccc solid 2rpx;
+}
+
+/* 导航栏未点击时文字 */
+
+.text-untab {
+  font-size: 30rpx;
+}
+
+.text-center {
+  text-align: center;
+  border-bottom: solid #eee 2rpx;
+}
+
+.mymargin {
+  margin: 99rpx;
+}
+.cu-tag{
+  min-width:130rpx;
+  margin-right: 15rpx;
+  font-size: 30rpx;
+}
+.tag-tab {
+  border: 2rpx solid;
+  border-color: #6cc;
+  background-color: #6cc;
+  color: #fff;
+}
+
+.tag-untab {
+  border: 2rpx solid;
+  border-color: #6cc;
+  background-color: #fff;
+  color: #6cc;
+}
+.nav{
+  padding-left:30rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  border-bottom:solid #eee 2rpx;
+}
+.text-icon{
+  font-size:40rpx;
+  margin-right: 35rpx;
+}

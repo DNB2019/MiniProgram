@@ -3,18 +3,18 @@
 <view class="mybg">
 
   <!-- 搜索框 -->
-  <form class="myform" bindsubmit='searchClick'>
+  <!-- <form class="myform" bindsubmit='searchClick'> -->
     <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
       <view class="search-form round">
         <text class="cuIcon-search"></text>
-        <input name="searchInput" type="text" placeholder="输入搜索的关键词" confirm-type="search" value="{{inputValue}}"></input>
+        <input bindconfirm="searchClick" auto-focus="true" name="searchInput" type="text" placeholder="输入搜索的关键词" confirm-type="search" value="{{inputValue}}"></input>
       </view>
-      <view class="action">
+      <!-- <view class="action">
         <button form-type="submit" class="cu-btn searchButton shadow-blur round">搜索</button>
-      </view>
+      </view> -->
 
     </view>
-  </form>
+  <!-- </form> -->
   <view class='margin'></view>
 
 

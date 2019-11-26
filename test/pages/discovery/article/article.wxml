@@ -1,7 +1,7 @@
 <!--pages/discovery/article/article.wxml-->
-
+<view class="mask" hidden='{{maskFlag}}'></view>
 <!-- 标题栏卡片 -->
-<scroll-view scroll-y class="mybg scrollPage">
+<scroll-view scroll-y class="mybg scrollPage" enable-back-to-top="true" bindscrolltolower="commentRefresh">
   <view class="cu-card no-card">
     <view class="mytitle">{{article.Title}}</view>
     <view class="card-bottom">
@@ -29,36 +29,62 @@
 
   <!-- <view class="cu-item shadow"> -->
 
-    <view class="cu-list menu-avatar margin-sm comment" wx:for="{{commentList}}" >
-      <view class="cu-item">
-        <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
-        <view class="content">
-          <view class="text-grey">{{item.nickName}}</view>
-          <view class="comment">
-            {{item.Content}}
-          </view>
-          <view class="margin-top-sm flex justify-between">
-            <view class="text-gray text-df">{{item.Time}}</view>
-            <view>
-              <text class="cuIcon-creative text-mint"></text>
-              <text class="cuIcon-message text-mint margin-left-sm"></text>
-            </view>
+  <view class="cu-list menu-avatar margin-sm comment" wx:for="{{commentList}}">
+    <view class="cu-item">
+      <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
+      <view class="content">
+        <view class="text-grey">{{item.nickName}}</view>
+        <view class="comment">
+          {{item.Content}}
+        </view>
+        <view class="margin-top-sm flex justify-between">
+          <view class="text-gray text-df">{{item.Time}}</view>
+          <view>
+            <text class="cuIcon-creative text-mint"></text>
+            <text class="cuIcon-message text-mint margin-left-sm"></text>
           </view>
         </view>
       </view>
     </view>
-<!-- </view> -->
-<view bindtap="commentRefresh" class="cu-bar refresh bg-white text marginbottom">轻揪刷新~</view>
+  </view>
+  <!-- </view> -->
+  <view bindtap="commentRefresh" class="cu-bar refresh bg-white text marginbottom">轻揪刷新~</view>
+
+
+</scroll-view>
+
 <!-- 评论框 -->
-<view class="cu-bar comment-bar bg-white">
-    <view class="search-form round">
-      <!-- <text class="cuIcon-search"></text> -->
-      <input bindconfirm="submitComment" confirm-type="done" placeholder="评论" value="{{commentValue}}"></input>
+<!-- <view class="cu-bar flex comment-bar bg-white" hidden="{{!maskFlag}}"> -->
+<!-- <view class="right-container"> -->
+<!-- <view class="left"> -->
+<!-- <text class="cuIcon-forward left text-mint"></text> -->
+<!-- </view> -->
+<!-- <view class="middle">
+    <text class="cuIcon-message text-mint"></text>
+    </view> -->
+<!-- <view class="right"> -->
+<!-- <text class="cuIcon-favor right text-mint"></text> -->
+<!-- </view> -->
+<!-- </view> -->
+<!-- </view> -->
+
+<!-- 评论框 -->
+<view class="cu-bar comment-bar bg-white" hidden="{{!maskFlag}}">
+    <view class=" search-form round ">
+      <!-- <input bindconfirm="submitComment " confirm-type="done " placeholder="评论 " value="{{commentValue}} "></input> -->
+       <input disabled="true" bindtap="showMask" confirm-type="done " placeholder="评论 " value="{{commentValue}} "></input>
     </view>
-    <view class="right-container">
-    <text class="cuIcon-favor text-gray margin-left-sm"></text>
-    <text class="cuIcon-message text-gray margin-left-sm"></text>
-    <text class="cuIcon-forward text-gray margin-left-sm"></text> 
+    <view class="right-container ">
+    <text class="cuIcon-creative text-mint margin-left-sm "></text>
+    <text class="cuIcon-favor text-mint margin-left-sm "></text>
+    <text class="cuIcon-forward text-mint margin-left-sm "></text> 
     </view>
 </view>
-</scroll-view>
+
+<form bindsubmit="submitComment">
+<view class="cu-bar makecomment-bar" hidden="{{maskFlag}}">
+    <input bindblur="back" class="comment-container" focus="{{focusFlag}}" confirm-type="done" placeholder="你的言语值得被倾听" name="commentInput" value="{{commentInput}}"></input>
+    <!-- <view class="mybtn" catchtap="submitComment" >发送</view> -->
+     <button size="mini" class="mybtn" formType="submit" >发送</button>
+</view>
+</form>

@@ -63,7 +63,9 @@ text-align: center;
   size:50px
 }
 .more{
-  margin-bottom: 50rpx;
+  margin-bottom: 10rpx;
+  width: 100%;
+  padding-left: 88%;
 }
 .myinput {
 flex: 1;
@@ -72,4 +74,7 @@ height: 64rpx;
 line-height: 64rpx;
 font-size: 26rpx;
 background-color: transparent;
+}
+.myclass{
+  width:100%;
 }

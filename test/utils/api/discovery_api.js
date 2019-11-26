@@ -49,6 +49,7 @@ export function getArticle(data) {
 }
 export function getComment(data) {
   //data是一个object：{}
+  console.log("getComment:"+data.cur_num);
   return request({
     url: `${baseUrl}/Article_Com`,
     method: 'POST',
@@ -64,8 +65,8 @@ export function articleClick(e) {
   })
 }
 export function submitComment(data) {
-  console.log('submit'+data);
-  console.log('submit' + data.articleId);
+  console.log('提交评论'+data);
+  console.log('提交评论' + data.articleId);
   //data是一个object：{}
   return request({
     url: `${baseUrl}/Submit_Article_Com`,

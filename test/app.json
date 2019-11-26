@@ -10,7 +10,8 @@
     "pages/discovery/main/main",
     "pages/discovery/article-li/article-li",
     "pages/discovery/search/search",
-    "pages/discovery/article/article"
+    "pages/discovery/article/article",
+    "pages/discovery/more-li/more-li"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",

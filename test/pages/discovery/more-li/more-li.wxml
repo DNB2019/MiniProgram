@@ -1,0 +1,42 @@
+<!--pages/discovery/more-li/more-li.wxml-->
+<scroll-view scroll-y class="scrollPage bg-white" enable-back-to-top="true" bindscrolltolower="articleRefresh">
+  <!-- 搜索框 -->
+  <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+    <view class="search-form round text-icon">
+      <text class="cuIcon-search "></text>
+      <input placeholder="搜索" bindconfirm="searchArticle" confirm-type="search" value="{{searchValue}}"></input>
+    </view>
+    <view class="margin-right-df text-icon">
+    <text class="cuIcon-order"></text>
+    </view>
+  </view>
+
+  <view class="mymargin"></view>
+  <!-- 导航栏 -->
+  <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="cu-tag bg round {{index==tagCur?'tag-tab':'tag-untab'}}" wx:for="{{tagList}}" bindtap="tagSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </scroll-view>
+
+  <!-- 文章卡片列表 -->
+  <view class="cu-card article no-card" wx:for="{{articleList}}" wx:key>
+    <view class="cu-item shadow">
+      <view class="content" catchtap="articleClick" data-id="{{item.Article_ID}}">
+        <!--文章图片 -->
+        <image src="{{item.Back_Image}}"></image>
+        <view class="desc">
+          <!-- 文章标题 -->
+          <view class="text-content"> {{item.Title}}</view>
+          <view class="right-container">
+            <!-- 文章标签 -->
+            <view class="myauthor">{{item.Author}}</view>
+            <!-- 文章作者 -->
+            <view class="mytag">{{item.Tag}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<view class="margin-tb-xl padding-r-sm bg-white" style="padding-left:45%">- End -</view>
+</scroll-view>

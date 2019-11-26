@@ -104,8 +104,7 @@ Page({
     // this.onLoad();
   },
   searchClick: function(e) {
-    console.log(e.detail.value);
-    var input = e.detail.value.searchInput;
+    var input = e.detail.value;
     console.log('用户搜索输入了:' + input);
     // 存入缓存并跳转
     this.setSearchStorage(input);
