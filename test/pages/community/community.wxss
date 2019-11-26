@@ -1,1 +1,56 @@
 /* pages/community/community.wxss */
+.container{
+  font-family: "Gill Sans", sans-serif;
+}
+text{
+  text-indent: 10rpx;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 15pt;
+  vertical-align: center;
+}
+.search-bar{
+  background-color: #e1fbfb;
+  width:700rpx;
+  height: 100rpx;
+  margin:10rpx auto 0px auto;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 100rpx;
+}
+.modules{
+  width:700rpx;
+  margin:auto;
+}
+.modules-item{
+  display: inline-block;
+  background-color:#e1fbfb;
+  width:150rpx;
+  height: 70rpx;
+  margin:20rpx 10rpx 20rpx 10rpx;
+  border-radius: 16px;
+  font-size: 7pt;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.single-card{
+  background-color: #e1fbfb;
+  width:700rpx;
+  height:300rpx;
+  margin-top: 20rpx;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 16px;
+  line-height: 300rpx;
+  text-align: center;
+}
+.post-article{
+  background-color: #5cddf6;
+  border-radius: 16px;
+  width:700rpx;
+  height: 100rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 20rpx;
+  line-height: 100rpx;
+}

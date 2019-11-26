@@ -1,25 +1,23 @@
-// pages/community/community.js
+// pages/me/me.js
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    feed:[{
-      content:"This is example test1",
-      },{
-        content:"this is 222222222",
-      },{
-        content:"this is 333333333333333",
-      }
-      ]
+    userInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData(
+      {
+        userInfo:app.globalData.userInfo
+      }
+    )
+    console.log('userInfo'+this.userInfo)
   },
 
   /**

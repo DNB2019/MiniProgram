@@ -1,0 +1,72 @@
+<!--pages/me/me.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+</cu-custom>
+<view class="container more">
+  <view class="user" style="background-image:url({{upper_img}})">
+    <view class="avatar">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </view>
+    <view class="user-info">
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+      <view class="edit">陪伴你的第{{day_count}}天</view>
+    </view>
+    <view class="score-board">
+      <view id="yellow-circle"><view id="rectangle"></view></view>
+      <text id="score-count">321</text>
+    </view>
+  </view>
+
+  <view class = "psycho-record">
+    <view class="line-bar"></view>
+    <text class="card-title">我的心理档案</text>
+    <text id="recent-test-time">最近测试时间</text>
+    <text id="time-detail">{{test_time}}</text>
+    <image class="graph" src = "../../../images/psycho_view.png"></image>
+    <text id="record-origin">结果根据每周一测（xxx测试）生成</text>
+    <view class = "view-all-record">查看完整档案</view>
+  </view>
+
+  <view class = "my-function">
+    <view class="line-bar"></view>
+    <text class="card-title">我的功能</text>
+    <view class="line-one">
+      <view class = "function-box" id = "one">
+        <image bindtap="bindViewTap" class = "function-icon" src = "../../../images/me_collection.png" mode="cover"></image>
+        <text>我的收藏</text>
+      </view>
+    <view class = "function-box" id = "two">
+        <image class = "function-icon" src = "../../../images/me_history.png" alt="历史浏览"></image>
+        <text>历史浏览</text>
+      </view>
+      <view class = "function-box" id = "three">
+        <image class = "function-icon" src = "../../../images/me_collection.png" alt="测试记录"></image>
+        <text>测试记录</text>
+      </view>
+      <view class = "function-box" id = "four">
+        <image class="function-icon" src = "../../../images/me_active.png" alt="我的动态"></image>
+        <text>我的动态</text>
+      </view>
+    </view>
+   <view class="line-two">
+      <view class = "function-box" id = "five">
+        <image class="function-icon" src = "../../../images/me_course.png" alt="我的课程"></image>
+        <text>我的课程</text>
+      </view>
+      <view class = "function-box" id = "six">
+        <image class = "function-icon" src = "../../../images/me_score.png" alt="积分"></image>
+        <text>我的积分</text>
+      </view>
+      <view class = "function-box" id = "seven">
+        <image class = "function-icon" src = "../../../images/me_setting.png" alt="设置"></image>
+        <text>我的设置</text>
+      </view> 
+    </view>
+  </view>
+
+  <view class="under-quote">
+    <view>万事皆有裂缝，那是光照进来的地方</view>
+    <view>-LIGHT开发团队-</view>
+  </view>
+</view>
+

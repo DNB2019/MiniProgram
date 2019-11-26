@@ -1,5 +1,22 @@
 <!--pages/community/community.wxml-->
 <cu-custom bgColor="bg-gradual-pink">
 	<view slot="backText"></view>
-	<view slot="content">社区</view>
 </cu-custom>
+<view class="container">
+  <view class = "search-bar">搜索</view>
+  <view class = "modules">
+    <view class="modules-item">缓解抑郁</view>
+    <view class="modules-item">减轻焦虑</view>
+    <view class="modules-item">something</view>
+    <view class="modules-item">somthing</view>
+  </view>
+  <scroll-view class="cards-content">
+    <view class="single-card" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
+      <view class = "feed-item">
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="post-article">+</view>
+</view>
