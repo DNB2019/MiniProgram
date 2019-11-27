@@ -1,0 +1,131 @@
+.container{
+    background-color: #f3fbfb;
+    width:100%;
+}
+.collection{
+    width:100%;
+    background-color: #f3fbfb;
+}
+
+.nav-bar{
+    width:100%;
+    height: 88rpx;
+    font-size: 28rpx;
+    line-height: 88rpx;
+    text-align: center;
+    background-color: white;
+}
+.nav-light{
+    width:50%;
+    height: 100%;
+    display: inline-block;
+    color: #66cccc;
+    border-bottom: 3rpx solid #66cccc;
+}
+.nav-gray{
+    width:50%;
+    height: 100%;
+    display: inline-block;
+    color: #353535;
+    border-bottom: 3rpx solid #b2b2b2;
+}
+.main-content{
+    position: relative;
+    background: white;
+}
+.content-box{
+    width:100%;
+    height:180rpx;
+    background-color: white;
+    position: relative;
+}
+.content-img{
+    width:180rpx;
+    height: 120rpx;
+    display: inline-block;
+    position: absolute;
+    left:32rpx;
+    top:32rpx;
+}
+.title{
+    font-size:32rpx;
+    color: #353535;
+    display: inline-block;
+    position: absolute;
+    top:30rpx;
+    left:250rpx;
+    display: inline-block;
+}
+.author{
+    font-size: 24rpx;
+    color: #b2b2b2;
+    display: inline-block;
+    position: absolute;
+    top:30rpx;
+    left:600rpx;
+}
+.tag{
+    font-size: 24rpx;
+    color: #66cccc;
+    display: inline-block;
+    position: absolute;
+    top:60rpx;
+    left: 600rpx;
+}
+.discuss-box{
+    width:710rpx;
+    height:400rpx;
+    margin:10rpx auto 10rpx auto;
+    background-color: f3fbfb;
+    position: relative;
+    border-radius: 16rpx 16rpx 16rpx 16rpx;
+}
+.info-bar{
+    width:100%;
+    height:108rpx;
+    border-bottom: 2rpx #e5e5e5 solid;
+    position: relative;
+}
+.user-avatar{
+    height: 60rpx;
+    width:60rpx;
+    border-radius: 50%;
+    position: absolute;
+    top:28rpx;
+    left:28rpx;
+}
+.username{
+    color: #888888;
+    font-size: 24rpx;
+    position: absolute;
+    top:28rpx;
+    left:120rpx;
+}
+.date{
+    color:#b2b2b2;
+    font-size:22rpx;
+    position: absolute;
+    top:60rpx;
+    left:120rpx;
+}
+.star{
+    color: #66cccc;
+    font-size:50rpx;
+    position: absolute;
+    top:30rpx;
+    left:600rpx;
+}
+.content{
+    font-size:28rpx;
+    color:#888888;
+    width:90%;
+    margin:auto;
+    margin-top:30rpx;
+}
+.discuss-tag{
+    font-size:24rpx;
+    color:#66cccc;
+    position: absolute;
+    top:350rpx;
+    left:600rpx;
+}

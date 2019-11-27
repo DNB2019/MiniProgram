@@ -32,7 +32,7 @@
     <text class="card-title">我的功能</text>
     <view class="line-one">
       <view class = "function-box" id = "one">
-        <image bindtap="bindViewTap" class = "function-icon" src = "../../../images/me_collection.png" mode="cover"></image>
+        <image bindtap="getCollection" class = "function-icon" src = "../../../images/me_collection.png" mode="cover"></image>
         <text>我的收藏</text>
       </view>
     <view class = "function-box" id = "two">
