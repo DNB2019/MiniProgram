@@ -1,0 +1,16 @@
+<!--pages/me/testRecord/testRecord.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+</cu-custom>
+<view class = "container">
+    <view class="testRecord">
+        <view class="main-content">
+            <view wx:for="{{psychoTest}}" class="content-box">
+                <image class="content-img" src="{{item.image_url}}"></image>
+                <view class="title">{{item.title}}</view>
+                <view class="date">{{item.date}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="under-quote">-End-</view>
+</view>

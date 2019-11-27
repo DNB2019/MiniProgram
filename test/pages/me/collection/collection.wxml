@@ -3,8 +3,27 @@
 	<view slot="backText"></view>
 </cu-custom>
 <view class = "container">
+    <view wx:if="{{location == 0}}" class="collection">
+        <view class="nav-bar">
+            <view class="nav-light">心理测评</view>
+            <view class="nav-gray" bindtap="getKnowledge">干货知识</view>
+            <view class="nav-gray" bindtap="getDiscussion">社区讨论</view>
+        </view>
+        <view class="main-content">
+            <view wx:for="{{psychoTest}}" class="content-box">
+                <image class="content-img" src="{{item.image_url}}"></image>
+                <view class="title">{{item.title}}</view>
+            </view>
+            <view wx:if="{{psychoTest.length == 0}}" class="empty">
+                <image class="empty-image" src="../../../images/empty_img.png"></image>
+                <view class="empty-info">还没有收藏的心理测评哦~</view>
+                <view class="empty-link">去测评</view>
+            </view>
+        </view>
+    </view>
     <view wx:if="{{location == 1}}" class="collection">
         <view class="nav-bar">
+            <view class="nav-gray" bindtap="getTest">心理测评</view>
             <view class="nav-light">干货知识</view>
             <view class="nav-gray" bindtap="getDiscussion">社区讨论</view>
         </view>
@@ -15,10 +34,16 @@
                 <view class="author">{{item.author}}</view>
                 <view class="tag">{{item.tag}}</view>
             </view>
+            <view wx:if="{{knowledge.length == 0}}" class="empty">
+                <image class="empty-image" src="../../../images/empty_img.png"></image>
+                <view class="empty-info">还没有收藏的干货哦~</view>
+                <view class="empty-link">去干货知识区逛一逛</view>
+            </view>
         </view>
     </view>
     <view wx:if="{{location == 2}}" class="collection">
         <view class="nav-bar">
+            <view class="nav-gray" bindtap="getTest">心理测评</view>
             <view class="nav-gray" bindtap="getKnowledge">干货知识</view>
             <view class="nav-light">社区讨论</view>
         </view>
@@ -32,6 +57,11 @@
                 </view>
                 <view class="content"><text>{{item.content}}</text></view>
                 <view class="discuss-tag">{{item.tag}}</view>
+            </view>
+            <view wx:if="{{discuss.length == 0}}" class="empty">
+                <image class="empty-image" src="../../../images/empty_img.png"></image>
+                <view class="empty-info">还没有收藏的讨论噢~</view>
+                <view class="empty-link">去社区逛一逛</view>
             </view>
         </view>
     </view>

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{}
+    userInfo:{},
+    psychoTest:[]
   },
 
   /**
@@ -14,7 +15,21 @@ Page({
   onLoad: function (options) {
     this.setData(
       {
-        userInfo:app.globalData.userInfo
+        userInfo:app.globalData.userInfo,
+        psychoTest:[{
+          image_url:"../../../images/chat_focus.png",
+          title:"测试1",
+          date:"2019-11-11",
+        },{
+          image_url:"../../../images/chat_focus.png",
+          title:"测试2",
+          date:"2019-11-12",
+        },{
+          image_url:"../../../images/chat_focus.png",
+          title:"测试3",
+          date:"2019-11-13",
+        }
+      ]
       }
     )
     console.log('userInfo'+this.userInfo)

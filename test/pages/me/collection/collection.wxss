@@ -1,6 +1,11 @@
+.page{
+    width:100%;
+    height:100%;
+}
 .container{
     background-color: #f3fbfb;
     width:100%;
+    height: 100%;
 }
 .collection{
     width:100%;
@@ -16,14 +21,14 @@
     background-color: white;
 }
 .nav-light{
-    width:50%;
+    width:33%;
     height: 100%;
     display: inline-block;
     color: #66cccc;
     border-bottom: 3rpx solid #66cccc;
 }
 .nav-gray{
-    width:50%;
+    width:33%;
     height: 100%;
     display: inline-block;
     color: #353535;
@@ -31,13 +36,14 @@
 }
 .main-content{
     position: relative;
-    background: white;
+    background:#f3fbfb;
 }
 .content-box{
     width:100%;
     height:180rpx;
     background-color: white;
     position: relative;
+    border-bottom: 2rpx solid #eeeeee;
 }
 .content-img{
     width:180rpx;
@@ -76,9 +82,9 @@
     width:710rpx;
     height:400rpx;
     margin:10rpx auto 10rpx auto;
-    background-color: f3fbfb;
+    background-color: white;
     position: relative;
-    border-radius: 16rpx 16rpx 16rpx 16rpx;
+    border-radius: 32rpx 32rpx 32rpx 32rpx;
 }
 .info-bar{
     width:100%;
@@ -128,4 +134,42 @@
     position: absolute;
     top:350rpx;
     left:600rpx;
+}
+.under-quote{
+    margin-top:28rpx;
+    font-size: 28rpx;
+    color:#b2b2b2;
+}
+/*deal with empty style*/
+.empty{
+    width:100%;
+    height:1000rpx;
+    position: relative;
+}
+.empty-image{
+    width:500rpx;
+    height: 544rpx;
+    position: absolute;
+    top:160rpx;
+    left:130rpx;
+}
+.empty-info{
+    font-size:26rpx;
+    color: #b2b2b2;
+    position: absolute;
+    top:730rpx;
+    left:230rpx;
+}
+.empty-link{
+    width:460rpx;
+    height:60rpx;
+    font-size:28rpx;
+    color:#66cccc;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 32rpx 32rpx 32rpx 32rpx;
+    border: 2rpx solid #66cccc;
+    position: absolute;
+    bottom:160rpx;
+    left:130rpx;
 }
