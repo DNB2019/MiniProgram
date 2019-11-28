@@ -32,8 +32,8 @@ Page({
         ],
         knowledge:[{
           image_url:"../../../images/chat_focus.png",
-          title:"收藏的干货知识",
-          tag:"#抑郁症",
+          title:"收藏的干货知识极端情况下看看有多少个字",
+          tag:"#抑郁症#加多一个#加多两个",
           author:"bynb"
         },{
           image_url:"../../../images/chat_focus.png",

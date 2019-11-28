@@ -6,11 +6,21 @@ Page({
    */
   data: {
     feed:[{
-      content:"This is example test1",
+        //avatar_url:
+        //username:
+        //date:
+        //image_url:
+        //content:
+        //light_number
+        //comment_number
       },{
-        content:"this is 222222222",
-      },{
-        content:"this is 333333333333333",
+        avatar_url:"../../../images/me_setting.png",
+        username:"user1",
+        date:"2019-11-22",
+        image_url:"../../../images/me_setting.png",
+        content:"一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才",
+        light_number: 13,
+        comment_number: 6
       }
       ]
   },
@@ -19,7 +29,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    this.setData(
+      {
+        userInfo:app.globalData.userInfo,
+      }
+    )
+    console.log('userInfo'+this.userInfo);
+    this.setData({
+      feed:[{
+        avatar_url:"../../../images/me_setting.png",
+        username:"user1",
+        date:"2019-11-22",
+        image_url:"../../../images/me_setting.png",
+        content:"一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
+      },{
+        avatar_url:"../../../images/me_setting.png",
+        username:"user2",
+        date:"2019-11-22",
+        image_url:"../../../images/me_setting.png",
+        content:"一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
+      }]
+    })
   },
 
   /**

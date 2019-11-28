@@ -3,20 +3,51 @@
 	<view slot="backText"></view>
 </cu-custom>
 <view class="container">
-  <view class = "search-bar">搜索</view>
-  <view class = "modules">
-    <view class="modules-item">缓解抑郁</view>
-    <view class="modules-item">减轻焦虑</view>
-    <view class="modules-item">something</view>
-    <view class="modules-item">somthing</view>
+  <view class="search-bar-container">
+    <view class = "search-bar">搜索</view>
   </view>
-  <scroll-view class="cards-content">
-    <view class="single-card" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
-      <view class = "feed-item">
-        <text>{{item.content}}</text>
-      </view>
+  <scroll-view scroll-x="true" class = "modules" >
+    <view class="modules-title">交流圈</view>
+    <view class="modules-item" id="one">
+      <image class="modules-img" src="../../../images/home_img"></image>
+      倾诉港湾
+    </view>
+    <view class="modules-item" id="two">
+      <image class="modules-img" src="../../../images/home_img"></image>
+      正能量供应站
+    </view>
+    <view class="modules-item" id="three">
+      <image class="modules-img" src="../../../images/home_img"></image>
+      学业压力
+    </view>
+    <view class="modules-item" id="four">
+      <image class="modules-img" src="../../../images/home_img"></image>
+      抑郁焦虑
     </view>
   </scroll-view>
+  <view class="cards-content">
+    <view class="card-box" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
+      <view class="card-info">
+        <image class="avartar" src="{{item.avatar_url}}"></image>
+        <view class="username">{{item.username}}</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+      <view class = "card-content">
+        <view class="content-img-container" wx:if="{{item.image_url !== ''}}">
+          <image class="content-img" src="{{item.image_url}}"></image>
+        </view>
+        <view class="content-word">{{item.content}}</view>
+        <view class = "etc">
+          <image class="lightbulb" src="../../../images/ring_focus.png"></image>
+          <text>{{light_number}}</text>
+          <image class="comment" src="../../../images/ring_focus.png"></image>
+          <text>{{comment_number}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
 
-  <view class="post-article">+</view>
+  <view class="post-article">
+    <image class="post-pen" src="../../../images/home_img.png"></image>
+  </view>
 </view>
