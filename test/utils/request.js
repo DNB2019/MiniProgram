@@ -15,8 +15,7 @@ const request = options => {
       header: { 'Content-Type': 'application/json' },
       ...options,//相当于将options拆开
       success: function (res) {
-        console.log('res.data: '+res.data)
-        console.log('code:'+res.data.code)
+        console.log('请求code:'+res.data.code)
         resolve(res.data) //将res.data return
       },
       fail: function (res) {

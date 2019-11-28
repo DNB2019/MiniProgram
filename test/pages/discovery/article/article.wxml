@@ -36,7 +36,7 @@
     </view>
     <view class="right">
       <text class="cuIcon-forward"></text>
-      <text class="issue-time">122</text>
+      <text class="issue-time">{{Transmit}}</text>
     </view>
   </view>
 
@@ -72,36 +72,21 @@
 </scroll-view>
 
 <!-- 评论框 -->
-<!-- <view class="cu-bar flex comment-bar bg-white" hidden="{{!maskFlag}}"> -->
-<!-- <view class="right-container"> -->
-<!-- <view class="left"> -->
-<!-- <text class="cuIcon-forward left text-mint"></text> -->
-<!-- </view> -->
-<!-- <view class="middle">
-    <text class="cuIcon-message text-mint"></text>
-    </view> -->
-<!-- <view class="right"> -->
-<!-- <text class="cuIcon-favor right text-mint"></text> -->
-<!-- </view> -->
-<!-- </view> -->
-<!-- </view> -->
-
-<!-- 评论框 -->
 <view class="cu-bar comment-bar bg-white" hidden="{{!maskFlag}}">
   <view class=" search-form round ">
     <!-- <input bindconfirm="submitComment " confirm-type="done " placeholder="评论 " value="{{commentValue}} "></input> -->
     <input disabled="true" bindtap="showMask" confirm-type="done " placeholder="评论"></input>
   </view>
   <view class="right-container ">
-    <text class="{{creativeFlag?'cuIcon-creativefill':'cuIcon-creative'}} text-mint margin-left-sm " catchtap="catchCreative"></text>
-    <text class="{{favorFlag?'cuIcon-favorfill':'cuIcon-favor'}} text-mint margin-left-lg " catchtap="catchFavor"></text>
+    <text class="{{creativeFlag==0?'cuIcon-creativefill':'cuIcon-creative'}} text-mint margin-left-sm " catchtap="catchCreative"></text>
+    <text class="{{favorFlag==0?'cuIcon-favorfill':'cuIcon-favor'}} text-mint margin-left-lg " catchtap="catchFavor"></text>
     <text class="cuIcon-forward text-mint margin-left-lg "></text>
   </view>
 </view>
 
 <form bindsubmit="submitComment">
   <view class="cu-bar makecomment-bar" hidden="{{maskFlag}}">
-    <input fixed cursor-spacing="200" bindblur="back" class="comment-container" focus="{{focusFlag}}" confirm-type="done" placeholder="你的言语值得被倾听" name="commentInput" value="{{commentInput}}"></input>
+    <input fixed cursor-spacing="150" bindblur="back" class="comment-container" focus="{{focusFlag}}" confirm-type="done" placeholder="你的言语值得被倾听" name="commentInput" value="{{commentInput}}"></input>
     <!-- <view class="mybtn" catchtap="submitComment" >发送</view> -->
     <button size="mini" class="mybtn" formType="submit">发送</button>
   </view>

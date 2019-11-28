@@ -23,16 +23,18 @@ Page({
     console.log('---discovery onLoad---');
     var that=this;
     var num=4;
+    //文章
     api.recommendArticle({
       num
     }).then(data => {
-      console.log('Success request ID:' + data.article[0].Article_ID);
+      console.log('成功请求文章 ID:' + data.article[0].Article_ID);
       that.setData({
         articleList:data.article
       })
     }).catch(data => {
       console.log('Error in getArticle: ' + data.code)
     });
+    //课程
     api.recommendClass({
       num
     }).then(data => {

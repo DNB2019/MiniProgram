@@ -1,5 +1,6 @@
 /* pages/home/main/main.wxss */
-.container{
+
+/* .container{
   background: rgb(255, 255, 255);
 }
 
@@ -22,9 +23,68 @@
 
 .usermotto {
   margin-top: 50px;
-} 
+}  */
 
-.cardTitle{
+/* pages/home/home.wxss */
+
+page {
+  background-color: #f3fbfb;
+}
+
+.robotRoom {
+  background-color: white;
+  height: 160rpx;
+  margin: 20rpx 30rpx;
+  margin-bottom: 40rpx;
+  border-radius: 120px;
+  box-shadow: 0rpx 0rpx 10rpx rgba(102, 204, 204, 0.2);
+  display: flex;
+  overflow: hidden;
+}
+
+.avatar {
+  border-radius: 5000px;
+  width: 140rpx;
+  height: 140rpx;
+  margin: 10rpx;
+}
+
+.midRoom {
+  width: 55%;
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightRoom {
+  border-radius: 5000px;
+  background: linear-gradient(45deg, #6cc, #c5f3d8);
+  box-shadow: 0rpx 0rpx 15rpx rgba(102, 102, 204, 0.35);
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 24rpx;
+  color: white;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  padding-top: 33rpx;
+  padding-left: 6rpx;
+}
+
+.greeting {
+  margin-top: 10rpx;
+  color: #353535;
+  font-size: 34rpx;
+}
+
+.motto {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #888;
+}
+
+/* .cardTitle{
   color: #fff;
   padding: 90rpx 60rpx;
   font-size: 40rpx;
@@ -58,5 +118,87 @@
   left: 90rpx;  
   transform: skew(10deg, 0deg);
   opacity: 0.1;
+} */
+
+.card {
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 30rpx;
+  box-shadow: 5rpx 5rpx 5rpx rgba(170, 170, 170, 0.2);
 }
 
+.activity {
+  height: 590rpx;
+}
+
+.test {
+  height: 300rpx;
+}
+
+.titleRoom {
+  display: flex;
+  flex-direction: column;
+  margin: 40rpx;
+  margin-bottom: 0rpx;
+}
+
+.titleRoom_act {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.title {
+  color: #6cc;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #b2b2b2;
+  font-size: 24rpx;
+}
+/* 签到按钮 */
+.sign {
+  color:white;
+  padding: 10rpx 50rpx;
+  background: linear-gradient(45deg, #6cc, #c5f3d8);
+  box-shadow: 0rpx 0rpx 15rpx rgba(102, 102, 204, 0.35);
+  border-radius: 60rpx;
+  width: 160rpx;
+  height: 64rpx;
+  margin-left: 70rpx
+}
+.actRoom
+{
+  display: flex;
+  margin:20rpx 40rpx;
+  /* margin-bottom:20rpx; */
+}
+.module
+{
+  width:280rpx;
+  border-radius: 16px;
+  background-color:#c5f3d8;
+}
+.game
+{
+  height:416rpx;
+}
+.right
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40rpx;
+}
+.music
+{
+  height:222rpx;
+}
+.challenge
+{
+  height:154rpx;
+  margin-top: 40rpx;
+}

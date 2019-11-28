@@ -6,15 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    refreshFlag:0,
     loadFlag: false,
     focusFlag: false,
     maskFlag: true,
-    creativeFlag: false,
-    favorFlag: false,
+    creativeFlag: 1, //点亮是0
+    favorFlag: 1,
     forwardFlag: false,
     commentInput: "",
     Watches: 0,
     Likes: 0,
+    Transmit:0,
     articleId: null,
     article: {
       // Title: "文章标题吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼",
@@ -51,6 +53,7 @@ Page({
     this.setData({
       articleId: articleId
     })
+    //获取文章
     api.getArticle({
       articleId
     }).then(data => {
@@ -60,29 +63,56 @@ Page({
         article: data.article,
         loadFlag: true,
         Watches: data.article.Watches,
-        Likes: data.article.Likes
+        Likes: data.article.Likes,
+        Transmit:data.article.Transmit
         // commentList:data.commentList
       });
       wx.hideLoading();
     }).catch(data => {
       console.log('Error in get greeting: ' + data.code)
     });
-
+    //获取评论
     var cur_num = this.data.commentList.length;
     api.getComment({
       articleId,
       cur_num
     }).then(data => {
-      if (data.Com_list.length != 0) {
+      if ((data.Com_List).length != 0) {
         console.log('Success getComment:' + data.Com_List[0].Content);
         console.log('Success getComment:' + data.Com_List[0].nickName);
         that.setData({
           commentList: data.Com_List
         })
       }
-    }).catch(data => {
-      console.log('Error in getComment: ' + data.code)
     });
+    // .catch(data => {
+    //   console.log('Error in getComment: ' + data.code)
+    // });
+
+    //获取是否点亮、收藏
+    api.getFavorCollect(
+      {
+        "id": this.data.articleId,
+        'user_id': app.globalData.openid,
+        'tag': "A"
+      }
+    ).then(data=>{
+      if (data.code == 0) {
+        console.log('获取点亮、收藏');
+        console.log('是否点亮:'+data.if_favor);
+        console.log('是否收藏:' + data.if_collect);
+        that.setData(
+          {
+            creativeFlag: data.if_favor, //点亮是0
+            favorFlag: data.if_collect
+          }
+        )
+      }
+      else
+      {
+        console.log('获取点亮、收藏失败')
+      }
+    })
   },
 
   /**
@@ -135,6 +165,7 @@ Page({
   },
   submitComment: function(e) {
     var content = e.detail.value.commentInput;
+    //评论为空
     if (content.length == 0) {
       wx.showModal({
         title: '发送失败',
@@ -171,7 +202,6 @@ Page({
         });
         wx.showToast({
           title: '发送成功',
-          // duration: 1500,
           mask: true,
           success: function(res) {},
           fail: function(res) {},
@@ -197,6 +227,12 @@ Page({
     var that = this;
     var articleId = this.data.articleId;
     var cur_num = this.data.commentList.length;
+    if(this.data.refreshFlag==0){
+      this.setData(
+        {
+          refreshFlag:1
+        }
+      )
     api.getComment({
       articleId,
       cur_num //当前评论数
@@ -207,12 +243,17 @@ Page({
         var origin = (that.data.commentList).concat(data.Com_List);
         console.log("新评论列表长度:" + origin.length);
         that.setData({
-          commentList: origin
+          commentList: origin,
+          refreshFlag:0
         });
       } else {
-
+        console.log("没有更多评论了")
       }
     });
+  }
+  else{
+    console.log("上次刷新还没结束");
+  }
     // .catch (data => {
     //   console.log('Error in getComment: ' + data.code)
     // });
@@ -226,6 +267,7 @@ Page({
     });
     console.log('maskFlag' + this.data.maskFlag);
   },
+  // 从评论框返回界面
   back: function() {
     console.log('back');
     this.setData({
@@ -233,28 +275,39 @@ Page({
       focusFlag: false
     })
   },
-  // 按下按钮，提交评论
-  // submitComment: function (e) {
-  //   var input = e.detail.value.commentInput;
-  //   console.log("用户提交评论" + input);
-  //   // console.log('提交用户评论:' + this.data.commentInput);
-  //   this.setData({
-  //     commentInput: "",
-  //   })
-  // },
+  //点亮文章
   catchCreative: function() {
     console.log('用户点亮');
-    var flag = this.data.creativeFlag ? false : true;
     this.setData({
-      creativeFlag: flag
+      creativeFlag: !this.data.creativeFlag
     });
+    api.favorArticle({
+      "id": this.data.articleId,
+      'user_id': app.globalData.openid,
+      'operate_code': this.data.creativeFlag,//0是插入，1是删除，creativeFlag：0是点亮，1是取消
+      'tag': "A"
+    }).then(data => {
+      if (data.code == 0) {
+        console.log('成功点亮')
+      }
+    })
   },
+  //收藏文章
   catchFavor: function() {
     console.log('用户收藏');
-    var flag = this.data.favorFlag ? false : true;
     this.setData({
-      favorFlag: flag
+      favorFlag: !this.data.favorFlag
     });
+    api.collectArticle({
+      "id": this.data.articleId,
+      'user_id': app.globalData.openid,
+      'operate_code': this.data.favorFlag,
+      'tag':"A"
+    }).then(data => {
+      if (data.code == 0) {
+        console.log('成功收藏')
+      }
+    })
   },
   catchForward: function() {
     console.log('用户转发');

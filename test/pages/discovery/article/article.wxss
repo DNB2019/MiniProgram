@@ -142,6 +142,9 @@
   padding-bottom: 36rpx;
   padding-top: 16rpx;
   font-size: 45rpx;
+  height: 16vw;
+  align-items: center;
+  display: flex;
 }
 
 /* 评论的输入框 */
@@ -157,7 +160,7 @@
   height: 152rpx;
   background-color: #f3fbfb;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 /* 刷新 */

@@ -1,30 +1,35 @@
 <!--pages/home/main/main.wxml-->
 
-<scroll-view scroll-y class="scrollPage">
-  <view class="container">
-    <view class="userinfo">
-      <block>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view>
-
-    <view class="usermotto">
-      <text class="user-motto" >{{greeting}}</text>
-    </view>  
+<view class="robotRoom">
+  <image class="avatar" src="../../../images/robot_img.png"></image>
+  <view class="midRoom">
+    <view class="greeting">{{greeting}}</view>
+    <view class="motto">{{motto}}</view>
   </view>
+  <view catchtap="toRobot" class="rightRoom">召唤小L</view>
+</view>
 
-  <view class="cu-card">
-    <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.img}})" bindtap="toChild" data-url="{{item.url}}" wx:for="{{list}}" wx:key>
-      <view class="cardTitle">
-        {{item.title}}
-      </view>
+<view class="card activity">
+  <view class="titleRoom_act">
+    <view class="titleRoom">
+      <view class="title">今日活动</view>
+      <view class="subtitle">每天活动一下，保持健康心理！</view>
+    </view>
+    <view class="sign" catchtap="signIn">签到</view>
+  </view>
+  <view class="actRoom">
+    <view class="module game"></view>
+    <view class="right">
+      <view class="module music"></view>
+      <view class="module challenge"></view>
     </view>
   </view>
-  <view class="cu-tabbar-height"></view>
-</scroll-view>
+</view>
 
-
-
-
+<view class="card test">
+  <view class="titleRoom">
+    <view class="title">每日一测</view>
+    <view class="subtitle">每天测评一下，了解真实的自己！</view>
+  </view>
+  <view class="testRoom"></view>
+</view>

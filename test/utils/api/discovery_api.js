@@ -47,6 +47,18 @@ export function getArticle(data) {
     data
   })
 }
+
+//请求干货知识更多页面的文章列表
+export function getFavorCollect(data) {
+  //data是一个object：{}
+  return request({
+    url: `${baseUrl}/If_Favor_Collect`,
+    method: 'POST',
+    data
+  })
+}
+
+//请求评论
 export function getComment(data) {
   //data是一个object：{}
   console.log("getComment:"+data.cur_num);
@@ -56,14 +68,7 @@ export function getComment(data) {
     data
   })
 }
-export function articleClick(e) {
-  var articleId = e.currentTarget.dataset.id;
-  console.log("文章被点击"+articleId);
-  console.log("类型"+typeof(articleId));
-  wx.navigateTo({
-    url: '../article/article?id='+articleId,
-  })
-}
+//提交评论
 export function submitComment(data) {
   console.log('提交评论'+data);
   console.log('提交评论' + data.articleId);
@@ -72,5 +77,33 @@ export function submitComment(data) {
     url: `${baseUrl}/Submit_Article_Com`,
     method: 'POST',
     data
+  })
+}
+//点赞文章
+export function favorArticle(data) {
+  //data是一个object：{}
+  return request({
+    url: `${baseUrl}/Favor`,
+    method: 'POST',
+    data
+  })
+}
+
+//收藏文章
+export function collectArticle(data) {
+  //data是一个object：{}
+  return request({
+    url: `${baseUrl}/Collect`,
+    method: 'POST',
+    data
+  })
+}
+
+//点击进入文章
+export function articleClick(e) {
+  var articleId = e.currentTarget.dataset.id;
+  console.log("文章被点击" + articleId);
+  wx.navigateTo({
+    url: '../article/article?id=' + articleId,
   })
 }

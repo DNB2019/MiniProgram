@@ -1,0 +1,148 @@
+/* pages/chatRobot/chatRobot.wxss */
+
+/* pages/contact/contact.wxss */
+
+page {
+  background-color: #f3fbfb;
+}
+
+.inputRoom {
+  width: 100vw;
+  height: 16vw;
+  border-top: 1px solid #cdcdcd;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  padding-bottom: 20rpx;
+  padding-top: 16rpx;
+}
+
+input {
+  width: 580rpx;
+  height: 9.33vw;
+  background-color: #f1f1f1;
+  border-radius: 40rpx;
+  margin-left: 2vw;
+  padding: 0 3vw;
+  font-size: 28rpx;
+  color: #444;
+}
+
+.leftMsg {
+  font-size: 26rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #fff;
+  margin-left: -1.6vw;
+  border-top-left-radius: 1rpx;
+  border-top-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  z-index: 10;
+  box-shadow: 0rpx 2rpx 4rpx rgba(219, 219, 219, 0.35);
+}
+
+.rightMsg {
+  font-size: 26rpx;
+  color: white;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #6cc;
+  margin-right: -1.6vw;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 1rpx;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 10;
+  box-shadow: 0rpx 2rpx 4rpx rgba(219, 219, 219, 0.35);
+}
+
+.mybtn {
+  color: white;
+  background-color: #6cc;
+  width: 102rpx;
+  height: 30px;
+  padding: 10rpx 20rpx;
+  border-radius: 5000px;
+  min-height: 50rpx;
+  font-weight: 500;
+  font-size: 26rpx;
+  size: mini;
+}
+
+.disMsg {
+  /* font-size: 26rpx; */
+  color: #444;
+  /* line-height: 7vw; *//* padding: 2vw 2.5vw; */
+  background-color: #fff;
+  margin-left: -1.6vw;
+  border-top-left-radius: 1rpx;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 10;
+  box-shadow: 0rpx 2rpx 4rpx rgba(219, 219, 219, 0.35);
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding: 28rpx;
+  border-bottom: solid 2rpx #e5e5e5;
+  font-size: 28rpx;
+}
+
+.contentRoom {
+  display: flex;
+  height:202rpx;
+  overflow:hidden;
+  padding-top: 40rpx;
+}
+
+.articleImg {
+  width: 240rpx;
+  height: 120rpx;
+  margin-left:40rpx;
+  margin-right: 20rpx;
+}
+
+.articleTitle {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  width:58%;
+  height:70%;
+  overflow: hidden;
+}
+
+.card-swiper {
+  height: 220rpx !important;
+  width: 512rpx;
+}
+
+.card-swiper swiper-item {
+  width: auto !important;
+  left: 0rpx;
+  box-sizing: border-box;
+  padding: 0rpx;
+  overflow: initial;
+}
+
+.actRoom {
+  padding: 0rpx 42%;
+}
+.cu-tag{
+  height:38rpx;
+}
+.actMsg {
+  font-size: 22rpx;
+  color: white;
+  background-color: gainsboro;
+  /* padding: 0 35rpx;
+  /* max-width: 165px;
+  min-width: 200rpx; */ 
+}

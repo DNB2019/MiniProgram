@@ -1,0 +1,58 @@
+<!--pages/chatRobot/chatRobot.wxml-->
+
+<view>
+  <scroll-view scroll-y scroll-into-view='{{toView}}' style='height: {{scrollHeight}};'>
+    <!-- <view class='scrollMsg'> -->
+    <block wx:key wx:for='{{msgList}}' wx:for-index="index">
+
+      <!-- 单个消息1 客服发出（左） -->
+      <view wx:if='{{item.speaker=="server"}}' id='msg-{{index}}' style='display: flex; padding: 2vw 15vw 2vw 2vw;'>
+        <view style='width: 11vw; height: 11vw;'>
+          <image style='width: 11vw; height: 11vw; border-radius: 5000px;' src='../../../images/robot_img.png' hidden="{{item.contentType=='action'}}"></image>
+        </view>
+        <view style='width: 4vw; height: 11vw; margin-left: 0.5vw; display: flex; align-items: center; z-index: 9;'>
+          <!-- <image style='width: 4vw;' src='../../images/left_msg.png' mode='widthFix'></image> -->
+        </view>
+        <view class='leftMsg' wx:if="{{item.contentType=='text'}}">{{item.content}}</view>
+        <view class='disMsg' wx:elif="{{item.contentType=='discovery'}}">
+          <view class="title">文章干货</view>
+          <swiper class="card-swiper round-solid-dot-sm" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#66cccc">
+            <swiper-item wx:for="{{item.content}}" wx:key class="{{cardCur==index?'cur':''}}">
+              <view class="contentRoom">
+                <image class="articleImg" src="{{item.Image}}"></image>
+                <view class="articleTitle">{{item.Title}}</view>
+              </view>
+            </swiper-item>
+          </swiper>
+        </view>
+        <!-- 行为 -->
+        <view class="actRoom" wx:elif="{{item.contentType=='action'}}">
+          <view class='actMsg cu-tag bg text-cut light xl round'>{{item.content}}</view>
+        </view>
+      </view>
+
+      <!-- 单个消息2 用户发出（右） -->
+      <view wx:else id='msg-{{index}}' style='display: flex; justify-content: flex-end; padding: 2vw 2vw 2vw 11vw;'>
+        <view class='rightMsg'>{{item.content}}</view>
+        <view style='width: 4vw; height: 11vw; margin-right: 0.5vw; display: flex; align-items: center; z-index: 9;'>
+          <image style='width: 4vw;' src='../../images/right_msg.png' mode='widthFix'></image>
+        </view>
+        <view style='width: 11vw; height: 11vw;'>
+          <image style='width: 11vw; height: 11vw; border-radius: 5000px;' src='{{cusHeadIcon}}'></image>
+        </view>
+      </view>
+
+    </block>
+    <!-- </view> -->
+    <!-- 占位 -->
+    <view style='width: 100%; height: 18vw;'></view>
+  </scroll-view>
+
+  <!-- 消息输入框 -->
+  <form bindsubmit="sendClick">
+    <view class='inputRoom' style='bottom: {{inputBottom}}'>
+      <input bindconfirm='' placeholder="和小L聊聊看吧" adjust-position='{{false}}' value='{{inputVal}}' confirm-type='done' bindfocus='focus' bindblur='blur' name="inputMsg"></input>
+      <button size="mini" class="mybtn" form-type="submit">发送</button>
+    </view>
+  </form>
+</view>

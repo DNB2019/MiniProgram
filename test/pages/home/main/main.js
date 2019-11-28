@@ -10,6 +10,7 @@ Page({
   data: {
     userInfo: app.globalData.userInfo,
     greeting: "欢迎",
+    motto:"万事皆有裂缝，那是光照进来的地方",
     list: [{
       title: '心理测试',
       img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
@@ -41,7 +42,8 @@ Page({
     }).then(data => {
       console.log('Success request:' + data)
       that.setData({
-        greeting: data.time_greeting + data.motto_greeting
+        greeting: data.time_greeting+this.data.userInfo.nickName,
+        motto: data.motto_greeting
       })
     }).catch(data => {
       console.log('Error in get greeting: ' + data.code)
@@ -96,17 +98,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  bindViewTap: function () {
-    console.log('here')
+  //跳到机器人聊天界面
+  toRobot: function () {
+    console.log('聊天')
     wx.navigateTo({
-      url: '/pages/discovery/article-li/article-li',
+      url: '/pages/home/chatRobot/chatRobot',
     })
   },
-  toChild(e) {
-    console.log('toChild')
-    wx.navigateTo({
-      url: '/pages' + e.currentTarget.dataset.url
-    })
+  signIn:function()
+  {
+
   }
 
 })

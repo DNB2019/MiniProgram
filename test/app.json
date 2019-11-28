@@ -14,7 +14,8 @@
     "pages/discovery/article-li/article-li",
     "pages/discovery/search/search",
     "pages/discovery/article/article",
-    "pages/discovery/more-li/more-li"
+    "pages/discovery/more-li/more-li",
+    "pages/home/chatRobot/chatRobot"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",
