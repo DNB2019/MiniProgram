@@ -20,15 +20,21 @@ Page({
     this.setData(
       {
         userInfo:app.globalData.userInfo,
-        knowledge:[
-        ],
-        discuss:[
-        ],
-        psychoTest:[
-        ]
       }
     )
-    console.log('userInfo'+this.userInfo)
+    console.log('userInfo'+this.userInfo);
+    var tag = 'A';
+    var user_id = app.globalData.openid;
+    api.collectionKnowledge({
+      tag,
+      user_id
+    }).then(data=>{
+      console.log('Success getKnowledge');
+      console.log('code is',data.code);
+      that.setData({
+        knowledge:data.collect_list
+      })
+    })
   },
   getKnowledge:function(){
     console.log("get knowledge");

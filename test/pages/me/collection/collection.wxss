@@ -171,5 +171,5 @@
     border: 2rpx solid #66cccc;
     position: absolute;
     bottom:160rpx;
-    left:130rpx;
+    left:150rpx;
 }

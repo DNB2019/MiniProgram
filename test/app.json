@@ -7,7 +7,7 @@
     "pages/me/history/history",
     "pages/me/collection/collection",
     "pages/me/testRecord/testRecord",
-    "pages/community/community",
+    "pages/community/main/main",
     "pages/test/test",
     "pages/home/main/main",
     "pages/discovery/main/main",
@@ -47,7 +47,7 @@
         "selectedIconPath": "images/导航栏icon/干货选中.png"
       },
       {
-        "pagePath": "pages/community/community",
+        "pagePath": "pages/community/main/main",
         "text": "社区",
         "iconPath": "images/导航栏icon/社区未选中.png",
         "selectedIconPath": "images/导航栏icon/社区选中.png"
