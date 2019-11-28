@@ -1,4 +1,5 @@
 // pages/me/me.js
+var api = require('../../../utils/api/meCollection_api.js');
 const app = getApp();
 Page({
   /**
@@ -31,6 +32,7 @@ Page({
     }).then(data=>{
       console.log('Success getKnowledge');
       console.log('code is',data.code);
+      console.log('data.collect_list length', data.collect_list.length);
       that.setData({
         knowledge:data.collect_list
       })
