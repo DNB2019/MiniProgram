@@ -202,3 +202,130 @@ page {
   height:154rpx;
   margin-top: 40rpx;
 }
+
+
+/* 签到 */
+
+/* icon图片 */
+
+.iconImg {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.mood_select {
+  font-size: 22rpx;
+  color: #353535;
+}
+
+/* icon心情 */
+
+.mood {
+  font-size: 22rpx;
+  color: #b2b2b2;
+}
+
+/* 模态框 */
+
+.cu-dialog {
+  width: 490rpx;
+  height: 640rpx;
+  border-radius: 32rpx;
+}
+
+/* 标题容器 */
+
+.titleRoom_sign {
+  display: flex;
+  flex-direction: column;
+  padding: 72rpx;
+}
+
+/* 第一行标题 */
+
+.signTitle {
+  margin-bottom: 32rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: white;
+}
+
+/* 第二行标题 */
+
+.signTitle2 {
+  font-size: 24rpx;
+  color: white;
+}
+
+/* 签到心情组件 */
+
+.iconItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0rpx 18rpx;
+  width: 70rpx;
+  margin-bottom: 22rpx;
+}
+
+/* 签到背景 */
+
+.background {
+  width: 490rpx;
+  height: 640rpx;
+  position: fixed;
+  z-index: -1;
+  background-size: 100% 100%;
+}
+
+.iconList {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 40rpx;
+  margin-top: 30rpx;
+}
+/* 有遮罩按钮 */
+.signBtn {
+  width: 200rpx;
+  height: 70rpx;
+  background: linear-gradient(45deg, #6cc, #c5f3d8);
+  color: white;
+  font-size: 28rpx;
+  box-shadow: 0 0 15rpx rgba(102, 102, 204, 0.35);
+  border-radius: 5000px;
+  padding-top: 15rpx;
+  display: inline-block;
+}
+/* 按钮遮罩 */
+.btnMask {
+  /* margin-left: 140rpx;
+  margin-top: 30rpx; */
+  background-color:#ffffff;
+  display: flex;
+  margin-left: 150rpx;
+  margin-right: 140rpx;
+  margin-top:10rpx;
+  opacity: 0.5;
+}
+/* 没有遮罩的按钮 */
+.signBtn2 {
+  width: 200rpx;
+  height: 70rpx;
+  background: linear-gradient(45deg, #6cc, #c5f3d8);
+  color: white;
+  font-size: 28rpx;
+  box-shadow: 0 0 15rpx rgba(102, 102, 204, 0.35);
+  border-radius: 5000px;
+  padding-top: 15rpx;
+  margin-left: 150rpx;
+  margin-top: 10rpx;
+}
+
+.successRoom
+{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-top: 300rpx;
+}
+
