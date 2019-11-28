@@ -1,0 +1,53 @@
+<!--pages/me/history/history.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+</cu-custom>
+<view class = "container">
+    <view wx:if="{{location == 0}}" class="collection">
+        <view class="nav-bar">
+            <view class="nav-light">心理测评</view>
+            <view class="nav-gray" bindtap="getKnowledge">干货知识</view>
+            <view class="nav-gray" bindtap="getDiscussion">社区讨论</view>
+        </view>
+        <view class="main-content">
+            <view wx:for="{{psychoTest}}" class="content-box">
+                <image class="content-img" src="{{item.image_url}}"></image>
+                <view class="title">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{location == 1}}" class="collection">
+        <view class="nav-bar">
+            <view class="nav-gray" bindtap="getTest">心理测评</view>
+            <view class="nav-light">干货知识</view>
+            <view class="nav-gray" bindtap="getDiscussion">社区讨论</view>
+        </view>
+        <view class="main-content">
+            <view wx:for="{{knowledge}}" class="content-box">
+                <image class="content-img" src="{{item.image_url}}"></image>
+                <view class="title">{{item.title}}</view>
+                <view class="author">{{item.author}}</view>
+                <view class="tag">{{item.tag}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{location == 2}}" class="collection">
+        <view class="nav-bar">
+            <view class="nav-gray" bindtap="getTest">心理测评</view>
+            <view class="nav-gray" bindtap="getKnowledge">干货知识</view>
+            <view class="nav-light">社区讨论</view>
+        </view>
+        <view class="main-content">
+            <view wx:for="{{discuss}}" class="discuss-box">
+                <view class="info-bar">
+                    <image class="user-avatar" src="{{item.avatar_url}}"></image>
+                    <view class="username">{{item.username}}</view>
+                    <view class="date">{{item.date}}</view>
+                </view>
+                <view class="content"><text>{{item.content}}</text></view>
+                <view class="discuss-tag">{{item.tag}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="under-quote">-End-</view>
+</view>
