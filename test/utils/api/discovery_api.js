@@ -48,7 +48,7 @@ export function getArticle(data) {
   })
 }
 
-//请求干货知识更多页面的文章列表
+//文章是否点亮、收藏
 export function getFavorCollect(data) {
   //data是一个object：{}
   return request({

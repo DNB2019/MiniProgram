@@ -29,7 +29,7 @@
             <view class="nav-gray" bindtap="getDiscussion">社区讨论</view>
         </view>
         <view class="main-content">
-            <view wx:for="{{knowledge}}" class="content-box">
+            <view wx:for="{{knowledge}}" class="content-box" wx:key>
                 <image class="content-img" src="{{item.Back_Image}}"></image>
                 <view class="title">{{item.Title}}</view>
                 <view class="author">{{item.Author}}</view>
