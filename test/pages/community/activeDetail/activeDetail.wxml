@@ -39,18 +39,18 @@
             <view class="comment-title">评论</view>
             {{comment_number}}
         </view>
-        <view class="comment-box" wx:for="{{comments}}"  wx:for-index="cm-idx" wx:for-item="cm-item">
+        <view class="comment-box" wx:for="{{comments}}"  wx:for-index="cm-idx" wx:for-item="cmItem">
             <view class="comment-info">
-                <image class="avartar" src="{{cm-item.avatar_url}}"></image>
-                <view class="username">{{cm-item.username}}</view>
-                <view class="date">{{cm-item.date}}</view>
+                <image class="avartar" src="{{cmItem.avatar_url}}"></image>
+                <view class="username">{{cmItem.username}}</view>
+                <view class="date">{{cmItem.date}}</view>
             </view>
-            <view class="comment-content">{{cm-item.content}}</view>
-            <view class="reply" wx:if="{{cm-item.reply_number > 0}}">
-                <view class = "reply-box" wx:for="{{cm-item.reply}}" wx:for-index="rp-idx" wx:for-item="rp-item">
-                    <view class="source">{{rp-item.source}}</view>
-                    <view class="destination" wx:if="{{rp-item.destination != ''}}">{{rp-item.destination}}</view>
-                    <view class="reply-content">{{rp-item.reply_content}}</view>
+            <view class="comment-content">{{cmItem.content}}</view>
+            <view class="reply" wx:if="{{cmItem.reply_number > 0}}">
+                <view class = "reply-box" wx:for="{{cmItem.reply}}" wx:for-index="rp-idx" wx:for-item="rpItem">
+                    <view class="source">{{rpItem.source}}</view>
+                    <view class="destination" wx:if="{{rpItem.destination != ''}}">{{rpItem.destination}}</view>
+                    <view class="reply-content">{{rpItem.reply_content}}</view>
                 </view>
             </view>
             <view class="comment-etc">
