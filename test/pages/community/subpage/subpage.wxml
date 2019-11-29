@@ -1,33 +1,20 @@
-<!--pages/community/community.wxml-->
+<!--pages/community/subpage/subpage.wxml-->
 <cu-custom bgColor="bg-gradual-pink">
 	<view slot="backText"></view>
 </cu-custom>
 <view class="container">
-  <view class="search-bar-container">
-    <view class = "search-bar">搜索</view>
-  </view>
-  <view class = "modules" >
-    <view class="modules-title">交流圈</view>
-    <scroll-view class="scroll-bar" scroll-x="true">
-      <view class="modules-item" id="one">
-        <image bindtap="getHarbour" class="modules-img" src="../../../images/home_img.png"></image>
-        <view class="modules-text">倾诉港湾</view>
-      </view>
-      <view class="modules-item" id="two">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
-        <view class="modules-text">正能量供应站</view>
-      </view>
-      <view class="modules-item" id="three">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
-        <view class="modules-text">学业压力</view>
-      </view>
-      <view class="modules-item" id="four">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
-        <view class="modules-text">抑郁焦虑</view>
-      </view>
-    </scroll-view>
-  </view>
-  <view class="cards-content">
+    <view class="head-image">
+        <image scr="{{head_image_url}}"></image>
+    </view>
+    <view class="nav-bar" wx:if="{{location==0}}">
+        <view class="nav-light" bindtap="getNewest">最新</view>
+        <view class="nav-gray" bindtap="getHottest">最热</view>
+    </view>
+    <view class="nav-bar" wx:if="{{location==1}}">
+        <view class="nav-gray" bindtap="getNewest">最新</view>
+        <view class="nav-light" bindtap="getHottest">最热</view>
+    </view>
+   <view class="cards-content">
     <view class="card-box" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class="card-info">
         <image class="avartar" src="{{item.avatar_url}}"></image>
@@ -51,7 +38,6 @@
       </view>
     </view>
   </view>
-
   <view class="post-article">
     <image class="post-pen" src="../../../images/pen.png"></image>
   </view>

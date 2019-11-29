@@ -1,0 +1,134 @@
+/* pages/test/test.wxss */
+.head-image{
+  width:750rpx;
+  height: 208rpx;
+}
+.nav-bar{
+  width:100%;
+  height: 88rpx;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: white;
+}
+.nav-light{
+  width:50%;
+  height: 100%;
+  display: inline-block;
+  color: #66cccc;
+  border-bottom: 3rpx solid #66cccc;
+}
+.nav-gray{
+  width:50%;
+  height: 100%;
+  display: inline-block;
+  color: #353535;
+  border-bottom: 3rpx solid #b2b2b2;
+}
+.cards-content{
+    position: relative;
+    width:710rpx;
+    margin-top:20rpx;
+  }
+  .card-box{
+    position: relative;
+    width:100%;
+    height:380rpx;
+    background-color: white;
+    border-radius: 32rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 5rpx 5rpx 5rpx rgb(170,170,170,0.2);
+  }
+  .card-info{
+    width:100%;
+    height: 110rpx;
+    position: relative;
+    border-bottom: 2rpx dotted #e5e5e5;
+  }
+  .avartar{
+    width:60rpx;
+    height:60rpx;
+    border-radius: 50%;
+    position: absolute;
+    top:28rpx;
+    left:28rpx;
+  }
+  .username{
+    font-size:24rpx;
+    color: #888888;
+    position: absolute;
+    top:28rpx;
+    left:100rpx;
+  }
+  .date{
+    font-size:22rpx;
+    color:#b2b2b2;
+    position: absolute;
+    top:60rpx;
+    left:100rpx;
+  }
+  .main-content{
+    position: relative;
+    width: 100%;
+    height: 240rpx;
+  }
+  .content-img-container{
+    width:180rpx;
+    height:180rpx;
+    position: relative;
+    top:20rpx;
+    left:20rpx;
+    display: inline-block;
+  }
+  .content-img{
+    width:180rpx;
+    height:180rpx;
+  }
+  .content-word{
+    font-size:28rpx;
+    color:#888888;
+    display: inline-block;
+    width:450rpx;
+    position: absolute;
+    left:230rpx;
+    top:20rpx;
+  }
+  .content-word2{
+    font-size:28rpx;
+    color: #888888;
+    width:670rpx;
+    position: absolute;
+    left:30rpx;
+    top:20rpx;
+  }
+  .etc{
+    width:200rpx;
+    height:30rpx;
+    color:#b2b2b2;
+    position: absolute;
+    top:330rpx;
+    left:30rpx;
+  }
+  .lightbulb{
+    width:30rpx;
+    height:30rpx;
+  }
+  .comment{
+    width:30rpx;
+    height:30rpx;
+    margin-left:20rpx;
+  }
+  .post-article{
+    width:120rpx;
+    height:120rpx;
+    border-radius: 50%;
+    position:fixed;
+    right:50rpx;
+    bottom:30rpx;
+    box-shadow: 2 2 2 rgb(170,170,170,0.2);
+  }
+  .post-pen{
+    width:120rpx;
+    height:120rpx;
+    border-radius: 50%;
+  }

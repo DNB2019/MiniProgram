@@ -1,2 +1,68 @@
-<!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<!--pages/community/activeDetail.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+</cu-custom>
+<view class="container">
+    <view class="card-box">
+        <view class="card-info">
+            <image class="avartar" src="{{avatar_url}}"></image>
+            <view class="username">{{username}}</view>
+            <view class="date">{{date}}</view>
+        </view>
+        <view class="main-content">
+        {{active_content}}
+        </view>
+        <view class="tag">
+        {{tag}}
+        </view>
+        <view class="etc">
+            <view class="little-box">
+                <image class="little-img" src="../../../images/attention.png"></image>
+                {{attention_number}}
+            </view>
+            <view class="little-box">
+                <image class="little-img" src="../../../images/creative.png"></image>
+                {{attention_number}}
+            </view>
+            <view class="little-box">
+                <image class="little-img" src="../../../images/favor.png"></image>
+                {{attention_number}}
+            </view>
+            <view class="little-box">
+                <image class="little-img" src="../../../images/forward.png"></image>
+                {{attention_number}}
+            </view>
+        </view>
+    </view>
+    <view class="comment">
+        <view class="comment-head">
+            <view class="comment-title">评论</view>
+            {{comment_number}}
+        </view>
+        <view class="comment-box" wx:for="{{comments}}"  wx:for-index="cm-idx" wx:for-item="cm-item">
+            <view class="comment-info">
+                <image class="avartar" src="{{cm-item.avatar_url}}"></image>
+                <view class="username">{{cm-item.username}}</view>
+                <view class="date">{{cm-item.date}}</view>
+            </view>
+            <view class="comment-content">{{cm-item.content}}</view>
+            <view class="reply" wx:if="{{cm-item.reply_number > 0}}">
+                <view class = "reply-box" wx:for="{{cm-item.reply}}" wx:for-index="rp-idx" wx:for-item="rp-item">
+                    <view class="source">{{rp-item.source}}</view>
+                    <view class="destination" wx:if="{{rp-item.destination != ''}}">{{rp-item.destination}}</view>
+                    <view class="reply-content">{{rp-item.reply_content}}</view>
+                </view>
+            </view>
+            <view class="comment-etc">
+                <image class="comment-img" src="../../../images/creative.png"></image>
+                {{item.light_number}}
+                <image class="comment-img" src="../../../images/mark.png"></image>
+                {{item.mark_number}}
+            </view>
+        </view>
+    </view>
+    <view class="post-bar">
+        <view class="enter-bar">给ta带去一点光亮吧</view>
+        
+    </view>
+</view>
