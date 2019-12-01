@@ -187,4 +187,11 @@
   position: absolute;
   left: 560rpx;
 }
-
+#five{
+  position: absolute;
+  left:740rpx;
+}
+#six{
+  position: absolute;
+  left:920rpx;
+}

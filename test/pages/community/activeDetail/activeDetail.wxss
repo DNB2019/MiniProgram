@@ -46,6 +46,7 @@
     position: relative;
     width:720rpx;
     height:80rpx;
+    margin-left:15rpx;
 }
 .tag{
     font-size: 24rpx;
@@ -62,8 +63,9 @@
     align-items: center;
 }
 .little-img{
-    width:30rpx;
-    height:30rpx;
+    width:50rpx;
+    height:50rpx;
+    margin-left:50rpx;
 }
 .comment{
     position: relative;
@@ -111,7 +113,132 @@
     background-color: #f3fbfb;
     font-size:24rpx;
 }
-.comment-etc{
+.reply-box{
     width:100%;
+    height: 100rpx;
+    position: relative;
+}
+.source{
+    display: inline-block;
+    color: #66cccc;
+}
+.destination{
+    display: inline-block;
+    color: #66cccc;
+}
+.reply-content{
+    display: inline;
+}
+.comment-etc{
+    width:200rpx;
+    height:80rpx;
+    position: relative;
+    left:600rpx;
+    padding-top:25rpx;
+}
+.comment-img{
+    width:50rpx;
     height:50rpx;
+    position: relative;
+}
+.post-bar{
+    position:fixed;
+    bottom:0rpx;
+    width:100%;
+    height:100rpx;
+    background-color: white;
+    display: inline-block;
+}
+.enter-bar{
+    position: relative;
+    left:20rpx;
+    top:10rpx;
+    background-color: #e5e5e5;
+    border-radius: 32rpx;
+    width:480rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    display: inline-block;
+    text-align: center;
+    color: #b2b2b2;
+}
+.bar-img{
+    width:70rpx;
+    height:70rpx;
+    top:15rpx;
+    left:40rpx;
+}
+.blank{
+    width:100%;
+    height:100rpx;
+}
+.numbers{
+    font-size:20rpx;
+    color: #b2b2b2;
+    position: relative;
+    bottom:10rpx;
+}
+.doReply-box{
+    width:100%;
+    height:152rpx;
+    background-color: #f3fbfb;
+    bottom:0rpx;
+    position: fixed;
+}
+.doReply-content{
+    width:600rpx;
+    height:120rpx;
+    background-color: white;
+    line-height: 120rpx;
+    position: relative;
+    left:20rpx;
+    top:15rpx;
+    border-radius: 32rpx;
+    display: inline-block;
+}
+.doReply-submit{
+    width:102rpx;
+    height: 26rpx;
+    position: relative;
+    display: inline-block;
+    background-color: #66cccc;
+    color:white;
+    border-radius: 32rpx;
+    text-align: center;
+    font-size: 26rpx;
+}
+.side-items{
+    width:104rpx;
+    display: inline-block;
+    left:30rpx;
+    position: relative;
+}
+.no-name{
+    position: relative;
+    top:10rpx;
+}
+.niming{
+    font-size:20rpx;
+    columns: #b2b2b2;
+    position: relative;
+    top:5rpx;
+    left:20rpx;
+}
+/*swtich整体大小及背景色*/
+.wx-switch-input{
+    width:80rpx !important;
+    height:38rpx !important;
+    background: #50D2C2 !important;
+    color:#66cccc;
+    border: #50d2c2 !important; /* 2018-07-18 重置开关边框颜色 */
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+    width:40rpx !important;
+    height: 38rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 38rpx !important;
 }

@@ -18,19 +18,19 @@
         <view class="etc">
             <view class="little-box">
                 <image class="little-img" src="../../../images/attention.png"></image>
-                {{attention_number}}
+                <text class="numbers">{{attention_number}}</text>
             </view>
             <view class="little-box">
                 <image class="little-img" src="../../../images/creative.png"></image>
-                {{attention_number}}
+                <text class="numbers">{{creative_number}}</text>
             </view>
             <view class="little-box">
                 <image class="little-img" src="../../../images/favor.png"></image>
-                {{attention_number}}
+                <text class="numbers">{{favor_number}}</text>
             </view>
             <view class="little-box">
                 <image class="little-img" src="../../../images/forward.png"></image>
-                {{attention_number}}
+                <text class="numbers">{{forward_number}}</text>
             </view>
         </view>
     </view>
@@ -45,24 +45,44 @@
                 <view class="username">{{cmItem.username}}</view>
                 <view class="date">{{cmItem.date}}</view>
             </view>
-            <view class="comment-content">{{cmItem.content}}</view>
+            <view class="comment-content" bindtap="doReply" data-reply-des="{{cmItem.username}}">{{cmItem.content}}</view>
             <view class="reply" wx:if="{{cmItem.reply_number > 0}}">
-                <view class = "reply-box" wx:for="{{cmItem.reply}}" wx:for-index="rp-idx" wx:for-item="rpItem">
+                <view class = "reply-box" bindtap="doReply" data-reply-des="{{rpItem.source}}" wx:for="{{cmItem.reply}}" wx:for-index="rp-idx" wx:for-item="rpItem">
                     <view class="source">{{rpItem.source}}</view>
+                    <text wx:if="{{rpItem.destination !=''}}">回复</text>
                     <view class="destination" wx:if="{{rpItem.destination != ''}}">{{rpItem.destination}}</view>
-                    <view class="reply-content">{{rpItem.reply_content}}</view>
+                    <view class="reply-content">:{{rpItem.reply_content}}</view>
                 </view>
             </view>
             <view class="comment-etc">
                 <image class="comment-img" src="../../../images/creative.png"></image>
-                {{item.light_number}}
+                <text class="numbers">{{cmItem.light_number}}</text>
                 <image class="comment-img" src="../../../images/mark.png"></image>
-                {{item.mark_number}}
+                <text class="numbers">{{cmItem.mark_number}}</text>
             </view>
         </view>
     </view>
-    <view class="post-bar">
-        <view class="enter-bar">给ta带去一点光亮吧</view>
-        
+    <view wx:if="{{isReplying==0}}" class="blank"></view>
+    <view wx:if="{{isReplying==0}}" class="post-bar">
+        <input class="enter-bar" placeholder="给ta带去一点光亮吧" bindtap="doComment"></input>
+        <image class="bar-img" src="../../../images/creative.png"></image>
+        <image class="bar-img" src="../../../images/favor.png"></image>
+        <image class="bar-img" src="../../../images/forward.png"></image>
+    </view>
+    <view wx:if="{{isReplying==1}}" class="doReply-box">
+        <input class="doReply-content" placeholder="回复{{replyDes}}"></input>
+        <view class="side-items">
+            <switch class="no-name"></switch>
+            <text class="niming">匿名</text>
+            <input type="submit" value="发送" class="doReply-submit" bindtap="finReply"></input>
+        </view>
+    </view>
+    <view wx:if="{{isReplying==2}}" class="doReply-box">
+        <input class="doReply-content" placeholder="你的言语值得被倾听"></input>
+        <view class="side-items">
+            <switch class="no-name"></switch>
+            <text class="niming">匿名</text>
+            <input type="submit" value="发送" class="doReply-submit" bindtap="finComment"></input>
+        </view>
     </view>
 </view>

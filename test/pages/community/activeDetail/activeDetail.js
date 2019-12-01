@@ -14,7 +14,13 @@ Page({
     date:"2019-22-22",
     active_content:"",
     tag:"#学业压力",
+    attention_number:50,
+    creative_number:8,
+    favor_number:12,
+    forward_number:2,
     comments:[],
+    isReplying:0, //0为正常状态，1为回复别人的评论，2为自己发表评论
+    replyDes:""
   },
 
   /**
@@ -26,11 +32,15 @@ Page({
       {
         userInfo:app.globalData.userInfo,
         active_content:"一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才…一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才…\n 一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。我该怎么办？",
+        light_number:"5",
+        mark_number:"3",
         comments:[{
           avatar_url:"../../../images/me_about.png",
           username:"宇宙无敌美少女",
           date:"2019-11-12",
           content:"不急，慢慢来，先把当下的事做好",
+          light_number:3,
+          mark_number:6,
           reply_number:3,
           reply:[{
             source:"某某某(作者）",
@@ -49,6 +59,8 @@ Page({
             username:"user1",
             date:"2019-11-12",
             content:"加油，你一定能找到自己擅长的方向",
+            light_number:5,
+            mark_number:12,
             reply_number:0,
             reply:[]
         }
@@ -57,7 +69,28 @@ Page({
     )
     console.log('userInfo'+this.userInfo);
   },
-
+  //回复某一个评论，首先要获取评论的值
+  doReply:function(event){
+    this.setData({
+      isReplying:1,
+      replyDes:event.currentTarget.dataset.replyDes
+    })
+  },
+  finReply:function(){
+    this.setData({
+      isReplying:0
+    })
+  },
+  doComment:function(){
+    this.setData({
+      isReplying:2,
+    })
+  },
+  finComment:function(){
+    this.setData({
+      isReplying:0
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

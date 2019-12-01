@@ -5,20 +5,7 @@ var api = require('../../../utils/api/home_api.js')
 Page({
   data: {
       userInfo: app.globalData.userInfo,
-      location:1,
-      feed:[{
-        avatar_url:"../../../images/me_setting.png",
-        username:"user1hot",
-        date:"2019-11-22",
-        image_url:"../../../images/me_setting.png",
-        content:"hothothothot一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个"
-      },{
-        avatar_url:"../../../images/me_setting.png",
-        username:"user1hot",
-        date:"2019-11-22",
-        image_url:"../../../images/me_setting.png",
-        content:"hothothothot一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能"
-      }],
+      location:0,
       hottest:[],
       newest:[],
       head_image_url:"../../../images/article_bottom.png"
@@ -34,29 +21,29 @@ Page({
         userInfo:app.globalData.userInfo,
         hottest:[{
           avatar_url:"../../../images/me_setting.png",
-          username:"user1new",
+          username:"user1hot",
           date:"2019-11-22",
           image_url:"../../../images/me_setting.png",
-          content:"newnewnew一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
+          content:"hothothot一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
         },{
           avatar_url:"../../../images/me_setting.png",
-          username:"user2new",
+          username:"user2hot",
           date:"2019-11-22",
           image_url:"../../../images/me_setting.png",
-          content:"newnewnew一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
+          content:"hothothot一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
         }],
         newest:[{
           avatar_url:"../../../images/me_setting.png",
-          username:"user1hot",
+          username:"user1new",
           date:"2019-11-22",
           image_url:"../../../images/me_setting.png",
-          content:"hothothothot一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个"
+          content:"newnewnewnew一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个"
         },{
           avatar_url:"../../../images/me_setting.png",
-          username:"user1hot",
+          username:"user1new",
           date:"2019-11-22",
           image_url:"../../../images/me_setting.png",
-          content:"hothothothot一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能"
+          content:"newnewnewnew一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能"
         }],
       }
     )
@@ -66,7 +53,6 @@ Page({
     console.log("getting newest, location");
     console.log("feed");
     this.setData({
-      //feed:newest,
       location:0
     });
   },
@@ -74,7 +60,6 @@ Page({
     console.log("getting hottest, location");
     console.log("feed");
     this.setData({
-      //feed:hottest,
       location:1
     })
     

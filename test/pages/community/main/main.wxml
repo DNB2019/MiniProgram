@@ -23,7 +23,15 @@
       </view>
       <view class="modules-item" id="four">
         <image class="modules-img" src="../../../images/home_img.png"></image>
-        <view class="modules-text">抑郁焦虑</view>
+        <view class="modules-text">恋爱情感</view>
+      </view>
+      <view class="modules-item" id="five">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">人际交往</view>
+      </view>
+      <view class="modules-item" id="six">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">发展规划</view>
       </view>
     </scroll-view>
   </view>
