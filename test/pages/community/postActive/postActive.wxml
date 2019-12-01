@@ -1,0 +1,27 @@
+<!--pages/community/postActive.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+</cu-custom>
+<view class="container">
+    <view class="post-container">
+        <textarea class="post-input" placeholder="在这里，你可以倾诉心声，也可以寻求帮助。当然，还可以分享开心的事哦！大家一直在你身边。"></textarea>
+    </view>
+    <view class="tag-container">
+        <view class="tag-title">选择标签</view>
+        <view class="tag-holder">
+            <view class="tag-box" wx:for="{{tag_list}}">
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+    <view class="alter-container">
+        <view class="alter-title">匿名</view>
+        <view class="show-alter" wx:if="{{alter_on==1}}">已开启</view>
+        <view class="show-alter" wx:if="{{alter_on==0}}">已关闭</view>
+        <switch class="alter-switch" bindChange="switchChange"></switch>
+    </view>
+    <view class="button-container">
+        <view class="button-cancel">取消</view>
+        <view class="button-post">发布</view>
+    </view>
+</view>

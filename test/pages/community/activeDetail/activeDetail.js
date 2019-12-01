@@ -88,7 +88,7 @@ Page({
   },
   finComment:function(){
     this.setData({
-      isReplying:0
+      isReplying:0,
     })
   },
   /**

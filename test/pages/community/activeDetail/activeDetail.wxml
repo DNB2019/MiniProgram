@@ -3,7 +3,7 @@
 	<view slot="backText"></view>
 </cu-custom>
 <view class="container">
-    <view class="card-box">
+    <view class="card-box" bindtap="finComment">
         <view class="card-info">
             <image class="avartar" src="{{avatar_url}}"></image>
             <view class="username">{{username}}</view>
@@ -63,6 +63,7 @@
         </view>
     </view>
     <view wx:if="{{isReplying==0}}" class="blank"></view>
+    <view wx:if="{{isReplying!=0}}" class="blank2"></view>
     <view wx:if="{{isReplying==0}}" class="post-bar">
         <input class="enter-bar" placeholder="给ta带去一点光亮吧" bindtap="doComment"></input>
         <image class="bar-img" src="../../../images/creative.png"></image>

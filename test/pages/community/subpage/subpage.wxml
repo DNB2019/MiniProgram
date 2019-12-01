@@ -60,7 +60,7 @@
       </view>
     </view>
   </view>
-  <view class="post-article">
+  <view class="post-article" bindtap="getPost">
     <image class="post-pen" src="../../../images/pen.png"></image>
   </view>
 </view>

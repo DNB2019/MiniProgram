@@ -76,6 +76,12 @@ Page({
       url:"../activeDetail/activeDetail"
     })
   },
+  getPost:function(){
+    console.log("getting post");
+    wx.navigateTo({
+      url:'../postActive/postActive'
+    })
+  },
   onReady: function () {
 
   },

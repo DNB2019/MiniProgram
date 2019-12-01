@@ -10,6 +10,7 @@
     "pages/community/main/main",
     "pages/community/subpage/subpage",
     "pages/community/activeDetail/activeDetail",
+    "pages/community/postActive/postActive",
     "pages/test/test",
     "pages/home/main/main",
     "pages/discovery/main/main",
