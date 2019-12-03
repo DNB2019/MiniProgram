@@ -1,0 +1,66 @@
+<!--pages/community/subpage/subpage.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+	<view slot="backText"></view>
+</cu-custom>
+<view class="container">
+    <view class="head-image">
+        <image class="head-img" src="{{head_image_url}}"></image>
+    </view>
+    <view class="nav-bar" wx:if="{{location==0}}">
+        <view class="nav-light" bindtap="getNewest">最新</view>
+        <view class="nav-gray" bindtap="getHottest">最热</view>
+    </view>
+    <view class="nav-bar" wx:if="{{location==1}}">
+        <view class="nav-gray" bindtap="getNewest">最新</view>
+        <view class="nav-light" bindtap="getHottest">最热</view>
+    </view>
+   <view class="cards-content">
+    <view class="card-box" wx:if="{{location==0}}" wx:for="{{newest}}" wx:for-index="idx" wx:for-item="item">
+      <view class="card-info">
+        <image class="avartar" src="{{item.avatar_url}}"></image>
+        <view class="username">{{item.username}}</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+      <view class="main-content" wx:if="{{item.image_url !== ''}}">
+        <view class="content-img-container">
+          <image class="content-img" src="{{item.image_url}}"></image>
+        </view>
+        <view class="content-word">{{item.content}}</view>
+      </view>
+      <view class="main-content" wx:else>
+        <view class="content-word2">{{item.content}}</view>
+      </view>
+      <view class = "etc">
+          <image class="lightbulb" src="../../../images/ring_focus.png"></image>
+          <text>{{item.light_number}}</text>
+          <image class="comment" src="../../../images/ring_focus.png"></image>
+          <text>{{item.comment_number}}</text>
+      </view>
+    </view>
+    <view class="card-box" wx:if="{{location==1}}" wx:for="{{hottest}}" wx:for-index="idx" wx:for-item="item">
+      <view class="card-info">
+        <image class="avartar" src="{{item.avatar_url}}"></image>
+        <view class="username">{{item.username}}</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+      <view class="main-content" wx:if="{{item.image_url !== ''}}">
+        <view class="content-img-container">
+          <image class="content-img" src="{{item.image_url}}"></image>
+        </view>
+        <view class="content-word">{{item.content}}</view>
+      </view>
+      <view class="main-content" wx:else>
+        <view class="content-word2">{{item.content}}</view>
+      </view>
+      <view class = "etc">
+          <image class="lightbulb" src="../../../images/ring_focus.png"></image>
+          <text>{{item.light_number}}</text>
+          <image class="comment" src="../../../images/ring_focus.png"></image>
+          <text>{{item.comment_number}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="post-article" bindtap="getPost">
+    <image class="post-pen" src="../../../images/pen.png"></image>
+  </view>
+</view>

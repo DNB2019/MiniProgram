@@ -3,20 +3,64 @@
 	<view slot="backText"></view>
 </cu-custom>
 <view class="container">
-  <view class = "search-bar">搜索</view>
-  <view class = "modules">
-    <view class="modules-item">缓解抑郁</view>
-    <view class="modules-item">减轻焦虑</view>
-    <view class="modules-item">something</view>
-    <view class="modules-item">somthing</view>
+  <view class="search-bar-container">
+    <view class = "search-bar">搜索</view>
   </view>
-  <scroll-view class="cards-content">
-    <view class="single-card" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
-      <view class = "feed-item">
-        <text>{{item.content}}</text>
+  <view class = "modules" >
+    <view class="modules-title">交流圈</view>
+    <scroll-view class="scroll-bar" scroll-x="true">
+      <view class="modules-item" id="one">
+        <image bindtap="getHarbour" class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">倾诉港湾</view>
+      </view>
+      <view class="modules-item" id="two">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">正能量供应站</view>
+      </view>
+      <view class="modules-item" id="three">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">学业压力</view>
+      </view>
+      <view class="modules-item" id="four">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">恋爱情感</view>
+      </view>
+      <view class="modules-item" id="five">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">人际交往</view>
+      </view>
+      <view class="modules-item" id="six">
+        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <view class="modules-text">发展规划</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cards-content">
+    <view class="card-box" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
+      <view class="card-info">
+        <image class="avartar" src="{{item.avatar_url}}"></image>
+        <view class="username">{{item.username}}</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+      <view class="main-content" bindtap="getActiveDetail" wx:if="{{item.image_url !== ''}}">
+        <view class="content-img-container">
+          <image class="content-img" src="{{item.image_url}}"></image>
+        </view>
+        <view class="content-word">{{item.content}}</view>
+      </view>
+      <view class="main-content" wx:else>
+        <view class="content-word2">{{item.content}}</view>
+      </view>
+      <view class = "etc">
+          <image class="lightbulb" src="../../../images/ring_focus.png"></image>
+          <text>{{item.light_number}}</text>
+          <image class="comment" src="../../../images/ring_focus.png"></image>
+          <text>{{item.comment_number}}</text>
       </view>
     </view>
-  </scroll-view>
+  </view>
 
-  <view class="post-article">+</view>
+  <view class="post-article" bindtap="getPost">
+    <image class="post-pen" src="../../../images/pen.png"></image>
+  </view>
 </view>

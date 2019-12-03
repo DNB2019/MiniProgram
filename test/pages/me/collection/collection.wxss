@@ -67,16 +67,16 @@
     color: #b2b2b2;
     display: inline-block;
     position: absolute;
-    top:30rpx;
-    left:600rpx;
+    top:100rpx;
+    right:30rpx;
 }
 .tag{
     font-size: 24rpx;
     color: #66cccc;
     display: inline-block;
     position: absolute;
-    top:60rpx;
-    left: 600rpx;
+    top:130rpx;
+    right:30rpx;
 }
 .discuss-box{
     width:710rpx;
