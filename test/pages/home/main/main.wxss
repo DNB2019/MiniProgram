@@ -160,49 +160,63 @@ page {
   color: #b2b2b2;
   font-size: 24rpx;
 }
+
 /* 签到按钮 */
+
 .sign {
-  color:white;
+  color: white;
+  font-size: 28rpx;
   padding: 10rpx 50rpx;
   background: linear-gradient(45deg, #6cc, #c5f3d8);
   box-shadow: 0rpx 0rpx 15rpx rgba(102, 102, 204, 0.35);
   border-radius: 60rpx;
   width: 160rpx;
   height: 64rpx;
-  margin-left: 70rpx
+  margin-left: 70rpx;
 }
-.actRoom
-{
+/* 已签到 */
+.signed {
+  color: #6cc;
+  font-size: 28rpx;
+  padding: 10rpx 35rpx;
+  background-color: white;
+  border: solid #6cc 2rpx;
+  border-radius: 60rpx;
+  width: 160rpx;
+  height: 64rpx;
+  margin-left: 70rpx;
+}
+
+.actRoom {
   display: flex;
-  margin:20rpx 40rpx;
+  margin: 20rpx 40rpx;
   /* margin-bottom:20rpx; */
 }
-.module
-{
-  width:280rpx;
+
+.module {
+  width: 280rpx;
   border-radius: 16px;
-  background-color:#c5f3d8;
+  background-color: #c5f3d8;
 }
-.game
-{
-  height:416rpx;
+
+.game {
+  height: 416rpx;
 }
-.right
-{
+
+.right {
   display: flex;
   flex-direction: column;
   margin-left: 40rpx;
 }
-.music
-{
-  height:222rpx;
-}
-.challenge
-{
-  height:154rpx;
-  margin-top: 40rpx;
+
+.music {
+  height: 222rpx;
 }
 
+.challenge {
+  height: 154rpx;
+  margin-top: 40rpx;
+}
 
 /* 签到 */
 
@@ -284,7 +298,9 @@ page {
   padding-left: 40rpx;
   margin-top: 30rpx;
 }
+
 /* 有遮罩按钮 */
+
 .signBtn {
   width: 200rpx;
   height: 70rpx;
@@ -296,18 +312,22 @@ page {
   padding-top: 15rpx;
   display: inline-block;
 }
+
 /* 按钮遮罩 */
+
 .btnMask {
   /* margin-left: 140rpx;
   margin-top: 30rpx; */
-  background-color:#ffffff;
+  background-color: #fff;
   display: flex;
   margin-left: 150rpx;
   margin-right: 140rpx;
-  margin-top:10rpx;
+  margin-top: 10rpx;
   opacity: 0.5;
 }
+
 /* 没有遮罩的按钮 */
+
 .signBtn2 {
   width: 200rpx;
   height: 70rpx;
@@ -321,11 +341,55 @@ page {
   margin-top: 10rpx;
 }
 
-.successRoom
-{
+.successRoom {
   display: flex;
   flex-direction: column;
   justify-items: center;
-  margin-top: 300rpx;
+  margin-top: 80rpx;
 }
 
+.successTop {
+  margin-top: 45rpx;
+  font-size: 140rpx;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.days {
+  font-size: 22rpx;
+  color: white;
+}
+
+.success1 {
+  font-size: 40rpx;
+  color: #6cc;
+  font-weight: 600;
+}
+
+.success2 {
+  margin-top: 20rpx;
+  padding-left: 20rpx;
+  font-size: 24rpx;
+  color: #353535;
+}
+
+.success3 {
+  font-size: 22rpx;
+  color: #888;
+  padding-left: 20rpx;
+}
+
+.imgRoom {
+  margin: 30rpx 0;
+}
+
+.iconImg2 {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.num {
+  color: #6cc;
+  margin: 0 8rpx;
+}

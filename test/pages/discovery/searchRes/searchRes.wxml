@@ -1,5 +1,5 @@
 <!--pages/discovery/article-li/article-li.wxml-->
-<scroll-view scroll-y class="scrollPage">
+<scroll-view scroll-y class="scrollPage" enable-back-to-top="true" bindscrolltolower="moreRefresh">
 <!-- 搜索框 -->
 <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round">
@@ -37,5 +37,8 @@
       </view>
     </view>
   </view>
-
+<view class="end" hidden="{{hideImg}}" style='background:url("../../../images/article_bottom.png")'>- End -</view>
+<!-- <view class="imgRoom"> -->
+<image src="../../../images/article_bottom.png" hidden="{{hideImg}}" class="myImg">- End -</image>
+<!-- </view> -->
 </scroll-view>

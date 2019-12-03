@@ -1,7 +1,7 @@
 // pages/chatRobot/chatRobot.js
 const app = getApp();
-var inputVal = '';
-var msgList = [];
+var inputVal = '';//消息值
+var msgList = [];//消息列表
 var windowWidth = wx.getSystemInfoSync().windowWidth;
 var windowHeight = wx.getSystemInfoSync().windowHeight;
 var keyHeight = 0;
@@ -11,7 +11,6 @@ var keyHeight = 0;
  */
 function initData(that) {
   inputVal = '';
-
   msgList = [{
       speaker: 'server',
       contentType: 'text',
@@ -38,6 +37,19 @@ function initData(that) {
     },
     {
       speaker: 'server',
+      contentType: 'community',
+      content: [{
+        main: "当感到疲惫时，我们可以做些什么？当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么",
+        Tag:"#学业"
+      },
+      {
+        main: "当感到疲惫时，我们可以做些什么什么什么",
+        Tag: "#学业"
+      }
+      ],
+    },
+    {
+      speaker: 'server',
       contentType: 'action',
       content: '小L抱了抱你'
     },
@@ -45,6 +57,11 @@ function initData(that) {
       speaker: 'server',
       contentType: 'action',
       content: '小L戳了你一下'
+    },
+    {
+      speaker: 'server',
+      contentType: 'action',
+      content: '小L摸摸头'
     }
   ]
   that.setData({
@@ -56,11 +73,11 @@ function initData(that) {
 /**
  * 计算msg总高度
  */
-// function calScrollHeight(that, keyHeight) {
-//   var query = wx.createSelectorQuery();
-//   query.select('.scrollMsg').boundingClientRect(function(rect) {
-//   }).exec();
-// }
+function calScrollHeight(that, keyHeight) {
+  var query = wx.createSelectorQuery();
+  query.select('.scrollMsg').boundingClientRect(function(rect) {
+  }).exec();
+}
 
 Page({
 
@@ -68,9 +85,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cardCur: 0,
+    articleCur: 0,
+    discussCur:0,
     scrollHeight: '100vh',
     inputBottom: 0,
+    toView:null
   },
 
   /**
@@ -79,7 +98,7 @@ Page({
   onLoad: function(options) {
     initData(this);
     this.setData({
-      cusHeadIcon: app.globalData.userInfo.avatarUrl,
+      cusHeadIcon: app.globalData.userInfo.avatarUrl,//用户头像
     });
   },
 
@@ -116,8 +135,9 @@ Page({
       toView: 'msg-' + (msgList.length - 1),
       inputBottom: keyHeight + 'px'
     })
+    console.log('toView',this.data.toView);
     //计算msg高度
-    // calScrollHeight(this, keyHeight);
+    calScrollHeight(this, keyHeight);
 
   },
 
@@ -130,7 +150,6 @@ Page({
     this.setData({
       toView: 'msg-' + (msgList.length - 1)
     })
-
   },
 
   /**
@@ -159,10 +178,15 @@ Page({
     }
 
   },
-  cardSwiper(e) {
+  //设置当前的文章index
+  articleSwiper(e) {
     this.setData({
-      cardCur: e.detail.current
+      articleCur: e.detail.current
     })
   },
-
+  discussSwiper(e) {
+    this.setData({
+      discussCur: e.detail.current
+    })
+  },
 })

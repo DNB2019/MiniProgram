@@ -7,6 +7,7 @@ Page({
    */
   data: {
     loadFlag:false,
+    hideImg:false,
     TabCur:0,
     sortList: ["文章干货","心理课堂"],
     searchData:"搜索",
@@ -110,5 +111,14 @@ Page({
     this.setData({
       TabCur:index
     });
+  },
+  moreRefresh:function()
+  {
+    console.log('more');
+    this.setData(
+      {
+        hideImg:false
+      }
+    )
   }
 })

@@ -1,6 +1,8 @@
 /* pages/discovery/article-li/article-li.wxss */
 
-
+page{
+  background-color: white
+}
 /* 卡片下边框 */
 
 .cu-card.article {
@@ -92,4 +94,24 @@ border-bottom: solid #eeeeee 2rpx;
 }
 .mymargin {
   margin: 100rpx;
+}
+.imgRoom{
+  display: flex;
+  justify-content: center;
+}
+.end
+{
+  font-size:28rpx;
+  color:#b2b2b2;
+  justify-content: center;
+  display: flex;
+  margin-top: 30rpx;
+}
+.myImg
+{
+  width:100%;
+}
+.nav .cu-item
+{
+  margin:0rpx;
 }

@@ -1,0 +1,109 @@
+/* pages/test/search/search.wxss */
+/* pages/discovery/search/search.wxss */
+/* 背景 */
+.mybg
+{
+  width:100%;
+  height:100%;
+  z-index:-1;
+  /* color: #66cccc08; */
+  background-color: #f3fbfb;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+/* grid布局中的view宽度自适应 */
+.grid.col-4>view {
+  width: auto;
+}
+/* grid布局整个的大小 */
+.cu-list.grid
+{
+  width: 100%;
+  border-radius: 16px;
+  padding:0 16rpx;
+}
+/* 删除icon */
+.cuIcon-delete:before {
+  content: "\e6b4";
+  color: #6cc;
+}
+/* title容器 */
+.title-container {
+  margin: 24rpx;
+  display: flex;
+  justify-content: center;
+  /* background-color: pink; */
+  width: 100%;
+  align-items: center;
+}
+/* 标题 */
+.title {
+  color: #6cc;
+  font-weight: 500;
+  font-size: 28rpx;
+  margin-right: 75%;
+  /* background-color: rgb(120, 47, 255); */
+}
+/* 历史记录和热门搜索卡片 */
+.mycard {
+  flex-direction: column;
+  margin: 18rpx;
+  border-radius: 16px;
+  padding-bottom: 16rpx;
+}
+
+.cu-list.grid>.cu-item:after {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+/* 标签 */
+.cu-list.grid>.cu-item .cu-tag {
+  right: auto;
+  left: 0%;
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+  /* background-color: #fff; */
+}
+.cu-list.grid>.cu-item {
+  padding: 0rpx;
+  margin-bottom: 16rpx;
+}
+/* .cu-tag: not([class*="bg"]): not([class*="line"]) {
+  background-color: var(--ghostWhite);
+} */
+
+/* 标签样式1 边框、背景颜色 */
+.pattern1 {
+  border: 2rpx solid;
+  border-color: #b2b2b2;
+  background-color: #fff;
+  color: #b2b2b2;
+}
+.pattern2 {
+  border: 2rpx solid;
+  border-color: #66cccc;
+  background-color: #66cccc;
+  color: #fff;
+}
+.pattern3 {
+  border: 2rpx solid;
+  border-color: #66cccc;
+  background-color: #fff;
+  color: #66cccc;
+}
+/* 搜索按钮 */
+.cu-bar .search-form+.action {
+  width: 16%;
+}
+.searchButton{
+  background-color: purple;
+  color:#7e7a7a;
+  font-size:26rpx;
+  font-weight: 600;
+}
+
+
+.margin{
+  margin: 120rpx;
+}

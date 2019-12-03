@@ -13,10 +13,8 @@
 
   <view class="padding-xl"></view>
   <!-- 文章干货 -->
-  <view class="cu-bar solid-bottom margin-top" bindtap="toMore">
-    <view class="action">
-      <text class="cuIcon-title text-black">文章干货</text>
-    </view>
+  <view class="cu-bar margin-top-xs" bindtap="toMore">
+    <view class="mytitle">文章干货</view>
   </view>
   <!-- 文章卡片 -->
   <view class="cu-list grid col-2">
@@ -30,15 +28,13 @@
     </view>
   </view>
   <!-- 更多 -->
-  <view class="more">
-    <text class="text-more" bindTap="toMore">更多 </text>
+  <view class="more" catchTap="toMore">
+    <text class="text-more" catchTap="toMore">更多 </text>
     <text class="cuIcon-right lg text-grey"></text>
   </view>
 
-  <view class="cu-bar solid-bottom myclass" bindtap="toMore">
-    <view class="action">
-      <text class="cuIcon-title text-black">心理课堂</text>
-    </view>
+  <view class="cu-bar" bindtap="toMore">
+    <view class="mytitle">心理课堂</view>
   </view>
 
   <view class="cu-list grid col-2">

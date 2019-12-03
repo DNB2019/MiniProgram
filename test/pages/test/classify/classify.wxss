@@ -1,0 +1,56 @@
+/* pages/test/classify/classify.wxss */
+
+/* 背景色 */
+page{
+  background:linear-gradient(#f3fbfb,#ffffff);
+}
+/* 导航栏点击时文字 */
+.text-tab {
+  color: #6ccccc;
+  font-size: 28rpx;
+  border-bottom: #6ccccc solid 2rpx;
+}
+
+/* 导航栏未点击时文字 */
+
+.text-untab {
+  color: #888;
+  font-size: 28rpx;
+}
+/* 导航栏高度 */
+.nav {
+  height: 76rpx;
+}
+/* 导航高度、宽度 */
+.nav .cu-item {
+  width: 125rpx;
+  height: 76rpx;
+  margin: 0rpx;
+}
+/* 测试的卡片 */
+.testCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 670rpx;
+  height: 240rpx;
+  margin: 40rpx;
+  border-radius: 16px;
+  box-shadow: 1rpx 1rpx 4rpx rgba(215, 215, 215, 0.8);
+}
+/* 测试名字 */
+.testName {
+  color: white;
+  font-weight: 600;
+  font-size: 36rpx;
+}
+/* 底端end */
+.end
+{
+  margin-bottom:32rpx;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  font-size:28rpx;
+  color:#b2b2b2;
+}

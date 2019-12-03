@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/test/classify/classify",
+    "pages/discovery/main/main",
+    "pages/home/chatRobot/chatRobot",
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/main/main",
@@ -8,14 +11,13 @@
     "pages/me/collection/collection",
     "pages/me/testRecord/testRecord",
     "pages/community/main/main",
-    "pages/test/test",
     "pages/home/main/main",
-    "pages/discovery/main/main",
-    "pages/discovery/article-li/article-li",
+    "pages/discovery/searchRes/searchRes",
     "pages/discovery/search/search",
     "pages/discovery/article/article",
     "pages/discovery/more-li/more-li",
-    "pages/home/chatRobot/chatRobot"
+    "pages/test/main/main",
+    "pages/test/search/search"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",
@@ -35,7 +37,7 @@
         "selectedIconPath": "images/导航栏icon/首页选中.png"
       },
       {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/test/main/main",
         "text": "测评",
         "iconPath": "images/导航栏icon/测评未选中.png",
         "selectedIconPath": "images/导航栏icon/测评选中.png"

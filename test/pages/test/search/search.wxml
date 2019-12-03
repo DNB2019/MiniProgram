@@ -1,0 +1,51 @@
+<!--pages/test/search/search.wxml-->
+<!--pages/discovery/search/search.wxml-->
+<!-- 搜索框 -->
+<view class="mybg">
+
+  <!-- 搜索框 -->
+  <!-- <form class="myform" bindsubmit='searchClick'> -->
+    <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input maxlength="100" bindconfirm="searchClick" auto-focus="true" name="searchInput" type="text" placeholder="输入搜索的关键词" confirm-type="search" value="{{inputValue}}"></input>
+      </view>
+      <!-- <view class="action">
+        <button form-type="submit" class="cu-btn searchButton shadow-blur round">搜索</button>
+      </view> -->
+
+    </view>
+  <!-- </form> -->
+  <view class='margin'></view>
+
+
+  <view class="cu-bar mycard bg-white flex-column margin-top">
+    <view class="title-container flex">
+      <text class="title">历史记录</text>
+      <text catchtap="deleteClick" class="cuIcon-delete lg">
+      <!-- ::before -->
+    </text>
+    </view>
+    <view class="cu-list grid col-4">
+      <view class="cu-item flex justify-center" wx:for="{{searchHisList}}">
+        <view catchtap="historyClick" data-history="{{item}}" class="cu-tag bg pattern1 text-cut text-grey light xl round">{{item}}</view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-bar mycard bg-white flex-column margin-top">
+    <view class="title-container flex">
+      <text class="title">热门搜索</text>
+      <text class="">
+      <!-- ::before -->
+    </text>
+    </view>
+    <view class="cu-list grid col-4">
+      <view class="cu-item flex justify-center" wx:for="{{hotList}}">
+        <view class="cu-tag bg pattern2 text-cut text-grey light xl round" wx:if="{{index<=3}}">{{item}}</view>
+        <view class="cu-tag bg pattern3 text-cut text-grey light xl round" wx:else>{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>

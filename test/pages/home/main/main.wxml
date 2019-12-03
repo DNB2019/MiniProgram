@@ -15,7 +15,8 @@
       <view class="title">今日活动</view>
       <view class="subtitle">每天活动一下，保持健康心理！</view>
     </view>
-    <view class="sign" catchtap="showSignIn">签到</view>
+    <view class="sign" catchtap="showSignIn" hidden="{{signed}}">签到</view>
+    <view class="signed" catchtap="signedClick" hidden="{{!signed}}">已签到</view>
   </view>
   <view class="actRoom">
     <view class="module game"></view>
@@ -59,13 +60,17 @@
 
 <view class="cu-modal {{successFlag==true?'show':''}}" bindtap="hideSuccess">
   <view class="cu-dialog" style="background:url({{back_img}})" catchtap>
+    <view class="successTop">
+      <text class="cuIcon-roundcheckfill"></text>
+      <text class="days">累计签到24天</text>
+    </view>
     <view class="successRoom">
-      <view class="title">签到成功</view>
-      <view class="success2">恭喜获得10积分！</view>
-      <view class="imgRoom margin-lg">
-      <image  class="iconImg" src="{{iconList[curIcon].img_selected}}"></image>
+      <view class="success1">签到成功!</view>
+      <view class="success2">恭喜获得<text class="num">10</text>积分！</view>
+      <view class="imgRoom">
+        <image class="iconImg2" src="{{iconList[curIcon].img_selected}}"></image>
       </view>
-        <view class="success3">希望以后的每一天都能像今天一样开心</view>
+      <view class="success3">{{iconList[curIcon].fdback}}</view>
     </view>
 
   </view>
