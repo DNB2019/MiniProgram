@@ -75,18 +75,18 @@ Page({
   setSearchStorage: function(searchInput) {
     let data;
     let localStorageValue = [];
-    console.log('searchInput: ' + searchInput);
+    console.log('searchInput: ' , searchInput);
     if (searchInput != '') {
       //调用API从本地缓存中获取数据
       var searchData = wx.getStorageSync('articleSearchData') || [];
-      console.log('searchData pre:' + searchData);
+      console.log('searchData pre:' , searchData);
       //-1意思是搜索在缓存中没有，放入缓存
       if (searchData.indexOf(searchInput) == -1) {
         console.log('放缓存');
         //放入此次的searchInput
         searchData.push(searchInput);
         wx.setStorageSync('articleSearchData', searchData);
-        console.log('searchData after:' + searchData);
+        console.log('searchData after:' , searchData);
         this.setData({
           searchHisList: searchData,
         })
@@ -105,23 +105,23 @@ Page({
   },
   searchClick: function(e) {
     var input = e.detail.value;
-    console.log('用户搜索输入了:' + input);
+    console.log('用户搜索输入了:' , input);
     // 存入缓存并跳转
     this.setSearchStorage(input);
   },
   deleteClick: function() {
     var searchNull = [];
     var now = wx.getStorageSync('articleSearchData');
-    console.log('当前搜索记录:' + now);
+    console.log('当前搜索记录:' , now);
     wx.setStorageSync('articleSearchData', searchNull);
-    console.log('清空后搜索记录:' + wx.getStorageSync('articleSearchData'));
+    console.log('清空后搜索记录:' , wx.getStorageSync('articleSearchData'));
     this.setData({
       searchHisList: []
     });
   },
   historyClick: function(e) {
     //跳转
-    console.log('history click:' + e.currentTarget.dataset.history)
+    console.log('history click:' , e.currentTarget.dataset.history)
     wx.navigateTo({
       url: '../searchRes/searchRes?searchData=' + e.currentTarget.dataset.history
     })

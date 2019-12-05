@@ -9,6 +9,7 @@ export function getCommunityList(data) {
     })
 }
 export function getCommunity(data) {
+  console.log("get data",data);
     return request({
       url: `${baseUrl}/Get_Community`,
       method: 'POST',

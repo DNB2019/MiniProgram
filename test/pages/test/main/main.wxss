@@ -43,38 +43,28 @@ page{
   height: 376rpx;
   width: 260rpx;
   border-radius:16px;
-  /* float: right;
-  display: inline-block; */
-  /* margin-right: 300rpx; */
 }
 .test-container {
-  /* background:rgb(255,255,255); */
   margin-left: 0rpx;
   margin-top: 0rpx;
   margin-right: 0;
   flex-direction: row;
   height: 376rpx;
   display: flex;
-  /* width: 100rpx; */
-  /* flex: 1; */
 }
 
 .recommand{
   margin-left: 24rpx;
   margin-right: 28rpx;
   width: 414rpx;
-  /* padding-left: 10rpx; */
   background: rgb(255,255,255);
   flex-direction: column;
-  /* height: 376rpx; */
   border-radius: 32rpx;
   flex: 1;
   display: inline-block;
   box-shadow: 1rpx 1rpx 4rpx rgba(215,215,215,0.8);
-  /* margin-bottom: 10rpx; */
 }
 .Words {
-  /* padding-left: 10rpx; */
   margin-top: 24rpx;
   font-size: 36rpx;
   color: #353535;
@@ -128,6 +118,18 @@ page{
     /* width: 100rpx; */
     /* flex: 1; */
   }
+  .fixedtest-container2{
+    background: #ffffff;
+    margin-left: 0rpx;
+    margin-top: 16rpx;
+    margin-right: 0;
+    flex-direction: row;
+    height: 174rpx;
+    display: flex;
+    top:-25rpx;
+    z-index: 1;
+    position: fixed;
+  }
 .iconList{
   margin-top: 28rpx;
   height: 146rpx;
@@ -135,26 +137,45 @@ page{
   margin-right: 27rpx;
 }
   .icon_img{
+    position: relative;
     /* margin-top: 28rpx; */
     margin-bottom: 20rpx;
     /* margin-right: 55rpx; */
     width: 70rpx;
     height: 70rpx;
   }
-  /* .iconwords{
-    margin-top: 50rpx;
-  } */
   .icontext{
-    /* margin-top: 50rpx; */
     color: #888888;
     text-align: center;
     font-size: 28rpx;
     font-weight: bold;
   }
   .chosenicontext{
-    /* margin-top: 50rpx; */
     color: #66cccc;
     text-align: center;
     font-size: 28rpx;
     font-weight: bold;
   }
+
+  .cardTitle{
+    margin-top: 40rpx;
+    height: 240rpx;
+    color: #fff;
+    padding: 90rpx;
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: 300;
+    /* transform: skew(-10deg, 0deg); */
+    position: relative;
+    text-shadow: 0px 0px 6rpx rgba(0,0,0,0.3)
+  }
+  
+  .ENDwords{
+    margin-top: 0rpx;
+    color: #b2b2b2;
+    font-size: 28rpx;
+    text-align: center;
+  }
+ 
+
+  
