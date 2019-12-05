@@ -9,7 +9,9 @@ Page({
    */
   data: {
     userInfo: app.globalData.userInfo,
+    tag_dic:{1:"倾诉港湾",2:"学业压力",3:"人际交往",4:"正能量供应站",5:"抑郁焦虑",6:"恋爱情感",7:"发展规划",8:"家庭关系"},
     alter_on: 0,
+    chosen_tag:-1,
     tag_list: []
   },
 
@@ -20,21 +22,37 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       tag_list: [{
-        name: "倾诉港湾"
+        id:0,
+        name: "倾诉港湾",
+        color:"#b2b2b2",
       }, {
-        name: "学业压力"
+        id:1,
+        name: "学业压力",
+        color:"#b2b2b2",
       }, {
-        name: "人际交往"
+        id:2,
+        name: "人际交往",
+        color:"#b2b2b2",
       }, {
-        name: "正能量供应站"
+        id:3,
+        name: "正能量供应站",
+        color:"#b2b2b2",
       }, {
-        name: "抑郁焦虑"
+        id:4,
+        name: "抑郁焦虑",
+        color:"#b2b2b2",
       }, {
-        name: "恋爱情感"
+        id:5,
+        name: "恋爱情感",
+        color:"#b2b2b2",
       }, {
-        name: "发展规划"
+        id:6,
+        name: "发展规划",
+        color:"#b2b2b2",
       }, {
-        name: "家庭关系"
+        id:7,
+        name: "家庭关系",
+        color:"#b2b2b2",
       }]
     })
   },
@@ -42,6 +60,8 @@ Page({
     this.setData({
       alter_on: !this.alter_on
     })
+  },
+  chosenTag:function(event){
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

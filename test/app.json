@@ -17,10 +17,12 @@
     "pages/me/history/history",
     "pages/me/collection/collection",
     "pages/me/testRecord/testRecord",
-    "pages/community/main/main",
     "pages/test/testResult/testResult",
+    "pages/community/main/main",
     "pages/community/subpage/subpage",
-    "pages/community/postActive/postActive"
+    "pages/community/search/search",
+    "pages/community/postActive/postActive",
+    "pages/community/activeDetail/activeDetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",
