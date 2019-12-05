@@ -3,7 +3,7 @@ import request from '../request.js'
 const baseUrl = getApp().globalData.baseUrl
 export function getCommunityList(data) {
     return request({
-      url: `${baseUrl}/Get_Community_List`,
+      url: `${baseUrl}/Get_Community_List_By_Order`,
       method: 'POST',
       data
     })

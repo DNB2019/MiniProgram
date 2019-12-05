@@ -12,13 +12,16 @@
         <view class="main-content">
         {{active_content}}
         </view>
+        <view class="image-container" wx:for="{{image_url}}">
+            <image class="imgs"src="{{item}}"></image>
+        </view>
         <view class="tag">
         {{tag}}
         </view>
         <view class="etc">
             <view class="little-box">
                 <text class="cuIcon-attention"></text>
-                <text class="numbers">{{attention_number}}</text>
+                <text class="numbers">{{watch_number}}</text>
             </view>
             <view class="little-box">
                 <text class="cuIcon-creative"></text>

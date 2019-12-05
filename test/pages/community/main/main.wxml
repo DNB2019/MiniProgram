@@ -54,8 +54,8 @@
       <view class = "etc">
           <text class="cuIcon-creative"></text>
           <text class="numbers">{{item.light_number}}</text>
-          <text class="cuIcon-mark"></text>
-          <text class="numbers">{{item.comment_number}}</text>
+          <text class="cuIcon-attention"></text>
+          <text class="numbers">{{item.watch_number}}</text>
       </view>
     </view>
   </view>

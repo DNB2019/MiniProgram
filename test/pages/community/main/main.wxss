@@ -128,6 +128,8 @@
   color:#888888;
   display: inline-block;
   width:450rpx;
+  height: 235rpx;
+  overflow: hidden;
   position: absolute;
   left:230rpx;
   top:20rpx;
@@ -136,6 +138,8 @@
   font-size:28rpx;
   color: #888888;
   width:670rpx;
+  height: 235rpx;
+  overflow: hidden;
   position: absolute;
   left:30rpx;
   top:20rpx;

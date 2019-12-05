@@ -42,6 +42,13 @@
     padding:30rpx;
     line-height: 42rpx;
 }
+.image-container{
+    width:600rpx;
+    margin:auto;
+}
+.imgs{
+    margin:auto;
+}
 .etc{
     position: relative;
     width:720rpx;

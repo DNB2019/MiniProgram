@@ -34,7 +34,7 @@
           <text class="cuIcon-creative"></text>
           <text class="numbers">{{item.light_number}}</text>
           <text class="cuIcon-mark"></text>
-          <text class="numbers">{{item.comment_number}}</text>
+          <text class="numbers">{{item.watch_number}}</text>
       </view>
     </view>
     <view class="card-box" wx:if="{{location==1}}" wx:for="{{hottest}}" wx:for-index="idx" wx:for-item="item">
@@ -56,7 +56,7 @@
           <text class="cuIcon-creative"></text>
           <text class="numbers">{{item.light_number}}</text>
           <text class="cuIcon-mark"></text>
-          <text class="numbers">{{item.comment_number}}</text>
+          <text class="numbers">{{item.watch_number}}</text>
       </view>
     </view>
   </view>

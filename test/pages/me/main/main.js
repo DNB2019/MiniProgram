@@ -29,6 +29,7 @@ Page({
     api.meMainPage({
       user_id
     }).then(data=>{
+      console.log("data",data);
       console.log("use days:",data.use_days," points:",data.points)
       that.setData({
         use_days: data.use_days,
