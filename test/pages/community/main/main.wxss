@@ -1,6 +1,6 @@
 /* pages/community/community.wxss */
 .container{
-  background-color: #f3f3f3;
+  background-color:#f3fbfb;
 }
 .search-bar-container{
   background-color:white;
@@ -128,6 +128,8 @@
   color:#888888;
   display: inline-block;
   width:450rpx;
+  height: 235rpx;
+  overflow: hidden;
   position: absolute;
   left:230rpx;
   top:20rpx;
@@ -136,6 +138,8 @@
   font-size:28rpx;
   color: #888888;
   width:670rpx;
+  height: 235rpx;
+  overflow: hidden;
   position: absolute;
   left:30rpx;
   top:20rpx;
@@ -147,15 +151,12 @@
   position: absolute;
   top:330rpx;
   left:30rpx;
+  font-size:30rpx;
 }
-.lightbulb{
-  width:30rpx;
-  height:30rpx;
-}
-.comment{
-  width:30rpx;
-  height:30rpx;
-  margin-left:20rpx;
+.numbers{
+  margin-left:10rpx;
+  margin-right:10rpx;
+  font-size: 30rpx;
 }
 .post-article{
   width:120rpx;

@@ -21,20 +21,20 @@
         <view class="username">{{item.username}}</view>
         <view class="date">{{item.date}}</view>
       </view>
-      <view class="main-content" wx:if="{{item.image_url !== ''}}">
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url !== ''}}">
         <view class="content-img-container">
           <image class="content-img" src="{{item.image_url}}"></image>
         </view>
         <view class="content-word">{{item.content}}</view>
       </view>
-      <view class="main-content" wx:else>
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:else>
         <view class="content-word2">{{item.content}}</view>
       </view>
-      <view class="etc">
-        <image class="lightbulb" src="../../../images/ring_focus.png"></image>
-        <text>{{item.light_number}}</text>
-        <image class="comment" src="../../../images/ring_focus.png"></image>
-        <text>{{item.comment_number}}</text>
+      <view class = "etc">
+          <text class="cuIcon-creative"></text>
+          <text class="numbers">{{item.light_number}}</text>
+          <text class="cuIcon-mark"></text>
+          <text class="numbers">{{item.watch_number}}</text>
       </view>
     </view>
     <view class="card-box" wx:if="{{location==1}}" wx:for="{{hottest}}" wx:for-index="idx" wx:for-item="item">
@@ -43,20 +43,20 @@
         <view class="username">{{item.username}}</view>
         <view class="date">{{item.date}}</view>
       </view>
-      <view class="main-content" wx:if="{{item.image_url !== ''}}">
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url !== ''}}">
         <view class="content-img-container">
           <image class="content-img" src="{{item.image_url}}"></image>
         </view>
         <view class="content-word">{{item.content}}</view>
       </view>
-      <view class="main-content" wx:else>
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:else>
         <view class="content-word2">{{item.content}}</view>
       </view>
-      <view class="etc">
-        <image class="lightbulb" src="../../../images/ring_focus.png"></image>
-        <text>{{item.light_number}}</text>
-        <image class="comment" src="../../../images/ring_focus.png"></image>
-        <text>{{item.comment_number}}</text>
+      <view class = "etc">
+          <text class="cuIcon-creative"></text>
+          <text class="numbers">{{item.light_number}}</text>
+          <text class="cuIcon-mark"></text>
+          <text class="numbers">{{item.watch_number}}</text>
       </view>
     </view>
   </view>

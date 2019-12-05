@@ -1,7 +1,7 @@
 // pages/community/community.js
 const app = getApp();
 var util = require('../../../utils/util.js')
-var api = require('../../../utils/api/home_api.js')
+var api = require('../../../utils/api/community_api.js')
 Page({
 
   /**
@@ -9,28 +9,18 @@ Page({
    */
   data: {
     userInfo: app.globalData.userInfo,
-    feed: [{
-      //avatar_url:
-      //username:
-      //date:
-      //image_url:
-      //content:
-      //light_number
-      //comment_number
-    }, {
-      avatar_url: "../../../images/me_setting.png",
-      username: "user1",
-      date: "2019-11-22",
-      image_url: "../../../images/me_setting.png",
-      content: "一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才",
-    }, {
-      avatar_url: "../../../images/me_setting.png",
-      username: "user1",
-      date: "2019-11-22",
-      image_url: "",
-      content: "一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才",
-    }
-    ]
+    feed:[{
+        //active_id:
+        //area
+        //avatar_url:
+        //username:
+        //date:
+        //image_url:
+        //content:
+        //light_number
+        //comment_number
+      }
+      ]
   },
 
   /**
@@ -43,21 +33,18 @@ Page({
         userInfo: app.globalData.userInfo,
       }
     )
-    console.log('userInfo' + this.userInfo);
-    this.setData({
-      feed: [{
-        avatar_url: "../../../images/me_setting.png",
-        username: "user1",
-        date: "2019-11-22",
-        image_url: "../../../images/me_setting.png",
-        content: "一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
-      }, {
-        avatar_url: "../../../images/me_setting.png",
-        username: "user2",
-        date: "2019-11-22",
-        image_url: "../../../images/me_setting.png",
-        content: "一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才"
-      }]
+    console.log('userInfo'+this.userInfo);
+    var area = 0;
+    var order = 0;
+    api.getCommunityList({
+      area,
+      order
+    }).then(data=>{
+      console.log("community list:",data.feed);
+      console.log("code",data.code);
+      that.setData({
+        feed:data.feed
+      })
     })
   },
 
@@ -70,10 +57,12 @@ Page({
       url: "../subpage/subpage"
     })
   },
-  getActiveDetail: function () {
+  getActiveDetail:function(event){
     console.log("getting active detail");
+    var acID = event.currentTarget.dataset.activeId;
+    console.log("active id is",acID);
     wx.navigateTo({
-      url: "../activeDetail/activeDetail"
+      url:"../activeDetail/activeDetail?active_id="+acID
     })
   },
   getPost: function () {
