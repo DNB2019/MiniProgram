@@ -1,4 +1,7 @@
 /* pages/test/test.wxss */
+.container{
+  background-color:#f3fbfb;
+}
 .head-image{
   width:750rpx;
   height: 208rpx;

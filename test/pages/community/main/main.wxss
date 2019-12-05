@@ -1,6 +1,6 @@
 /* pages/community/community.wxss */
 .container{
-  background-color: #f3f3f3;
+  background-color:#f3fbfb;
 }
 .search-bar-container{
   background-color:white;
