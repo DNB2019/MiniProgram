@@ -1,5 +1,6 @@
 // pages/me/me.js
 const app = getApp();
+var api = require('../../../utils/api/me_api.js');
 Page({
   /**
    * 页面的初始数据
@@ -7,8 +8,10 @@ Page({
   data: {
     userInfo:{},
     test_time:"2019-11-09",
-    day_count:6,
-    upper_img:"../../../images/me_upper.png"
+    use_days:6,
+    upper_img:"../../../images/me_upper.png",
+    points:10,
+    loaded:0//记载是否已经请求过，请求过就不用再请求了（是否有用？）
   },
 
   /**
@@ -20,7 +23,18 @@ Page({
         userInfo:app.globalData.userInfo
       }
     )
-    console.log('userInfo'+this.userInfo)
+    console.log('userInfo'+this.userInfo);
+    var that = this;
+    var user_id = app.globalData.openid;
+    api.meMainPage({
+      user_id
+    }).then(data=>{
+      console.log("use days:",data.use_days," points:",data.points)
+      that.setData({
+        use_days: data.use_days,
+        points :data.points
+      })
+    })
   },
   getCollection:function(){
     wx.navigateTo({

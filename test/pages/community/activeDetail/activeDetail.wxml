@@ -17,19 +17,19 @@
         </view>
         <view class="etc">
             <view class="little-box">
-                <image class="little-img" src="../../../images/attention.png"></image>
+                <text class="cuIcon-attention"></text>
                 <text class="numbers">{{attention_number}}</text>
             </view>
             <view class="little-box">
-                <image class="little-img" src="../../../images/creative.png"></image>
+                <text class="cuIcon-creative"></text>
                 <text class="numbers">{{creative_number}}</text>
             </view>
             <view class="little-box">
-                <image class="little-img" src="../../../images/favor.png"></image>
+                <text class="cuIcon-favor"></text>
                 <text class="numbers">{{favor_number}}</text>
             </view>
             <view class="little-box">
-                <image class="little-img" src="../../../images/forward.png"></image>
+                <text class="cuIcon-forward"></text>
                 <text class="numbers">{{forward_number}}</text>
             </view>
         </view>
@@ -55,9 +55,9 @@
                 </view>
             </view>
             <view class="comment-etc">
-                <image class="comment-img" src="../../../images/creative.png"></image>
+                <text class="cuIcon-creative"></text>
                 <text class="numbers">{{cmItem.light_number}}</text>
-                <image class="comment-img" src="../../../images/mark.png"></image>
+                <text class="cuIcon-mark"></text>
                 <text class="numbers">{{cmItem.mark_number}}</text>
             </view>
         </view>
@@ -66,9 +66,11 @@
     <view wx:if="{{isReplying!=0}}" class="blank2"></view>
     <view wx:if="{{isReplying==0}}" class="post-bar">
         <input class="enter-bar" placeholder="给ta带去一点光亮吧" bindtap="doComment"></input>
-        <image class="bar-img" src="../../../images/creative.png"></image>
-        <image class="bar-img" src="../../../images/favor.png"></image>
-        <image class="bar-img" src="../../../images/forward.png"></image>
+        <view class = "bar-icon">
+            <text class="cuIcon-creative"></text>
+            <text class="cuIcon-favor"></text>
+            <text class="cuIcon-forward"></text>
+        </view>
     </view>
     <view wx:if="{{isReplying==1}}" class="doReply-box">
         <input class="doReply-content" placeholder="回复{{replyDes}}"></input>

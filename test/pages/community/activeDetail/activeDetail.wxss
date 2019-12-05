@@ -54,11 +54,12 @@
     margin-left:30rpx;
 }
 .little-box{
-    width:180rpx;
+    width:120rpx;
     height:80rpx;
     display: inline-block;
+    margin-left:60rpx;
     color: #b2b2b2;
-    font-size:24rpx;
+    font-size:30rpx;
     line-height: 120rpx;
     align-items: center;
 }
@@ -135,6 +136,7 @@
     position: relative;
     left:600rpx;
     padding-top:25rpx;
+    font-size:30rpx;
 }
 .comment-img{
     width:50rpx;
@@ -162,11 +164,12 @@
     text-align: center;
     color: #b2b2b2;
 }
-.bar-img{
-    width:70rpx;
+.bar-icon{
+    width:210rpx;
     height:70rpx;
-    top:15rpx;
-    left:40rpx;
+    display: inline-block;
+    font-size:60rpx;
+    margin-left:50rpx;
 }
 .blank{
     width:100%;
@@ -177,10 +180,12 @@
     height:152rpx;
 }
 .numbers{
-    font-size:20rpx;
+    font-size:30rpx;
     color: #b2b2b2;
     position: relative;
-    bottom:10rpx;
+    margin-left:10rpx;
+    margin-right:10rpx;
+    
 }
 .doReply-box{
     width:100%;

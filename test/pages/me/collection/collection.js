@@ -1,5 +1,5 @@
 // pages/me/me.js
-var api = require('../../../utils/api/meCollection_api.js');
+var api = require('../../../utils/api/me_api.js');
 const app = getApp();
 Page({
   /**

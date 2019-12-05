@@ -27,13 +27,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("active id receive is",options.active_id);
+    var active_id = options.active_id;//这个参数到时候传给后台获取具体文章号码
     var that = this;
     this.setData(
       {
         userInfo:app.globalData.userInfo,
         active_content:"一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才…一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。现在才…\n 一些关于大学生心理困惑的问题。我是一个艺术生，以前挺喜欢画画的。后来跟风去报视觉传达。然后感觉自己不适合这个专业，又不能转专业。我该怎么办？",
-        light_number:"5",
-        mark_number:"3",
         comments:[{
           avatar_url:"../../../images/me_about.png",
           username:"宇宙无敌美少女",

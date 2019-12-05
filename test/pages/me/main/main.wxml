@@ -9,11 +9,11 @@
     </view>
     <view class="user-info">
       <view class="userinfo-nickname">{{userInfo.nickName}}</view>
-      <view class="edit">陪伴你的第{{day_count}}天</view>
+      <view class="edit">陪伴你的第{{use_days}}天</view>
     </view>
     <view class="score-board">
       <view id="yellow-circle"><view id="rectangle"></view></view>
-      <text id="score-count">321</text>
+      <text id="score-count">{{points}}</text>
     </view>
   </view>
 
