@@ -9,8 +9,8 @@ Page({
    */
   data: {
     userInfo: app.globalData.userInfo,
-    alter_on:0,
-    tag_list:[]
+    alter_on: 0,
+    tag_list: []
   },
 
   /**
@@ -18,27 +18,27 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo:app.globalData.userInfo,
-      tag_list:[{
-        name:"倾诉港湾"
-      },{
-        name:"学业压力"
-      },{
-        name:"人际交往"
-      },{
-        name:"正能量供应站"
-      },{
-        name:"抑郁焦虑"
-      },{
-        name:"恋爱情感"
-      },{
-        name:"发展规划"
-      },{
-        name:"家庭关系"
+      userInfo: app.globalData.userInfo,
+      tag_list: [{
+        name: "倾诉港湾"
+      }, {
+        name: "学业压力"
+      }, {
+        name: "人际交往"
+      }, {
+        name: "正能量供应站"
+      }, {
+        name: "抑郁焦虑"
+      }, {
+        name: "恋爱情感"
+      }, {
+        name: "发展规划"
+      }, {
+        name: "家庭关系"
       }]
     })
   },
-  switchChange:function(){
+  switchChange: function () {
     this.setData({
       alter_on: !this.alter_on
     })

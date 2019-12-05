@@ -1,7 +1,8 @@
 // pages/chatRobot/chatRobot.js
 const app = getApp();
-var inputVal = '';//消息值
-var msgList = [];//消息列表
+var api = require('../../../utils/api/home_api.js');
+var inputVal = ''; //消息值
+var msgList = []; //消息列表
 var windowWidth = wx.getSystemInfoSync().windowWidth;
 var windowHeight = wx.getSystemInfoSync().windowHeight;
 var keyHeight = 0;
@@ -26,11 +27,11 @@ function initData(that) {
       contentType: 'discovery',
       content: [{
           Title: "当感到疲惫时，我们可以做些什么？",
-          Image: "../../../images/bluesky.jpg"
+          Image: "../../../images/empty_img.png",
         },
         {
           Title: "当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么",
-          Image: "../../../images/bluesky.jpg"
+          Image: "../../../images/empty_img.png"
         }
       ],
 
@@ -39,13 +40,13 @@ function initData(that) {
       speaker: 'server',
       contentType: 'community',
       content: [{
-        main: "当感到疲惫时，我们可以做些什么？当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么",
-        Tag:"#学业"
-      },
-      {
-        main: "当感到疲惫时，我们可以做些什么什么什么",
-        Tag: "#学业"
-      }
+          main: "当感到疲惫时，我们可以做些什么？当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么当感到疲惫时，我们可以做些什么什么什么？我们可以做些什么",
+          Tag: "#学业"
+        },
+        {
+          main: "当感到疲惫时，我们可以做些什么什么什么",
+          Tag: "#学业"
+        }
       ],
     },
     {
@@ -75,8 +76,7 @@ function initData(that) {
  */
 function calScrollHeight(that, keyHeight) {
   var query = wx.createSelectorQuery();
-  query.select('.scrollMsg').boundingClientRect(function(rect) {
-  }).exec();
+  query.select('.scrollMsg').boundingClientRect(function(rect) {}).exec();
 }
 
 Page({
@@ -86,10 +86,10 @@ Page({
    */
   data: {
     articleCur: 0,
-    discussCur:0,
+    discussCur: 0,
     scrollHeight: '100vh',
     inputBottom: 0,
-    toView:null
+    toView: null
   },
 
   /**
@@ -98,7 +98,7 @@ Page({
   onLoad: function(options) {
     initData(this);
     this.setData({
-      cusHeadIcon: app.globalData.userInfo.avatarUrl,//用户头像
+      cusHeadIcon: app.globalData.userInfo.avatarUrl, //用户头像
     });
   },
 
@@ -135,7 +135,7 @@ Page({
       toView: 'msg-' + (msgList.length - 1),
       inputBottom: keyHeight + 'px'
     })
-    console.log('toView',this.data.toView);
+    console.log('toView', this.data.toView);
     //计算msg高度
     calScrollHeight(this, keyHeight);
 
@@ -157,6 +157,7 @@ Page({
    */
   sendClick: function(e) {
     var msg = e.detail.value.inputMsg;
+    var that = this;
     if (msg.length != 0) {
       console.log('用户发送消息：' + msg)
       msgList.push({
@@ -169,6 +170,23 @@ Page({
         msgList,
         inputVal
       });
+      // 向服务器发送消息
+      api.askRobot({
+        question: msg
+      }).then(data => {
+        if (data.code == 0) {
+          console.log('Robot回复:' + data.answer);
+          msgList.push({
+            speaker: 'server',
+            contentType: 'text',
+            content: data.answer
+          });
+          that.setData({
+            msgList,
+            toView: 'msg-' + (msgList.length - 1),
+          })
+        }
+      })
     } else {
       wx.showModal({
         title: '发送失败',
@@ -176,7 +194,6 @@ Page({
         showCancel: false
       })
     }
-
   },
   //设置当前的文章index
   articleSwiper(e) {

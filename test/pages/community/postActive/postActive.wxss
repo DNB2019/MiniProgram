@@ -111,4 +111,3 @@ page{
     line-height: 80rpx;
     box-shadow: 0rpx 0rpx 15rpx rgb(102,102,204,0.35);
 }
-

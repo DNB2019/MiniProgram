@@ -1,9 +1,9 @@
 //app.js
 App({
   onLaunch: function () {
-    wx.showLoading({
-      title: '加载中',
-    })
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
     console.log('---app onLaunch---')
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

@@ -48,19 +48,21 @@ page{
   width: 180rpx;
   height: 120rpx;
   margin-right: 20rpx;
+  margin-bottom: 30rpx;
   border-radius: 6rpx;
 }
 
 
 
-/* .cu-card.article>.cu-item {
-padding-bottom: 30rpx;
-} */
+.cu-card.article>.cu-item {
+padding-bottom: 0rpx;
+}
 
 /* 图片右边 */
 
 .cu-card.article>.cu-item .content .desc {
   flex-direction: row;
+  margin-bottom: 20rpx;
 }
 
 /* 标题右边 */

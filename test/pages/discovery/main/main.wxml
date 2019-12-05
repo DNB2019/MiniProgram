@@ -1,6 +1,6 @@
 <!--pages/discovery/main/main.wxml-->
 
-<scroll-view scroll-y class="scrollPage" hidden="{{!loadFlag}}">
+<scroll-view scroll-y class="scrollPage" hidden="{{!loadFlag}}" >
   <image class='background' src="../../../images/背景图.png" mode="aspectFill"></image>
 
   <!-- 搜索框 -->
@@ -13,7 +13,7 @@
 
   <view class="padding-xl"></view>
   <!-- 文章干货 -->
-  <view class="cu-bar margin-top-xs" bindtap="toMore">
+  <view class="cu-bar margin-top-xs">
     <view class="mytitle">文章干货</view>
   </view>
   <!-- 文章卡片 -->
@@ -28,12 +28,12 @@
     </view>
   </view>
   <!-- 更多 -->
-  <view class="more" catchTap="toMore">
-    <text class="text-more" catchTap="toMore">更多 </text>
+  <view class="more">
+    <text class="text-more" catchtap="toMore">更多 </text>
     <text class="cuIcon-right lg text-grey"></text>
   </view>
 
-  <view class="cu-bar" bindtap="toMore">
+  <view class="cu-bar">
     <view class="mytitle">心理课堂</view>
   </view>
 
@@ -48,8 +48,8 @@
     </view>
   </view>
   <!-- 更多 -->
-  <view class="more" bindTap="toMore">
-    <text class="text-more">更多 </text>
+  <view class="more">
+    <text class="text-more" catchtap="toMore">更多 </text>
     <text class="cuIcon-right lg text-grey"></text>
   </view>
 

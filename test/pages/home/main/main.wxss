@@ -174,7 +174,9 @@ page {
   height: 64rpx;
   margin-left: 70rpx;
 }
+
 /* 已签到 */
+
 .signed {
   color: #6cc;
   font-size: 28rpx;
@@ -392,4 +394,12 @@ page {
 .num {
   color: #6cc;
   margin: 0 8rpx;
+}
+
+.under-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #b2b2b2;
+  margin-top: 30rpx;
 }

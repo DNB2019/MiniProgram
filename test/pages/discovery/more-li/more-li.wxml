@@ -1,5 +1,5 @@
 <!--pages/discovery/more-li/more-li.wxml-->
-<scroll-view scroll-y class="scrollPage bg-white" enable-back-to-top="true" bindscrolltolower="articleRefresh" hidden="{{!loadFlag}}">
+<scroll-view scroll-y class="scrollPage bg-white" enable-back-to-top="true" bindscrolltolower="articleRefresh">
   <!-- 搜索框 -->
   <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round text-icon">
@@ -18,6 +18,7 @@
       {{item}}
     </view>
   </scroll-view>
+
 
   <!-- 文章卡片列表 -->
   <view class="cu-card article no-card" wx:for="{{articleList}}" wx:key>

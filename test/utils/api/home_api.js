@@ -12,4 +12,14 @@ export function apiGreet(data) {
   })
 }
 
+export function askRobot(data) {
+  //data是一个object：{}
+  return request({
+    url: `${baseUrl}/Auto_Answer_Robot`,
+    method: 'POST',
+    data
+  })
+}
+
+
 

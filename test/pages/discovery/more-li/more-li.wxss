@@ -42,23 +42,25 @@
   overflow: hidden;
 }
 
+.cu-card.article>.cu-item {
+  padding-bottom: 0rpx;
+}
+
 /* 图片 */
 
 .cu-card.article>.cu-item .content>image {
   width: 180rpx;
   height: 120rpx;
   margin-right: 20rpx;
+  margin-bottom: 30rpx;
   border-radius: 6rpx;
 }
-
-/* .cu-card.article>.cu-item {
-padding-bottom: 30rpx;
-} */
 
 /* 图片右边 */
 
 .cu-card.article>.cu-item .content .desc {
   flex-direction: row;
+  margin-bottom:15rpx;
 }
 
 /* 标题右边 */
@@ -97,11 +99,13 @@ padding-bottom: 30rpx;
 .mymargin {
   margin: 99rpx;
 }
-.cu-tag{
-  min-width:130rpx;
+
+.cu-tag {
+  min-width: 130rpx;
   margin-right: 15rpx;
   font-size: 30rpx;
 }
+
 .tag-tab {
   border: 2rpx solid;
   border-color: #6cc;
@@ -115,13 +119,15 @@ padding-bottom: 30rpx;
   background-color: #fff;
   color: #6cc;
 }
-.nav{
-  padding-left:30rpx;
-  padding-top:20rpx;
-  padding-bottom:20rpx;
-  border-bottom:solid #eee 2rpx;
+
+.nav {
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: solid #eee 2rpx;
 }
-.text-icon{
-  font-size:40rpx;
+
+.text-icon {
+  font-size: 40rpx;
   margin-right: 35rpx;
 }

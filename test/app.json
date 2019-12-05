@@ -1,9 +1,16 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/test/classify/classify",
-    "pages/discovery/main/main",
+    "pages/test/testDetail/testDetail",
     "pages/home/chatRobot/chatRobot",
+    "pages/test/main/main",
+    "pages/test/search/search",
+    "pages/discovery/main/main",
+    "pages/discovery/searchRes/searchRes",
+    "pages/discovery/search/search",
+    "pages/discovery/article/article",
+    "pages/discovery/more-li/more-li",
+    "pages/home/main/main",
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/main/main",
@@ -11,13 +18,9 @@
     "pages/me/collection/collection",
     "pages/me/testRecord/testRecord",
     "pages/community/main/main",
-    "pages/home/main/main",
-    "pages/discovery/searchRes/searchRes",
-    "pages/discovery/search/search",
-    "pages/discovery/article/article",
-    "pages/discovery/more-li/more-li",
-    "pages/test/main/main",
-    "pages/test/search/search"
+    "pages/test/testResult/testResult",
+    "pages/community/subpage/subpage",
+    "pages/community/postActive/postActive"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",

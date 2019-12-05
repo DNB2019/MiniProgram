@@ -150,14 +150,13 @@ Page({
   },
   //点击签到，弹出签到页面
   showSignIn: function(e) {
-    console.log('点击');
     this.setData({
       signFlag: true
     })
   },
   //签到成功后者点击黑色处，收起签到页面
   hideSignIn: function() {
-    console.log('收起');
+    console.log('收起签到弹窗');
     this.setData({
       signFlag: false
     })
@@ -175,6 +174,12 @@ Page({
         curIcon: index
       })
     }
+  },
+  test: function () {
+    console.log("test");
+    wx.navigateTo({
+      url: '../../test/testDetail/testDetail',
+    })
   },
   //点击签到
   signInClick: function() {

@@ -96,6 +96,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
   getSearch: function () {
     console.log('跳转到搜索页面')
     wx.navigateTo({

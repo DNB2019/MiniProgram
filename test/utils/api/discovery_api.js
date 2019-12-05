@@ -21,10 +21,10 @@ export function recommendClass(data) {
   })
 }
 //请求干货知识更多页面的文章列表
-export function getArticleList(data) {
+export function getMoreList(data) {
   //data是一个object：{}
   return request({
-    url: `${baseUrl}/testing`,
+    url: `${baseUrl}/More_Article`,
     method: 'POST',
     data
   })

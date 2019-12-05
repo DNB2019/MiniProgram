@@ -1,0 +1,71 @@
+<!--pages/test/testDetail/testDetail.wxml-->
+<view class="welcomeRoom padding-top-xl" hidden="{{welcomeFlag}}">
+  <view class="imgRoom">
+    <image class="testImg" src="{{img}}"></image>
+  </view>
+  <view class="testName">{{name}}</view>
+  <view class="peopleNum">已有{{people}}人测试</view>
+  <view class="description">{{description}}</view>
+  <view class="myRoom">
+    <view class="leftRoom">
+      <view class="txt">题目数量</view>
+      <view class="num">{{qNum}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="rightRoom">
+      <view class="qTime">
+        <view class="txt">预计用时</view>
+        <view class="num">{{qTime}}</view>
+      </view>
+      <view class="min">min</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="collect">
+      <text class="cuIcon-favor text-mint"></text>
+      <text class="collectTxt">收藏</text>
+    </view>
+    <view class="start" catchtap="startClick" wx:if="{{!haveDone}}">开始测试</view>
+    <view class="flex" wx:else>
+      <view class="round re restart" catchtap="startClick">重新测试</view>
+      <view class=" re start" catchtap="showRes">查看报告</view>
+    </view>
+  </view>
+</view>
+<view class="questionRoom" hidden="{{questionFlag}}">
+  <view class="qIndex">
+    <view class="num">{{qCur+1}}/</view>
+    <view class="num">{{qNum}}</view>
+  </view>
+  <view class="testName margin-bottom-xl">{{questionList[qCur].question}}</view>
+
+  <!-- 滑块类型 -->
+  <view class="dotChoice" wx:if="{{questionList[qCur].type=='dot'}}">
+    <view class="txtRoom">
+      <view class="dotTxt" wx:for="{{questionList[qCur].choice}}">{{item}}</view>
+    </view>
+    <view class="secondRoom">
+      <view class="dotRoom" wx:for="{{questionList[qCur].choice}}">
+        <view class="{{index==selected[qCur]?'dotLarge':''}} {{index<=selected[qCur]?'dotColor':'dot'}}" catchtap="btnClick" data-id="{{index}}">
+        </view>
+        <view class="{{index<selected[qCur]?'linkColor':'link'}}" wx:if="{{index<questionList[qCur].choice.length-1}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮类型 -->
+  <view class="btnChoice" wx:if="{{questionList[qCur].type=='btn'}}">
+    <view class="cu-tag bg round {{index==selected[qCur]?'btn-tab':'btn-untab'}}" wx:for="{{questionList[qCur].choice}}" catchtap="btnClick" data-id="{{index}}">{{item}}</view>
+  </view>
+  <!-- 是否类型 -->
+  <view class="ynChoice imgRoom" wx:if="{{questionList[qCur].type=='yn'}}">
+    <view class="yn {{0==selected[qCur]?'yes-tab':'yes-untab'}}" catchtap="btnClick" data-id="{{0}}">是</view>
+    <view class="yn {{1==selected[qCur]?'no-tab':'no-untab'}}" catchtap="btnClick" data-id="{{1}}">否</view>
+  </view>
+
+  <view class="pre imgRoom" catchtap="preClick">上一题</view>
+  <!-- <view class="pre imgRoom" catchtap="nextClick" wx:if="{{next}}">下一题</view> -->
+  <view class="imgRoom" wx:if="{{qCur==qNum-1&&selected[qCur]!=-1}}" data-id="{{selected[qCur]}}">
+    <view class="viewRes" catchtap="showRes">查看结果</view>
+  </view>
+</view>

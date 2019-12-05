@@ -33,7 +33,8 @@ Page({
       //   comment:"越努力越幸运,DNB!!"
       // }
     ],
-    userInfo: app.globalData.userInfo
+    userInfo: app.globalData.userInfo,
+    tips:"轻揪刷新~"
   },
 
   /**
@@ -247,6 +248,11 @@ Page({
           refreshFlag:0
         });
       } else {
+        this.setData(
+          {
+            tips:"没有更多啦~"
+          }
+        )
         console.log("没有更多评论了")
       }
     });

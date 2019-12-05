@@ -63,10 +63,10 @@
   </scroll-view>
 
   <!-- 消息输入框 -->
-  <form bindsubmit="sendClick ">
+  <form bindsubmit="sendClick">
     <view class='inputRoom' style='bottom: {{inputBottom}}'>
-      <input bindconfirm='' placeholder="和小L聊聊看吧 " adjust-position='{{false}}' value='{{inputVal}}' confirm-type='done' bindfocus='focus' bindblur='blur' name="inputMsg "></input>
-      <button size="mini" class="mybtn" form-type="submit ">发送</button>
+      <input bindconfirm='' placeholder="和小L聊聊看吧 " adjust-position='{{false}}' value='{{inputVal}}' confirm-type='done' bindfocus='focus' bindblur='blur' name="inputMsg"></input>
+      <button size="mini" class="mybtn" form-type="submit">发送</button>
     </view>
   </form>
 </view>

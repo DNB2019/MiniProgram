@@ -1,0 +1,31 @@
+<view class="resRoom">
+  <view class="res">
+    <view class="resTitle mint">测试结果</view>
+    <view class="mint" style="font-size: 15px;line-height: 50rpx; ">{{res.summary}}</view>
+    <view class="paragraph" wx:for="{{res.paragraph}}">
+      <view class="subtitle">{{item.title}}</view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </view>
+
+
+  <view class="res">
+    <view class="resTitle mint">小建议</view>
+    <view class="mint" style="font-size: 15px;line-height: 50rpx; ">{{advice.summary}}</view>
+    <view class="paragraph" wx:for="{{advice.paragraph}}">
+      <view class="subtitle">{{item.title}}</view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </view>
+  <view class="content flexCol">- 测试结果已保存至“我的测试”，可随时查看 -</view>
+  <view class="resEnd">
+    <view class="flexCol  margin-right-lg">
+      <text class="mint cuIcon-favor"></text>
+      <text class="iconTxt">收藏</text>
+    </view>
+    <view class="flexCol">
+      <text class="mint cuIcon-forward"></text>
+      <text class="iconTxt">转发</text>
+    </view>
+  </view>
+</view>

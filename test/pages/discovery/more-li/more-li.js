@@ -8,7 +8,7 @@ Page({
   data: {
     loadFlag:false,
     searchValue:"",
-    tagCur:null,
+    tagCur:0,
     articleList:[],
     tagList: ['加油夜深了新的一天要开始了', '标签1', '标签1', '标签1', '标签1', '标签1', '标签1']
   },
@@ -22,13 +22,12 @@ Page({
     })
     var that=this;
     console.log('---more-li onLoad---');
-    var searchData="抑郁症";
-    api.getSearchList({ searchData }).then(data => {
-      console.log('Success getSearchList:' + data.article_list[0].Tag)
+    var num=30;
+    api.getMoreList({ num }).then(data => {
       that.setData({
         loadFlag: true,
         articleList: data.article_list,
-        // tagList: data.article_list
+        tagCur:0
       });
       wx.hideLoading();
     }).catch(data => {

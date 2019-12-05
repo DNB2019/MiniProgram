@@ -64,7 +64,7 @@
   </view>
   <!-- </view> -->
 
-  <view bindtap="commentRefresh" class="cu-bar refresh bg-white text marginbottom">轻揪刷新~</view>
+  <view bindtap="commentRefresh" class="cu-bar refresh bg-white text marginbottom">{{tips}}</view>
   <view class="margin-xl"></view>
   <view class="margin-xl"></view>
 

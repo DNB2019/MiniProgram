@@ -29,12 +29,17 @@
 
 <view class="card test">
   <view class="titleRoom">
-    <view class="title">每日一测</view>
+    <view class="title" catchtap="test">每日一测</view>
     <view class="subtitle">每天测评一下，了解真实的自己！</view>
   </view>
   <view class="testRoom"></view>
 </view>
 
+
+<view class="under-quote">
+  <view>万事皆有裂缝，那是光照进来的地方</view>
+  <view>-LIGHT开发团队-</view>
+</view>
 
 <view class="cu-modal {{signFlag==true?'show':''}}" bindtap="hideSignIn">
   <view class="cu-dialog" style="background:url({{back_img}})" catchtap>
@@ -66,12 +71,12 @@
     </view>
     <view class="successRoom">
       <view class="success1">签到成功!</view>
-      <view class="success2">恭喜获得<text class="num">10</text>积分！</view>
+      <view class="success2">恭喜获得
+        <text class="num">10</text>积分！</view>
       <view class="imgRoom">
         <image class="iconImg2" src="{{iconList[curIcon].img_selected}}"></image>
       </view>
       <view class="success3">{{iconList[curIcon].fdback}}</view>
     </view>
-
   </view>
 </view>
