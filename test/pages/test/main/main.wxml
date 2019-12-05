@@ -25,7 +25,7 @@
 
 
 <view class = "test-container" >
-  <image class='LinkImg' mode="scaletoFill" src = "/images/test/档案入口2.png" bindtap="getRecord" />
+  <image class='LinkImg' mode="scaletoFill" src = "{{url+'/static/img/test/档案入口2.png'}}" bindtap="getRecord" />
   <view class="recommand" style="display: flex;" >
     <text class='Words'>为你推荐</text>
     <view class="scroll_box"> 
@@ -55,36 +55,25 @@
   </view>
 </view>
 
-<view class="testList" wx:for="{{testList}}" wx:for-item="item" bindtap="GetTest" id="{{item.id}}">
-    <view class="cu-card case {{isCard?'no-card':''}}">
-    <view class="cu-item shadow">
-      <view class="image">
-        <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
-        <view class="cu-tag bg-blue">史诗</view>
-        <view class="cu-bar bg-shadeBottom">
-          <text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
-        </view>
-      </view>
-      <view class="cu-list menu-avatar">
-        <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
-          <view class="content flex-sub">
-            <view class="text-grey">正义天使 凯尔</view>
-            <view class="text-gray text-sm flex justify-between">
-              十天前
-              <view class="text-gray text-sm">
-                <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
-                <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
-                <text class="cuIcon-messagefill margin-lr-xs"></text> 30
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
+<view class="fixedtest-container2" style="display:{{top>380?'':'none'}}">
+  <view class="iconList" wx:for="{{iconList}}" wx:for-item="item" bindtap="Dochoice" id="{{item.id}}">
+    <image class="icon_img" src="{{item.url}}" mode="scaletoFill"/>
+    <view class="iconwords">
+      <view class="{{item.id==iconcur?'chosenicontext':'icontext'}}">{{item.sentence}}</view>
+      <!-- <view class="icontext">{{item.sentence}}</view> -->
     </view>
   </view>
 </view>
 
+<view class="cu-card" wx:for="{{testList}}" wx:for-index="testListindex" wx:for-item="testItems">
+  <view class="cu-item bg-img shadow-blur" style="background-image:url({{item.url}}); display:{{testListindex==iconcur-1?'':'none'}}" bindtap="getTest"  wx:for="{{testItems}}" wx:key id="{{item.link}}">
+    <view class="cardTitle">
+      {{item.title}}
+    </view>
+  </view>
+</view>
+
+<view class='ENDwords'>- End -</view>
 
 </scroll-view>
 

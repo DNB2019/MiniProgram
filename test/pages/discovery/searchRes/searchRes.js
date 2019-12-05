@@ -32,14 +32,14 @@ Page({
     console.log('---article-li onLoad---');
     var searchData=options.searchData;
     var that=this;
-    console.log('用户搜索:'+searchData);
+    console.log('用户搜索',searchData);
     this.setData(
       {
         searchData:searchData
       }
     ),
     api.getSearchList({searchData}).then(data => {
-      console.log('Success getSearchList:' + data.article_list[0].Tag)
+      console.log('Success getSearchList:',data.article_list[0])
       that.setData({
         articleList: data.article_list,
         classList:data.article_list,
@@ -47,7 +47,7 @@ Page({
       });
       wx.hideLoading();
     }).catch(data => {
-      console.log('Error in get greeting: ' + data.code)
+      console.log('Error in get greeting: ',data.code)
     })
 
   },
@@ -107,7 +107,7 @@ Page({
   tabSelect:function(e)
   {
     var index=e.currentTarget.dataset.id;
-    console.log('被点击栏目:'+index);
+    console.log('被点击栏目:',index);
     this.setData({
       TabCur:index
     });
