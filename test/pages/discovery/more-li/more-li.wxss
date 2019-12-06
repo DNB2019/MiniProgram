@@ -60,7 +60,7 @@
 
 .cu-card.article>.cu-item .content .desc {
   flex-direction: row;
-  margin-bottom:15rpx;
+  margin-bottom: 15rpx;
 }
 
 /* 标题右边 */
@@ -130,4 +130,41 @@
 .text-icon {
   font-size: 40rpx;
   margin-right: 35rpx;
+}
+/* 顺序的容器 */
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  top: 100rpx;
+  z-index: 999;
+  background-color: white;
+  width: 180rpx;
+}
+
+/* 按时间 按热度 */
+
+.orderCard {
+  font-size: 30rpx;
+  color: #b2b2b2;
+  /* border-bottom: solid 2rpx #b2b2b2; */
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.1);
+  padding: 15rpx;
+  width: 180rpx;
+  display: flex;
+  justify-content: center;
+}
+
+/* 选择顺序时颜色 */
+
+.orderColor {
+  color: #6cc;
+}
+
+/* 模态框遮罩 */
+
+.cu-modal {
+  background: rgba(102, 102, 102, 0.38);
 }

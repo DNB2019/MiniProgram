@@ -50,7 +50,7 @@ Page({
     console.log('---article onLoad---');
     var that = this;
     var articleId = options.id;
-    console.log('展示的文章articleId' + articleId);
+    console.log('展示的文章articleId', articleId);
     this.setData({
       articleId: articleId
     })
@@ -58,8 +58,8 @@ Page({
     api.getArticle({
       articleId
     }).then(data => {
-      console.log('Success getArticle:' + data.article.Title);
-      console.log('Success getArticle:' + data.article.Tag);
+      console.log('Success getArticle:' , data.article.Title);
+      // console.log('Success getArticle:' , data.article.Tag);
       that.setData({
         article: data.article,
         loadFlag: true,
@@ -79,8 +79,8 @@ Page({
       cur_num
     }).then(data => {
       if ((data.Com_List).length != 0) {
-        console.log('Success getComment:' + data.Com_List[0].Content);
-        console.log('Success getComment:' + data.Com_List[0].nickName);
+        // console.log('Success getComment:' , data.Com_List);
+        // console.log('Success getComment:' , data.Com_List[0].nickName);
         that.setData({
           commentList: data.Com_List
         })
@@ -99,9 +99,8 @@ Page({
       }
     ).then(data=>{
       if (data.code == 0) {
-        console.log('获取点亮、收藏');
-        console.log('是否点亮:'+data.if_favor);
-        console.log('是否收藏:' + data.if_collect);
+        console.log('是否点亮:',data.if_favor);
+        console.log('是否收藏:' ,data.if_collect);
         that.setData(
           {
             creativeFlag: data.if_favor, //点亮是0
@@ -177,7 +176,7 @@ Page({
         complete: function(res) {},
       })
     } else if (content.length < 120) {
-      console.log("用户提交评论:" + content);
+      console.log("用户提交评论:" , content);
       this.setData({
         commentInput: "",
       });
@@ -189,7 +188,7 @@ Page({
         'openid': openid,
         'content': content
       }).then(data => {
-        console.log('Success submitComment:' + data.code);
+        console.log('Success submitComment:' , data.code);
         var newComment = {
           'nickName': this.data.userInfo.nickName,
           'Time': '刚刚',
@@ -239,10 +238,10 @@ Page({
       cur_num //当前评论数
     }).then(data => {
       if (data.Com_List.length != 0) {
-        console.log('Success getComment:' + data.Com_List[0].Content);
-        console.log('Success getComment:' + data.Com_List[0].nickName);
+        // console.log('Success getComment:' , data.Com_List);
+        // console.log('Success getComment:' + data.Com_List[0].nickName);
         var origin = (that.data.commentList).concat(data.Com_List);
-        console.log("新评论列表长度:" + origin.length);
+        console.log("新评论列表长度:" , origin.length);
         that.setData({
           commentList: origin,
           refreshFlag:0
@@ -271,7 +270,7 @@ Page({
       maskFlag: false,
       focusFlag: true
     });
-    console.log('maskFlag' + this.data.maskFlag);
+    console.log('maskFlag' , this.data.maskFlag);
   },
   // 从评论框返回界面
   back: function() {

@@ -4,13 +4,18 @@
   <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round text-icon">
       <text class="cuIcon-search "></text>
-      <input placeholder="搜索" bindconfirm="searchArticle" confirm-type="search" value="{{searchValue}}"></input>
+      <input disabled="true" placeholder="搜索" bindconfirm="searchArticle" bindtap="getSearch" confirm-type="search" value="{{searchValue}}"></input>
     </view>
     <view class="margin-right-df text-icon">
-    <text class="cuIcon-order"></text>
+      <text class="cuIcon-order" catchtap="getOrder"></text>
     </view>
   </view>
-
+  <view class="cu-modal {{orderFlag==false?'show':''}}" bindtap="hide">
+    <view class="order cu-dialog"catchtap>
+      <view class="orderCard {{orderCur==0?'orderColor':''}}" catchtap="orderClick" data-id="{{0}}">按时间</view>
+      <view class="orderCard {{orderCur==1?'orderColor':''}}" catchtap="orderClick" data-id="{{1}}">按热度</view>
+    </view>
+  </view>
   <view class="mymargin"></view>
   <!-- 导航栏 -->
   <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
@@ -39,5 +44,5 @@
       </view>
     </view>
   </view>
-<view class="margin-tb-xl padding-r-sm bg-white" style="padding-left:45%">- End -</view>
+  <view class="margin-tb-xl padding-r-sm bg-white" style="padding-left:45%;color:#b2b2b2;">- End -</view>
 </scroll-view>

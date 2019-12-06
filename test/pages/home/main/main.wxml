@@ -19,10 +19,10 @@
     <view class="signed" catchtap="signedClick" hidden="{{!signed}}">已签到</view>
   </view>
   <view class="actRoom">
-    <view class="module game"></view>
+    <image class="module game" src="{{card_img+'/game.png'}}"></image>
     <view class="right">
-      <view class="module music"></view>
-      <view class="module challenge"></view>
+      <image class="module music" src="{{card_img+'/music.png'}}"></image>
+      <image class="module challenge" src="{{card_img+'/challenge.png'}}"></image>
     </view>
   </view>
 </view>
@@ -32,7 +32,9 @@
     <view class="title" catchtap="test">每日一测</view>
     <view class="subtitle">每天测评一下，了解真实的自己！</view>
   </view>
-  <view class="testRoom"></view>
+  <view class="testRoom">
+  <image class="testImg" src="{{card_img+'/test.png'}}"></image>
+  </view>
 </view>
 
 

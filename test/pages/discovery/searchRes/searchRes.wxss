@@ -15,7 +15,7 @@ page{
   color: #353535;
   height: 90rpx;
   overflow: hidden;
-  margin-right: 20rpx;
+  /* margin-right: 20rpx; */
 }
 
 /* 调整卡片的上边距 */

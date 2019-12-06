@@ -216,6 +216,6 @@ input {
   overflow: hidden;
   padding-top: 28rpx;
   padding-left:28rpx;
-  padding-bottom: 40rpx;
+  padding-bottom: 45rpx;
 }
 

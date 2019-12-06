@@ -12,6 +12,7 @@ Page({
     userInfo: app.globalData.userInfo,
     greeting: "欢迎",
     back_img: app.globalData.baseUrl + "/static/img/background/signin.png",
+    card_img: app.globalData.baseUrl + "/static/img/home",
     motto: "万事皆有裂缝，那是光照进来的地方",
     signFlag: false, //是否展示签到弹窗
     successFlag: false, //是否展示成功弹窗
