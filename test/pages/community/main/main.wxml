@@ -4,7 +4,7 @@
 </cu-custom>
 <view class="container">
   <view class="search-bar-container">
-    <view class = "search-bar">搜索</view>
+    <view class = "search-bar" bindtap = "getSearch">搜索</view>
   </view>
   <view class = "modules" >
     <view class="modules-title">交流圈</view>

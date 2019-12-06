@@ -1,3 +1,6 @@
+page{
+    background-color: #f3fbfb;
+}
 .container{
     background-color: #f3fbfb;
     width:100%;
@@ -135,4 +138,5 @@
     margin-top:28rpx;
     font-size: 28rpx;
     color:#b2b2b2;
+    text-align: center;
 }

@@ -9,7 +9,8 @@ Page({
    */
   data: {
     userInfo:app.globalData.userInfo,
-    avatar_url:"../../../images/me_about.png",
+    inputBottom: 0,
+    avatar_url:"../../../images/me_setting.png",
     username:"userone",
     date:"2019-22-22",
     active_content:"",
@@ -56,7 +57,7 @@ Page({
     })
     this.setData({
       comments:[{
-        avatar_url:"../../../images/me_about.png",
+        avatar_url:"../../../images/me_setting.png",
         username:"宇宙无敌美少女",
         date:"2019-11-12",
         content:"不急，慢慢来，先把当下的事做好",
@@ -76,7 +77,7 @@ Page({
           destination:"",
           reply_content:"谢谢你，你也是这个专业的吗？一起努力吧"
         }]},{
-          avatar_url:"../../../images/me_about.png",
+          avatar_url:"../../../images/me_setting.png",
           username:"user1",
           date:"2019-11-12",
           content:"加油，你一定能找到自己擅长的方向",
@@ -108,6 +109,19 @@ Page({
   finComment: function () {
     this.setData({
       isReplying: 0,
+    })
+  },
+  focus: function(e) {
+    this.setData({
+      inputBottom:"10rpx"
+    });
+
+  },
+
+  //失去聚焦(软键盘消失)
+  blur: function(e) {
+    this.setData({
+      inputBottom:"0rpx"
     })
   },
   /**

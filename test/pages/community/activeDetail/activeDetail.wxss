@@ -157,6 +157,7 @@
     height:100rpx;
     background-color: white;
     display: inline-block;
+    padding-top:10rpx;
 }
 .enter-bar{
     position: relative;
@@ -257,4 +258,7 @@
 .wx-switch-input::after{
     width: 40rpx !important;
     height: 38rpx !important;
+}
+input{
+    cursor-spacing:10rpx;
 }

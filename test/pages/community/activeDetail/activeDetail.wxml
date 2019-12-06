@@ -67,24 +67,24 @@
     </view>
     <view wx:if="{{isReplying==0}}" class="blank"></view>
     <view wx:if="{{isReplying!=0}}" class="blank2"></view>
-    <view wx:if="{{isReplying==0}}" class="post-bar">
-        <input class="enter-bar" placeholder="给ta带去一点光亮吧" bindtap="doComment"></input>
+    <view wx:if="{{isReplying==0}}" class="post-bar" >
+        <input class="enter-bar" placeholder="给ta带去一点光亮吧" bindtap="doComment" bindfocus='focus' bindblur='blur'></input>
         <view class = "bar-icon">
             <text class="cuIcon-creative"></text>
             <text class="cuIcon-favor"></text>
             <text class="cuIcon-forward"></text>
         </view>
     </view>
-    <view wx:if="{{isReplying==1}}" class="doReply-box">
-        <input class="doReply-content" placeholder="回复{{replyDes}}"></input>
+    <view wx:if="{{isReplying==1}}" class="doReply-box" style='bottom: {{inputBottom}}'>
+        <input class="doReply-content" placeholder="回复{{replyDes}}" bindfocus='focus' bindblur='blur'></input>
         <view class="side-items">
             <switch class="no-name"></switch>
             <text class="niming">匿名</text>
             <input type="submit" value="发送" class="doReply-submit" bindtap="finReply"></input>
         </view>
     </view>
-    <view wx:if="{{isReplying==2}}" class="doReply-box">
-        <input class="doReply-content" placeholder="你的言语值得被倾听"></input>
+    <view wx:if="{{isReplying==2}}" class="doReply-box" style='bottom: {{inputBottom}}'>
+        <input class="doReply-content" placeholder="你的言语值得被倾听" bindfocus='focus' bindblur='blur'></input>
         <view class="side-items">
             <switch class="no-name"></switch>
             <text class="niming">匿名</text>

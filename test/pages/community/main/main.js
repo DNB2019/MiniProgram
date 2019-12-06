@@ -71,6 +71,12 @@ Page({
       url: '../postActive/postActive'
     })
   },
+  getSearch:function(){
+    console.log("getting search");
+    wx.navigateTo({
+      url:'../search/search'
+    })
+  },
   onReady: function () {
 
   },

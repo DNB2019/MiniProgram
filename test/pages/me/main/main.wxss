@@ -1,4 +1,7 @@
 /* pages/me/me.wxss */
+page{
+  background-color: #f3fbfb;
+}
 .container{
   background-color:#f3fbfb;
 }
@@ -130,7 +133,7 @@
   width:480rpx;
   height:50rpx;
   margin-left: 100rpx;
-  margin-top:20rpx;
+  margin-top:10rpx;
   text-align: center;
   line-height: 50rpx;
 }
