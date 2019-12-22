@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/community/postActive/postActive",
     "pages/test/testDetail/testDetail",
     "pages/home/chatRobot/chatRobot",
     "pages/test/main/main",
@@ -21,8 +22,8 @@
     "pages/community/main/main",
     "pages/community/subpage/subpage",
     "pages/community/search/search",
-    "pages/community/postActive/postActive",
-    "pages/community/activeDetail/activeDetail"
+    "pages/community/activeDetail/activeDetail",
+    "pages/test/search_result/search_result"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e1fbfb",

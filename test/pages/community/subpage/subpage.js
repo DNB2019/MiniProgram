@@ -8,9 +8,8 @@ Page({
     location: 0,
     hottest: [],
     newest: [],
-    head_image_url: "../../../images/article_bottom.png"
+    head_image_url: "../../../images/harbour.png"
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

@@ -56,6 +56,24 @@ Page({
       location:0
     })
   },
+  getToTest:function()
+  {
+    console.log("switch to test main");
+    wx.switchTab({
+      url: '/pages/test/main/main',
+    })
+  },
+  getToDiscovery:function()
+  {
+    wx.switchTab({
+      url: '/pages/discovery/main/main',
+    })
+  },
+  getToCommunity: function () {
+    wx.switchTab({
+      url: '/pages/community/main/main',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

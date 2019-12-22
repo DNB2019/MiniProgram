@@ -2,7 +2,7 @@
 const app = getApp();
 var util = require('../../../utils/util.js')
 var api = require('../../../utils/api/discovery_api.js')
-var baseUrl = app.globalData.baseUrl
+var baseUrl = app.globalData.baseUrl+""
 Page({
 
   /**
@@ -20,27 +20,27 @@ Page({
     }, {
       id: 1,
         type: 'image',
-        url: baseUrl + '/static/img/test/test.png'
+        url: baseUrl + '/static/img/test/heart/2.png'
         // url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
     }, {
       id: 2,
       type: 'image',
-        url: baseUrl + '/static/img/test/test.png'
+        url: baseUrl + '/static/img/test/heart/3.png'
       // url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
     }, {
       id: 3,
       type: 'image',
-        url: baseUrl + '/static/img/test/test.png'
+        url: baseUrl + '/static/img/test/heart/4.png'
     }, {
       id: 4,
       type: 'image',
-        url: baseUrl + '/static/img/test/test.png'
+        url: baseUrl + '/static/img/test/heart/5.png'
       // url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
     }],
-    Item_List:[{url:baseUrl+'/static/img/test/recommand.png',sentence:'test'},{url:baseUrl+'/static/img/test/test.png',sentence:'test1'},{url:baseUrl+'/static/img/test/recommand.png',sentence:'test2'},{url:baseUrl+'/static/img/test/test.png',sentence:'test3'},{url:baseUrl+'/static/img/test/recommand.png',sentence:'test4'},{url:baseUrl+'/static/img/test/test.png',sentence:'test5'},{url:baseUrl+'/static/img/test/recommand.png',sentence:'test'},{url:baseUrl+'/static/img/test/test.png',sentence:'test1'}],
+    Item_List:[{url:baseUrl+'/static/img/test/recommand.png',sentence:'test'},{url:baseUrl + '/static/img/test/heart/8.png',sentence:'test1'},{url:baseUrl+'/static/img/test/recommand.png',sentence:'test2'},{url:baseUrl + '/static/img/test/heart/7.png',sentence:'test3'},{url:baseUrl+'/static/img/test/recommand.png',sentence:'test4'},{url:baseUrl + '/static/img/test/heart/6.png',sentence:'test5'},{url:baseUrl+'/static/img/test/recommand.png',sentence:'test'},{url:baseUrl + '/static/img/test/test.png',sentence:'test1'}],
     iconList:[{url:'/images/test/icon/1.jpg',sentence:'健康',id:1},{url:'/images/test/icon/2.jpg',sentence:'情感',id:2},{url:'/images/test/icon/3.jpg',sentence:'人际',id:3},{url:'/images/test/icon/4.jpg',sentence:'能力',id:4},{url:'/images/test/icon/5.jpg',sentence:'性格',id:5},{url:'/images/test/icon/6.jpg',sentence:'发展',id:6}],
     iconcur:1,
-    testList:[[{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试",link:'../search/search'},{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl+'/static/img/test/test.png',title:"抑郁症程度测试"}],[{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"}],[{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl+'/static/img/test/test.png',title:"抑郁症程度测试"}],[{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"}],[{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl+'/static/img/test/test.png',title:"抑郁症程度测试"}],[{url:baseUrl+'/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl+'/static/img/test/test.png',title:"伯恩斯抑郁状况"}]],
+    testList:[[{url:baseUrl + '/static/img/test/heart/9.png',title:"国际标准抑郁测试",link:'../testDetail/testDetail'},{url:baseUrl + '/static/img/test/heart/10.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/heart/11.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/heart/12.png',title:"伯恩斯抑郁状况"},{url:baseUrl + '/static/img/test/heart/13.png',title:"抑郁症程度测试"}],[{url:baseUrl + '/static/img/test/heart/14.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"}],[{url:baseUrl + '/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl + '/static/img/test/test.png',title:"抑郁症程度测试"}],[{url:baseUrl + '/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"}],[{url:baseUrl + '/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl + '/static/img/test/test.png',title:"抑郁症程度测试"}],[{url:baseUrl + '/static/img/test/test.png',title:"国际标准抑郁测试"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"},{url:baseUrl + '/static/img/test/test.png',title:"伯恩斯抑郁状况"}]],
   },
   /**
    * 生命周期函数--监听页面加载

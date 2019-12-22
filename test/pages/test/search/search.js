@@ -96,7 +96,7 @@ Page({
       })
       //跳转
       wx.navigateTo({
-        url: '../article-li/article-li?searchData=' + searchInput
+        url: '../search_result/search_result'
       })
     } else {
       console.log('空白的！')
