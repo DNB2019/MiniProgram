@@ -57,9 +57,19 @@ Page({
     })
   },
   switchChange: function () {
-    this.setData({
-      alter_on: !this.alter_on
-    })
+    console.log("change switch")
+    if(this.alter_on == 0){
+      this.setData({
+        alter_on:1
+      })
+    }
+    else{
+      this.setData({
+        alter_on:0
+      })
+    }
+    
+
   },
   chosenTag:function(event){
   },
