@@ -17,7 +17,7 @@
             <view wx:if="{{psychoTest.length == 0}}" class="empty">
                 <image class="empty-image" src="../../../images/empty_img.png"></image>
                 <view class="empty-info">还没有收藏的心理测评哦~</view>
-                <view class="empty-link">去测评</view>
+                <view class="empty-link" catchtap="getToTest">去测评</view>
             </view>
         </view>
         <view class="under-quote">-End-</view>
@@ -38,7 +38,7 @@
             <view wx:if="{{knowledge.length == 0}}" class="empty">
                 <image class="empty-image" src="../../../images/empty_img.png"></image>
                 <view class="empty-info">还没有收藏的干货哦~</view>
-                <view class="empty-link">去干货知识区逛一逛</view>
+                <view class="empty-link" catchtap="getToDiscovery">去干货知识区逛一逛</view>
             </view>
         </view>
         <view class="under-quote">-End-</view>
@@ -63,7 +63,7 @@
             <view wx:if="{{discuss.length == 0}}" class="empty">
                 <image class="empty-image" src="../../../images/empty_img.png"></image>
                 <view class="empty-info">还没有收藏的讨论噢~</view>
-                <view class="empty-link">去社区逛一逛</view>
+                <view class="empty-link" catchtap="getToCommunity">去社区逛一逛</view>
             </view>
         </view>
         <view class="under-quote">-End-</view>

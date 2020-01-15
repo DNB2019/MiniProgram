@@ -1,0 +1,98 @@
+/* pages/discovery/search_result/search_result.wxss */
+/* 背景 */
+
+.scrollPage{
+  z-index:-1;
+}
+.mybg
+{
+  width:100%;
+  height:100%;
+  z-index:-1;
+  /* color: #66cccc08; */
+  background-color: #f3fbfb;
+  background-size:100% 100%;
+  z-index: -1;
+}
+
+
+.cardTitle{
+  margin-top: 20rpx;
+  height: 240rpx;
+  color: #fff;
+  padding: 90rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 300;
+  /* transform: skew(-10deg, 0deg); */
+  position: relative;
+  text-shadow: 0px 0px 6rpx rgba(0,0,0,0.3)
+}
+
+.ENDwords{
+  margin-bottom: 32rpx;
+  color: #b2b2b2;
+  font-size: 28rpx;
+  text-align: center;
+}
+.margin{
+  margin: 110rpx;
+}
+
+
+.recommand{
+  margin-left: 24rpx;
+  margin-right: 28rpx;
+  height: 376rpx;
+  /* width: 414rpx; */
+  background: rgb(255,255,255);
+  flex-direction: column;
+  border-radius: 32rpx;
+  flex: 1;
+  display: inline-block;
+  box-shadow: 1rpx 1rpx 4rpx rgba(215,215,215,0.8);
+}
+
+.Words {
+  margin-top: 24rpx;
+  font-size: 36rpx;
+  color: #353535;
+  margin-left: 24rpx;
+  font-weight: bold;
+}
+
+
+.scroll_box{
+  margin-left: 24rpx;
+  margin-right: 28rpx;
+  margin-top: 32rpx;
+  /* width: 93%; */
+  height: 376rpx;
+  overflow : hidden;
+  white-space: nowrap;
+  }
+  .item_list{
+    width: 240rpx;
+    height: 240rpx;
+    margin-right: 23rpx;
+    display: inline-block;
+    border-radius: 32rpx;
+    box-shadow: 1rpx 1rpx 4rpx rgba(215,215,215,0.8); 
+  }
+  .item_img{
+    width: 240rpx;
+    height: 150rpx;
+    border-top-left-radius: 32rpx;
+    border-top-right-radius: 32rpx;
+  }
+
+  .sentence{
+    height: 90rpx;
+    width: 240rpx;
+  }
+
+  .text-grey{
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+  }

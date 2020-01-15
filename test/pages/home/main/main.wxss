@@ -35,7 +35,7 @@ page {
   background-color: white;
   height: 160rpx;
   margin: 20rpx 30rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 30rpx;
   border-radius: 120px;
   box-shadow: 0rpx 0rpx 10rpx rgba(102, 204, 204, 0.2);
   display: flex;
@@ -134,7 +134,7 @@ page {
 }
 
 .test {
-  height: 300rpx;
+  height: 363rpx;
 }
 
 .titleRoom {
@@ -142,6 +142,7 @@ page {
   flex-direction: column;
   margin: 40rpx;
   margin-bottom: 0rpx;
+  margin-top:35rpx;
 }
 
 .titleRoom_act {
@@ -218,6 +219,19 @@ page {
 .challenge {
   height: 154rpx;
   margin-top: 40rpx;
+}
+
+.testRoom {
+  padding: 17rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.testImg {
+  height: 205rpx;
+  width: 600rpx;
+  border-radius: 16px;
+  background-color:#c5f3d8;
 }
 
 /* 签到 */
@@ -401,5 +415,5 @@ page {
   flex-direction: column;
   align-items: center;
   color: #b2b2b2;
-  margin-top: 30rpx;
+  margin-top: 25rpx;
 }

@@ -5,7 +5,10 @@ page {
 }
 
 /* 测试图片容器 */
-
+.welcomeRoom
+{
+  margin-bottom:200rpx;
+}
 .imgRoom {
   display: flex;
   justify-content: center;
@@ -70,7 +73,7 @@ page {
   justify-content: center;
   align-items: center;
   padding-left: 50rpx;
-  margin-top:150rpx;
+  margin-top:80rpx;
 }
 
 .rightRoom {

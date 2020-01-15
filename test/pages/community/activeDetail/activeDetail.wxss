@@ -144,6 +144,7 @@
     left:600rpx;
     padding-top:25rpx;
     font-size:30rpx;
+    color:#66cccc;
 }
 .comment-img{
     width:50rpx;
@@ -178,6 +179,7 @@
     display: inline-block;
     font-size:60rpx;
     margin-left:50rpx;
+    color: #6cc;
 }
 .blank{
     width:100%;

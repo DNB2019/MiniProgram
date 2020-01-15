@@ -1,4 +1,7 @@
 /* pages/test/test.wxss */
+page {
+  background-color: #f3fbfb;
+}
 .container{
   background-color:#f3fbfb;
 }

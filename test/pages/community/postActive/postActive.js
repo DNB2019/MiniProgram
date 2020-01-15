@@ -1,18 +1,20 @@
 // pages/community/postActive.js
 const app = getApp();
 var util = require('../../../utils/util.js')
-var api = require('../../../utils/api/home_api.js')
+var api = require('../../../utils/api/community_api.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    activeValue:"",
     userInfo: app.globalData.userInfo,
     tag_dic:{1:"倾诉港湾",2:"学业压力",3:"人际交往",4:"正能量供应站",5:"抑郁焦虑",6:"恋爱情感",7:"发展规划",8:"家庭关系"},
     alter_on: 0,
     chosen_tag:-1,
-    tag_list: []
+    tag_list: [],
+    tempFilePaths:[]
   },
 
   /**
@@ -57,21 +59,76 @@ Page({
     })
   },
   switchChange: function () {
-    console.log("change switch")
-    if(this.alter_on == 0){
-      this.setData({
-        alter_on:1
-      })
-    }
-    else{
-      this.setData({
-        alter_on:0
-      })
-    }
-    
-
+    var on = this.data.alter_on;
+    // console.log("on",on);
+    this.setData({
+      alter_on: !on
+    })
   },
   chosenTag:function(event){
+  },
+  post:function(e)
+  {
+    var that=this;
+    var Content=e.detail.value.active;
+    console.log("content",Content);
+    var user_id=app.globalData.openid;
+    var Area=0;
+    var Tag="倾诉港湾";
+    var Noname=!this.data.alter_on;//0是匿名
+    var Images=[];
+    console.log("images",Images);
+    api.postActive({
+      user_id,
+      Noname,
+      Area,
+      Images,
+      Content,
+      Tag
+    }).then(data => {
+      if(data.code==0){
+        wx.showToast({
+          title: '发送成功',
+        })
+        that.setData(
+          {
+            activeValue:""
+          }
+        )
+      } 
+    }).catch(data => {
+      console.log('Error in get greeting: ' + data.code)
+    })
+  },
+  chooseImage: function () {
+    var _this = this;
+    wx.chooseImage({
+      count: 9, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        console.log("tempFilePaths", tempFilePaths);
+        _this.setData({
+          tempFilePaths: res.tempFilePaths
+        });
+        var tempFilePaths = res.tempFilePaths
+        console.log("tempFilePaths", tempFilePaths );
+        // wx.uploadFile({
+        //   url: 'http://222.200.181.65:5000/static/img/user/'+app.globalData.openid+'file', //仅为示例，非真实的接口地址
+        //   filePath: tempFilePaths[0],
+        //   name: 'file',
+        //   formData: {
+        //     'user': 'test'
+        //   },
+        //   success: function (res) {
+        //     console.log("res",res.data)
+        //     var data = res.data
+        //     //do something
+        //   }
+        // });
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

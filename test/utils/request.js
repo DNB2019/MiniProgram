@@ -8,14 +8,15 @@ const request = options => {
     if (data && method !== 'get') {
       options.data = JSON.stringify(data) //转成JSON字符串
     }
-  console.log('method:'+options.method)
-  console.log('url:'+options.url)
-  console.log('data:'+options.data)
+  // console.log('method:',options.method)
+  console.log('url:',options.url)
+  console.log('send data:',options.data)
     wx.request({
       header: { 'Content-Type': 'application/json' },
       ...options,//相当于将options拆开
       success: function (res) {
-        console.log('请求code:'+res.data.code)
+        // console.log('请求code:',res.data.code)
+        console.log('receive data:', res.data)
         resolve(res.data) //将res.data return
       },
       fail: function (res) {

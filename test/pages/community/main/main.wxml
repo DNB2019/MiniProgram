@@ -1,61 +1,72 @@
 <!--pages/community/community.wxml-->
 <cu-custom bgColor="bg-gradual-pink">
-	<view slot="backText"></view>
+  <view slot="backText"></view>
 </cu-custom>
-<view class="container">
-  <view class="search-bar-container">
-    <view class = "search-bar" bindtap = "getSearch">搜索</view>
+
+<!-- <view class="container"> -->
+<scroll-view scroll-y bindscrolltoupper="refreshCommunity" enable-back-to-top="true" style="height:1000px;white-space:nowrap;">
+  <!-- <view class="search-bar-container">
+    <view class="search-bar" bindtap="getSearch">搜索</view>
+  </view> -->
+  <!-- 搜索框 -->
+  <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input disabled="true" bindtap="getSearch" placeholder="搜索"></input>
+    </view>
   </view>
-  <view class = "modules" >
+
+  <view class="modules mymargin">
     <view class="modules-title">交流圈</view>
     <scroll-view class="scroll-bar" scroll-x="true">
       <view class="modules-item" id="one">
-        <image bindtap="getHarbour" class="modules-img" src="../../../images/home_img.png"></image>
+        <image bindtap="getHarbour" class="modules-img" src="{{url+'harbour.png'}}"></image>
         <view class="modules-text">倾诉港湾</view>
       </view>
       <view class="modules-item" id="two">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <image class="modules-img" src="{{url+'energy.png'}}"></image>
         <view class="modules-text">正能量供应站</view>
       </view>
       <view class="modules-item" id="three">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <image class="modules-img" src="{{url+'study.png'}}"></image>
         <view class="modules-text">学业压力</view>
       </view>
       <view class="modules-item" id="four">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <image class="modules-img" src="{{url+'love.png'}}"></image>
         <view class="modules-text">恋爱情感</view>
       </view>
       <view class="modules-item" id="five">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <image class="modules-img" src="{{url+'social.png'}}"></image>
         <view class="modules-text">人际交往</view>
       </view>
       <view class="modules-item" id="six">
-        <image class="modules-img" src="../../../images/home_img.png"></image>
+        <image class="modules-img" src="{{url+'plan.png'}}"></image>
         <view class="modules-text">发展规划</view>
       </view>
     </scroll-view>
   </view>
-  <view class="cards-content">
+
+  <view class="cards-content mymargin">
     <view class="card-box" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class="card-info">
         <image class="avartar" src="{{item.avatar_url}}"></image>
         <view class="username">{{item.username}}</view>
         <view class="date">{{item.date}}</view>
       </view>
-      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url !== ''}}">
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url.length !== 0}}">
         <view class="content-img-container">
-          <image class="content-img" src="{{item.image_url}}"></image>
+          <image class="content-img" src="{{item.image_url[0]}}"></image>
         </view>
         <view class="content-word">{{item.content}}</view>
       </view>
       <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:else>
         <view class="content-word2">{{item.content}}</view>
       </view>
-      <view class = "etc">
-          <text class="cuIcon-creative"></text>
-          <text class="numbers">{{item.light_number}}</text>
-          <text class="cuIcon-attention"></text>
-          <text class="numbers">{{item.watch_number}}</text>
+      <view class="etc">
+        <text class="cuIcon-creative"></text>
+        <text class="numbers">{{item.light_number}}</text>
+        <text class="cuIcon-attention"></text>
+        <text class="numbers">{{item.watch_number}}</text>
       </view>
     </view>
   </view>
@@ -63,4 +74,5 @@
   <view class="post-article" bindtap="getPost">
     <image class="post-pen" src="../../../images/pen.png"></image>
   </view>
-</view>
+</scroll-view>
+<!-- </view> -->

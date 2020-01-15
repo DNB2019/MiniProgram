@@ -21,9 +21,9 @@
         <view class="username">{{item.username}}</view>
         <view class="date">{{item.date}}</view>
       </view>
-      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url !== ''}}">
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url.length != 0}}">
         <view class="content-img-container">
-          <image class="content-img" src="{{item.image_url}}"></image>
+          <image class="content-img" src="{{item.image_url[0]}}"></image>
         </view>
         <view class="content-word">{{item.content}}</view>
       </view>
@@ -43,7 +43,7 @@
         <view class="username">{{item.username}}</view>
         <view class="date">{{item.date}}</view>
       </view>
-      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url !== ''}}">
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url.length != 0}}">
         <view class="content-img-container">
           <image class="content-img" src="{{item.image_url}}"></image>
         </view>

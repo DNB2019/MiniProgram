@@ -38,15 +38,16 @@ Page({
     api.recommendClass({
       num
     }).then(data => {
-      console.log('Success request:' + data.article[0].Title);
+      console.log('Success request:', data);
       that.setData({
         classList: data.article,
-         loadFlag: true
+        loadFlag: true
       });
       wx.hideLoading();
-    }).catch(data => {
-      console.log('Error in getClass: ' + data.code)
     })
+    // .catch(data => {
+    //   console.log('Error in getClass: ' + data.code)
+    // })
   },
 
   /**

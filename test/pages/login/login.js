@@ -1,5 +1,6 @@
 var app = getApp();
 const baseUrl = app.globalData.baseUrl;
+var openid;
 Page({
   /**
    * 页面的初始数据
@@ -28,13 +29,13 @@ Page({
               'content-type': 'application/json'
             },
             success: (res) => {
-              console.log('wx.login get openid：')
-              console.log(res.data)
+              console.log('wx.login get openid：',res.data)
               app.globalData.openid = res.data.openid;
+              openid=res.data.openid;
             }
           })
           flag = true;
-          console.log('flag' + flag);
+          console.log('获取openid flag', flag);
           if (flag) {
             resolve();
           } else {
@@ -47,15 +48,40 @@ Page({
       // 获取用户设置
       wx.getSetting({
         success: res => {
-          console.log('用户是否授权？:' + res.authSetting['scope.userInfo'])
+          console.log('用户是否授权？:' ,res.authSetting['scope.userInfo'])
           if (res.authSetting['scope.userInfo']) {
-            console.log('用户已授权')
-            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
             wx.getUserInfo({
               success: res => {
                 // 可以将 res 发送给后台解码出 unionId
                 app.globalData.userInfo = res.userInfo
-                console.log('login的函数成功获取用户信息:' + res.userInfo);
+                console.log('已授权，成功获取用户信息:' , res.userInfo);
+                //插入登录的用户的相关信息到数据库
+                wx.request({
+                  url: baseUrl + '/UsrInfo', //开发者服务器接口
+                  data: { //请求的参数(要插入到数据库的数据)
+                    openid: openid,
+                    nickName: res.userInfo.nickName,
+                    avatarUrl: res.userInfo.avatarUrl,
+                    province: res.userInfo.province,
+                    city: res.userInfo.city,
+                    gender: res.userInfo.gender
+                  },
+                  method: "POST",
+                  header: {
+                    'content-type': 'application/json'
+                  },
+                  //接口调用成功的回调函数
+                  success: function (res) {
+                    //从数据库获取用户信息
+                    console.log('插入用户信息' , res.data.code)
+                    if (res.data.code == 1) {
+                      console.log("插入小程序登录用户信息失败！");
+                    } else {
+                      console.log("插入小程序登录用户信息成功！");
+                    }
+                  }
+                });
                 // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                 // 所以此处加入 callback 以防止这种情况
                 // if (this.userInfoReadyCallback) {

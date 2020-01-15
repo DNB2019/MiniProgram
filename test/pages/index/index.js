@@ -79,7 +79,7 @@ Page({
         //接口调用成功的回调函数
         success: function(res) {
           //从数据库获取用户信息
-          console.log('success ' + res.data.code)
+          console.log('code ' + res.data.code)
           if (res.data.code == 1) {
             console.log("插入小程序登录用户信息失败！");
           } else {

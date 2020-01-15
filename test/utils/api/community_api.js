@@ -16,3 +16,11 @@ export function getCommunity(data) {
       data
     })
 }
+export function postActive(data) {
+  console.log("get data", data);
+  return request({
+    url: `${baseUrl}/Send_Community`,
+    method: 'POST',
+    data
+  })
+}

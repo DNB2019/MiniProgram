@@ -2,10 +2,18 @@
 <cu-custom bgColor="bg-gradual-pink">
 	<view slot="backText"></view>
 </cu-custom>
+<form bindsubmit="post">
 <view class="container">
     <view class="post-container">
-        <textarea class="post-input" placeholder="在这里，你可以倾诉心声，也可以寻求帮助。当然，还可以分享开心的事哦！大家一直在你身边。"></textarea>
+        <textarea class="post-input" placeholder="在这里，你可以倾诉心声，也可以寻求帮助。当然，还可以分享开心的事哦！大家一直在你身边。" name="active" value="{{activeValue}}"></textarea>
     </view>
+    <!-- <text class="cuIcon-cameraadd Image-chooser" bindtap="chooseImage">
+    </text>
+    <view class="Image-container">
+      <view class="image-looper" wx:for="{{tempFilePaths}}">
+        <image class="Image-chosen" src="{{item}}"></image>
+      </view>
+    </view> -->
     <view class="tag-container">
         <view class="tag-title">选择标签</view>
         <view class="tag-holder">
@@ -18,10 +26,11 @@
         <view class="alter-title">匿名</view>
         <view class="show-alter" wx:if="{{alter_on==1}}">已开启</view>
         <view class="show-alter" wx:if="{{alter_on==0}}">已关闭</view>
-        <switch class="alter-switch" bindChange="switchChange"></switch>
+        <switch class="alter-switch" bindchange="switchChange"></switch>
     </view>
     <view class="button-container">
         <view class="button-cancel">取消</view>
-        <view class="button-post">发布</view>
+        <button class="button-post" style="width: 560rpx;"form-type="submit">发布</button>
     </view>
 </view>
+</form>
