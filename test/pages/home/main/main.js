@@ -142,6 +142,12 @@ Page({
   onShareAppMessage: function() {
 
   },
+  toMusic: function() {
+    console.log('music')
+    wx.navigateTo({
+      url: '/pages/home/music/music',
+    })
+  },
   //跳到机器人聊天界面
   toRobot: function() {
     console.log('聊天')

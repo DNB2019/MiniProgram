@@ -1,0 +1,135 @@
+@font-face{
+    font-family: 'FZXiaoBiaoSong';
+    src:url('http://d.xiazaiziti.com/en_fonts/fonts/f/FZXiaoBiaoSong-B05.ttf');
+}
+page{
+    background-color: #E4FAFD;
+    font-family: FZXiaoBiaoSong;
+    
+}
+
+.container{
+    margin:0rpx 54rpx;
+    background-color: #E4FAFD;
+}
+.music_box{
+    display: inline-box;
+    height: 290rpx;
+    margin: 0rpx 27rpx;
+    text-align: center;
+    
+}
+.music_border{
+    width:290rpx;
+    height: 290rpx;
+    display: inline-block;
+}
+.music_img{
+    width:290rpx;
+    height:290rpx;
+}
+image{
+    display: inline-box;
+}
+text{
+    font-family: FZXiaoBiaoSong;
+    position: relative;
+    top:-30rpx;
+    font-size: 28rpx;
+    color: #9BB1D2;
+}
+.footer{
+    height: 232rpx;
+}
+.random,.random image{
+    display: inline-block;
+    height: 192rpx;
+    width:192rpx;
+}
+.play,.play image{
+    display: inline-block;
+    height: 232rpx;
+    width: 232rpx;
+}
+.clock,.clock image,.clock_count{
+    display: inline-block;
+    height: 192rpx;
+    width: 192rpx;
+}
+
+.clock_count{
+    display: inline-block;
+    width:100rpx;
+    height:100rpx;
+    border-radius: 50%;
+    background:rgba(230,239,253,1);
+    box-shadow:10rpx 10rpx 20rpx rgba(212,222,238,1);
+    opacity:1;
+    text-align: center;
+    line-height: 100rpx;
+    position: relative;
+    top:-85rpx;
+    left:40rpx;
+}
+
+.set_clock{
+    background-color: #FFFFFF;  
+    height:520rpx;
+    width:750rpx;
+    position: fixed;
+    top: 700rpx;
+}
+.close_sign{
+    font-size: 36rpx;
+    display: inline-block;
+    font-size: 72rpx;
+    height:196rpx;
+    width:150rpx;
+    line-height: 196rpx;
+    text-align: center;
+    color: #666666;
+}
+.close_text{
+    height: 196rpx;
+    width:450rpx;
+    font-size: 36rpx;
+    display: inline-block;
+    line-height: 196rpx;
+    text-align: center;
+}
+.time_bar{
+    height:84rpx;
+    width:680rpx;
+    margin:auto;
+    font-size: 36rpx;
+    text-align: center;
+}
+.time{
+    display: inline-block;
+    width:76rpx;
+    height: 60rpx;
+    margin: 0rpx 25rpx;
+    top:0rpx;
+    border-width: 0rpx 0rpx 5rpx 0rpx;
+    border-style: solid;
+    border-color: #FFFFFF;
+}
+.time_chosen{
+    display: inline-block;
+    width:76rpx;
+    height: 60rpx;
+    margin: 0rpx 25rpx;
+    top:0rpx;
+    border-width: 0rpx 0rpx 5rpx 0rpx;
+    border-style: solid;
+    border-color: #AADEE3;
+}
+.set_time{
+    width:670rpx;
+    height: 80rpx;
+    background:rgba(170,222,227,1);
+    border-radius: 20rpx;
+    line-height: 80rpx;
+    margin: 50rpx auto;
+    text-align: center;
+}

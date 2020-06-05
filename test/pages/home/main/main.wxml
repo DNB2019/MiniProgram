@@ -21,7 +21,7 @@
   <view class="actRoom">
     <image class="module game" src="{{card_img+'/game.png'}}"></image>
     <view class="right">
-      <image class="module music" src="{{card_img+'/music.png'}}"></image>
+      <image catchtap="toMusic" class="module music" src="{{card_img+'/music.png'}}"></image>
       <image class="module challenge" src="{{card_img+'/challenge.png'}}"></image>
     </view>
   </view>

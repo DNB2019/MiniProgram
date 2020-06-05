@@ -4,6 +4,7 @@
     "pages/community/postActive/postActive",
     "pages/test/testDetail/testDetail",
     "pages/home/chatRobot/chatRobot",
+    "pages/home/music/music",
     "pages/test/main/main",
     "pages/test/search/search",
     "pages/discovery/main/main",
