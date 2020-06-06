@@ -1,0 +1,41 @@
+<view class="container">
+    <view class="psycho-graph">
+        <image src="{{graph}}"></image>
+    </view>
+    <view class="sub-part">
+        <view class="sub-part-left">
+            <view class="sub-title" bindtap="getPotential">个人潜能</view>
+            <text>探索系数</text>
+            <text>{{p1_progress}}</text>
+            <view class="quote">了解自我，才能成就自我</view>
+        </view>
+        <view class="person">
+            <image src="{{p1}}"></image>
+        </view>
+    </view>
+    <view class="sub-part">
+        <view class="sub-part-left">
+            <view class="sub-title" bindtap="getMood">情绪健康</view>
+            <text>探索系数</text>
+            <text>{{p2_progress}}</text>
+            <view class="quote">保持适度情绪，找到平衡</view>
+        </view>
+        <view class="person">
+            <image src="{{p2}}"></image>
+        </view>
+    </view>
+    <view class="sub-part">
+        <view class="sub-part-left">
+            <view class="sub-title" bindtap="getInterpersonal">人际关系</view>
+            <text>探索系数</text>
+            <text>{{p3_progress}}</text>
+            <view class="quote">学会识别和管理人际关系</view>
+        </view>
+        <view class="person">
+            <image src="{{p3}}"></image>
+        </view>
+    </view>
+    <view class="view-all">
+    查看所有测试记录
+    </view>
+</view>

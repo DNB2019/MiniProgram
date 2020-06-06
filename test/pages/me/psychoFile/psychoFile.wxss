@@ -1,0 +1,77 @@
+page{
+    background:#F3FBFB;
+}
+.psycho-graph image{
+    width: 670rpx;
+    height: 380rpx;
+    margin-top: 30rpx;
+}
+.sub-part{
+    width: 670rpx;
+    height: 240rpx;
+    background-color: white;
+    border-radius: 10rpx;
+    box-shadow:0px 6px 30px rgba(229,246,246,1);
+    margin-top: 30rpx;
+}
+.sub-part-left{
+    width:470rpx;
+    height: 240rpx;
+    display: inline-block;
+    position: relative;
+    top:-80rpx;
+}
+.sub-title{
+    width: 220rpx;
+    height: 70rpx;
+    border-radius:40px;
+    color: white;
+    font-size: 32rpx;
+    background-color: #A5D5D5;
+    display: inline-block;
+    position: relative;
+    left: 54rpx;
+    text-align: center;
+    line-height: 70rpx;
+}
+.sub-part-left text{
+    display: inline-block;
+    font-size: 24rpx;
+    color: #999999;
+    position: relative;
+    left: 80rpx;
+    top:-20rpx;
+}
+.sub-part-left text+text{
+    color: #A5D5D5;
+    position: relative;
+    top:15rpx;
+    left:-20rpx;
+}
+.quote{
+    display: inline-block;
+    width: 322rpx;
+    height: 40rpx;
+    color: #666666;
+    line-height: 40rpx;
+    position: relative;
+    left:54rpx;
+    top:30rpx;
+    
+}
+.person,.person image{
+    width:160rpx;
+    height: 240rpx;
+    display: inline-block;
+}
+.view-all{
+    width:670rpx;
+    height: 80rpx;
+    border-radius: 20rpx;
+    line-height: 80rpx;
+    text-align: center;
+    background-color: #AADEE3;
+    font-size: 32rpx;
+    color: white;
+    margin-top:30rpx;
+}

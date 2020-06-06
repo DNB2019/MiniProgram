@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'FZXiaoBiaoSong';
-    src:url('http://d.xiazaiziti.com/en_fonts/fonts/f/FZXiaoBiaoSong-B05.ttf');
+    src:url('http://193.112.179.39:5000/static/fonts/FZXiaoBiaoSong-B05.ttf');
 }
 page{
     background-color: #E4FAFD;
@@ -77,7 +77,7 @@ text{
     height:520rpx;
     width:750rpx;
     position: fixed;
-    top: 700rpx;
+    bottom:0rpx;
 }
 .close_sign{
     font-size: 36rpx;

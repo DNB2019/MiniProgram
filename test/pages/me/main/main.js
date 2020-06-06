@@ -52,6 +52,11 @@ Page({
       url:"../testRecord/testRecord"
     })
   },
+  getPsychoFile:function(){
+    wx.navigateTo({
+      url:"../psychoFile/psychoFile"
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

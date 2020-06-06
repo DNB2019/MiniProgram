@@ -23,7 +23,7 @@ App({
   },
   globalData: {
     userInfo: null,  //用户信息
-    baseUrl: 'http://222.200.181.65:5000',
+    baseUrl: 'http://193.112.179.39:5000',
     openid: null,
     StatusBar:null,
     Custom:null,
