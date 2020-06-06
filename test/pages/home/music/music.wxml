@@ -12,31 +12,31 @@
     </view>
     <view class = "music_box">
         <view class = "music_border" bindtap="chooseMusic" data-index="2">
-            <image class="music_img sea" src="{{chosen==2?selected_list[2]:unselected_list[3]}}"></image>
+            <image class="music_img sea" src="{{chosen==2?selected_list[2]:unselected_list[2]}}"></image>
             <text>海浪</text>
         </view>
         <view class = "music_border" bindtap="chooseMusic" data-index="3">
-            <image class="music_img bird" src="{{chosen==3?bird_chosen:bird}}"></image>
+            <image class="music_img bird" src="{{chosen==3?selected_list[3]:unselected_list[3]}}"></image>
             <text>鸟鸣</text>
         </view>
     </view>
     <view class = "music_box">
         <view class = "music_border" bindtap="chooseMusic" data-index="4">
-            <image class="music_img wet" src="{{chosen==4?wet_chosen:wet}}"></image>
+            <image class="music_img wet" src="{{chosen==4?selected_list[4]:unselected_list[4]}}"></image>
             <text>湿地</text>
         </view>
         <view class = "music_border" bindtap="chooseMusic" data-index="5">
-            <image class="music_img wind" src="{{chosen==5?wind_chosen:wind}}"></image>
+            <image class="music_img wind" src="{{chosen==5?selected_list[5]:unselected_list[5]}}"></image>
             <text>风声</text>
         </view>
     </view>
     <view class = "music_box">
         <view class = "music_border" bindtap="chooseMusic" data-index="6">
-            <image class="music_img sun" src="{{chosen==6?sun_chosen:sun}}"></image>
+            <image class="music_img sun" src="{{chosen==6?selected_list[6]:unselected_list[6]}}"></image>
             <text>清晨</text>
         </view>
         <view class = "music_border" bindtap="chooseMusic" data-index="7">
-            <image class="music_img water" src="{{chosen==7?water_chosen:water}}"></image>
+            <image class="music_img water" src="{{chosen==7?selected_list[7]:unselected_list[7]}}"></image>
             <text>流水</text>
         </view>
     </view>
