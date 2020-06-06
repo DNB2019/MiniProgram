@@ -6,13 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-      avartar_link:"../../../images/person.png",
+      avartar_link:"http://193.112.179.39:5000/static/img/psyfile/person.png",
       type:"???",
-      intimacy:"../../../images/intimacy.png",
-      adapt:"../../../images/adapt.png",
-      social:"../../../images/social.png",
-      communicate:"../../../images/heart.png",
-      finish:"../../../images/okay.png",
+      intimacy:"http://193.112.179.39:5000/static/img/psyfile/intimacy.png",
+      adapt:"http://193.112.179.39:5000/static/img/psyfile/adapt.png",
+      social:"http://193.112.179.39:5000/static/img/psyfile/social.png",
+      communicate:"http://193.112.179.39:5000/static/img/psyfile/heart.png",
+      finish:"http://193.112.179.39:5000/static/img/psyfile/okay.png",
       progress_num:"0%"
   },
 

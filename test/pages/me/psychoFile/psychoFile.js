@@ -6,10 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    p1:"../../../images/p1.png",
-    p2:"../../../images/p2.png",
-    p3:"../../../images/p3.png",
-    graph:"../../../images/psycho_view.png",
+    p1:"http://193.112.179.39:5000/static/img/psyfile/p1.png",
+    p2:"http://193.112.179.39:5000/static/img/psyfile/p2.png",
+    p3:"http://193.112.179.39:5000/static/img/psyfile/p3.png",
+    graph:"http://193.112.179.39:5000/static/img/psyfile/aaaaa.png",
     p1_progress:"100%",
     p2_progress:"75%",
     p3_progress:"25%",

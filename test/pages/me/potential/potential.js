@@ -7,7 +7,7 @@ Page({
    */
   data: {
       chosen:0,
-      avartar_link:"../../../images/person.png",
+      avartar_link:"http://193.112.179.39:5000/static/img/psyfile/person.png",
       type:"内部驱动型",
       preface:"",
       subPre:"",
