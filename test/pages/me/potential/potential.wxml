@@ -1,6 +1,6 @@
 <view class="container">
     <view class="avartar">
-        <image src="../../../images/person.png"></image>
+        <image src="{{avartar_link}}"></image>
     </view>
     <view class="type">{{type}}</view>
     <view class="tag-bar">
@@ -13,19 +13,19 @@
     <view class = "preface">{{preface}}</view>
     <view class = "subpart">
         <view class="part-bar">
-            <view wx:if="{{chosen==0}}" class="sub-title">自我认知</view>
+            <view wx:if="{{chosen==0}}" class="sub-title-chosen">自我认知</view>
             <view wx:else class="sub-title" bindtap="choosePart"  data-part="0">自我认知</view>
-            <view wx:if="{{chosen==1}}" class="sub-title">个性</view>
+            <view wx:if="{{chosen==1}}" class="sub-title-chosen">个性</view>
             <view wx:else class="sub-title" bindtap="choosePart" data-part="1">个性</view>
-            <view wx:if="{{chosen==2}}" class="sub-title">动机/价值观</view>
+            <view wx:if="{{chosen==2}}" class="sub-title-chosen">动机/价值观</view>
             <view wx:else class="sub-title" bindtap="choosePart" data-part="2">动机/价值观</view>
-            <view wx:if="{{chosen==3}}" class="sub-title">思维能力</view>
+            <view wx:if="{{chosen==3}}" class="sub-title-chosen">思维能力</view>
             <view wx:else class="sub-title" bindtap="choosePart" data-part="3">思维能力</view>
         </view>
         <view class="sub-pre">{{subPre}}</view>
         <view class="sub-context">{{subContext}}</view>
     </view>
-    <view class="suggest-title">
+    <view class="suggestion-title">建议
     </view>
     <view class="suggestion">
         <text class="small-title">{{suggestion_small_title[0]}}</text>

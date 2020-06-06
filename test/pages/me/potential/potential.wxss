@@ -11,8 +11,7 @@ page{
     color: white;
     width: 240rpx;
     height: 70rpx;
-    line-height: 70rpx;
-    letter-spacing:50rpx;
+    line-height: 60rpx;
     border:4px solid rgba(255,255,255,1);
     text-align: center;
     border-radius: 40rpx;
@@ -20,7 +19,7 @@ page{
 }
 .tag-bar{
     height: 98rpx;
-    margin-bottom: 30rpx;
+    margin: 30rpx auto;
 }
 .tag{
     display: inline-block;
@@ -31,12 +30,13 @@ page{
     color: #418A8A;   
     font-size: 24rpx;
     border-radius: 50%;
-    margin:0rpx 10rpx;
+    margin:0rpx 20rpx;
     text-align: center;
 }
 .preface{
     width: 630rpx;
     color: #418A8A;
+    line-height: 50rpx;
 }
 .subpart{
     width: 670rpx;
@@ -50,34 +50,62 @@ page{
 .sub-title{
     border-radius: 32rpx;
     margin:20rpx;
+    background-color: white;
+    color: #666666;
+    display: inline-block;
+    padding:10rpx;
+}
+.sub-title-chosen{
+    border-radius: 32rpx;
+    margin:20rpx;
     background-color: #A5D5D5;
+    color: white;
     display: inline-block;
     padding:10rpx;
 }
 .sub-pre{
     width:592rpx;
     color: #A5C2C2;
+    margin:20rpx auto;
+    line-height: 50rpx;
 }
-.sub-content{
+.sub-context{
     width:592rpx;
     color: #666666;
+    line-height: 50rpx;
+    margin: 20rpx auto;
 }
 .suggestion-title{
     width:128rpx;
     height: 70rpx;
+    line-height: 60rpx;
+    text-align: center;
+    color:rgba(165,213,213,1) ;
     border-radius: 40rpx;
-    border:4rpx solid rgba(165,213,213,1)
+    border:4rpx solid rgba(165,213,213,1);
+    margin:20rpx auto;
+    background-color: white;
+    font-size: 32rpx;
 }
 .suggestion{
     width:670rpx;
     background-color: white;
     font-size: 28rpx;
+    margin-bottom: 100rpx;
 }
 .small-title{
+    font-size: 28rpx;
+    line-height: 50rpx;
+    width: 592rpx;
+    display: block;
     color: #6EAEAE;
-    margin-top:10rpx;
+    margin:10rpx auto;
 }
 .detail{
+    font-size: 28rpx;
+    line-height: 50rpx;
+    width: 592rpx;
     color: #666666;
-    margin-top: 10rpx;
+    display: block;
+    margin: 10rpx auto;
 }

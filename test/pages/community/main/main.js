@@ -44,7 +44,7 @@ Page({
       that.setData({
         feed: data.feed
       })
-    })
+    });
   },
 
   /**

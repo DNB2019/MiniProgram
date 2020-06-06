@@ -66,6 +66,25 @@ Page({
     })
   },
   chosenTag:function(event){
+    let id = event.currentTarget.dataset.id;
+    var that = this;
+    id = parseInt(id);
+    console.log("idis",id);
+    let temp = 'tag_list['+id+'].color';
+    let temp2 = 'tag_list['+that.data.chosen_tag+'].color';
+    if(that.data.chosen_tag == -1){
+      that.setData({
+        chosen_tag :id,
+        [temp]:"#66cccc",
+      })
+    }
+    else{
+      that.setData({
+        chosen_tag :id,
+        [temp]:"#66cccc",
+        [temp2]:"b2b2b2",
+      })
+    }
   },
   post:function(e)
   {
@@ -76,7 +95,7 @@ Page({
     var Area=0;
     var Tag="倾诉港湾";
     var Noname=!this.data.alter_on;//0是匿名
-    var Images=[];
+    var Images="";
     console.log("images",Images);
     api.postActive({
       user_id,

@@ -17,7 +17,7 @@
     <view class="tag-container">
         <view class="tag-title">选择标签</view>
         <view class="tag-holder">
-            <view class="tag-box" wx:for="{{tag_list}}" id="{{item.id}}" style="color:{{item.color}};border-color:{{item.color}}" bindtap="chosenTag">
+            <view class="tag-box" wx:for="{{tag_list}}" id="{{item.id}}" style="color:{{item.color}};border-color:{{item.color}}" bindtap="chosenTag" data-id="{{item.id}}">
                 {{item.name}}
             </view>
         </view>

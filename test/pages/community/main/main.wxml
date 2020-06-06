@@ -46,14 +46,14 @@
     </scroll-view>
   </view>
 
-  <view class="cards-content mymargin">
+  <view class="cards-content">
     <view class="card-box" wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class="card-info">
         <image class="avartar" src="{{item.avatar_url}}"></image>
         <view class="username">{{item.username}}</view>
         <view class="date">{{item.date}}</view>
       </view>
-      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url.length !== 0}}">
+      <view class="main-content" bindtap="getActiveDetail" data-active-id="{{item.active_id}}" wx:if="{{item.image_url.length != 0}}">
         <view class="content-img-container">
           <image class="content-img" src="{{item.image_url[0]}}"></image>
         </view>

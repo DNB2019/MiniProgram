@@ -6,6 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+      avartar_link:"../../../images/person.png",
+      type:"???",
+      health:"../../../images/leaf.png",
+      risk:"../../../images/risk.png",
+      adjust:"../../../adjust.png",
+      mood:"../../../images/heart.png",
+      finish:"../../../images/okay.png",
+      progress_num:"75%"
+
   },
 
   /**

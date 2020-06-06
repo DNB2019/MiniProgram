@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="avartar">
+        <image src="{{avartar_link}}"></image>
+    </view>
+    <view class="type">{{type}}</view>
+    <view class="test-bar">
+        <image class="test" src="{{health}}"></image>
+        <image class="test" src="{{risk}}"></image>
+        <image class="test" src="{{adjust}}"></image>
+        <image class="test" src="{{mood}}"></image>
+    </view>
+    <view class="finish-bar">
+        <image class="status" src="{{finish}}"></image>
+        <image class="status" src="{{finish}}"></image>
+        <image class="status" src="{{finish}}"></image>
+        <image class="status" src=""></image>
+    </view>
+    <view class="report">
+        <text>完成以上所有测试</text>
+        <text>即可解锁报告</text>
+        <view class="progress">
+            <view class="fin-progress"></view>
+        </view>
+        <view class="progress-num">{{progress_num}}</view>
+    </view>
+</view>
