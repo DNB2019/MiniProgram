@@ -25,7 +25,23 @@ page{
 .test{
     width: 136rpx;
     height: 136rpx;
-    margin:0rpx 20rpx;
+    margin:0rpx 15rpx;
+}
+.test-text{
+    height: 50rpx;
+    width: 662rpx;
+    margin: auto;
+    position: relative;
+    top:-10rpx;
+}
+.test-text text{
+    display: inline-block;
+    width: 136rpx;
+    line-height: 56rpx;
+    font-size: 28rpx;
+    color:#418A8A;
+    margin-left: 25rpx;
+    margin-right: 5rpx;
 }
 .finish-bar{
     width: 662rpx;
@@ -35,13 +51,15 @@ page{
 .status{
     width: 30rpx;
     height: 30rpx;
-    margin: 0epx 73rpx;
+    margin: 0rpx 66rpx;
 }
 .report{
     width: 670rpx;
     height: 580rpx;
+    border-radius:10rpx;
     background-color: white;
-
+    padding-top:180rpx;
+    margin:50rpx auto 100rpx auto;
 }
 .report text{
     width: 300rpx;
@@ -49,13 +67,15 @@ page{
     text-align: center;
     line-height: 56rpx;
     display: block;
+    margin:auto;
 }
 .progress{
     width:500rpx;
     height: 20rpx;
     border-radius: 10rpx;
-    background-color: white;
+    background-color: rgb(236, 236, 236);
     margin:30rpx auto;
+    display: flex;
 }
 .fin-progress{
     display: inline-block;

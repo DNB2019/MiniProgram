@@ -10,7 +10,7 @@ Page({
       type:"???",
       health:"../../../images/leaf.png",
       risk:"../../../images/risk.png",
-      adjust:"../../../adjust.png",
+      adjust:"../../../images/adjust.png",
       mood:"../../../images/heart.png",
       finish:"../../../images/okay.png",
       progress_num:"75%"

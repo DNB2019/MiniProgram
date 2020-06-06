@@ -9,6 +9,12 @@
         <image class="test" src="{{adjust}}"></image>
         <image class="test" src="{{mood}}"></image>
     </view>
+    <view class="test-text">
+        <text>身体状况</text>
+        <text>潜在风险</text>
+        <text>调节能力</text>
+        <text>情绪状态</text>
+    </view>
     <view class="finish-bar">
         <image class="status" src="{{finish}}"></image>
         <image class="status" src="{{finish}}"></image>
