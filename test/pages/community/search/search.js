@@ -6,8 +6,8 @@ Page({
     // CustomBar:app.globalData.CustomBar,
     searchHisList: [],
     hotList: [
-      "标签名称123testing", "标签名称123testing", "标签名称123testing",
-      "标签名称", "标签名称", "标签名称", "标签名称", "标签名称",
+      "抑郁症", "拖延", "期末焦虑",
+      "宿舍关系", "强迫症", "失眠", "情绪健康", "社交恐惧",
     ],
     inputValue: ""
   },

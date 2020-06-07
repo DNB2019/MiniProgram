@@ -3,14 +3,14 @@
     src:url('http://193.112.179.39:5000/static/fonts/FZXiaoBiaoSong-B05.ttf');
 }
 page{
-    background-color: #E4FAFD;
+    background:linear-gradient(135deg,rgba(228,250,253,1) 0%,rgba(228,236,253,1) 100%);
     font-family: FZXiaoBiaoSong;
     
 }
 
 .container{
     margin:0rpx 54rpx;
-    background-color: #E4FAFD;
+    background:linear-gradient(135deg,rgba(228,250,253,1) 0%,rgba(228,236,253,1) 100%);
 }
 .music_box{
     display: inline-box;

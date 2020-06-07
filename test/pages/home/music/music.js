@@ -386,7 +386,7 @@ Page({
         let time = parseInt(event.currentTarget.dataset.time);
         this.setData({
             minute:time,
-            count_second: time*1,
+            count_second: time*60,
         })
     },
     setTime: function(event){
